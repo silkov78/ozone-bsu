@@ -6,44 +6,45 @@
 <main id="main">
 
     {% verbatim %}
-    <section id="main-info" class="pb-0">
+    <section id="worker-info" class="pb-0">
         <div class="container">
-            <div class="worker__main main" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="600">
-                <div class="main__img col-lg-2 col-md-3">
+            <div class="worker__worker worker" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="600">
+                <div class="worker__img col-lg-2 col-md-3">
                     <img v-bind:src="workerInfo.photo" alt="">
                 </div>
-                <div class="main__info col-lg-5 col-md-12">
-                    <h2 class="main__name">{{ workerInfo.last_name }} {{ workerInfo.first_name }} {{
+                <div class="worker__info col-lg-5 col-md-12">
+                    <h2 class="worker__name">{{ workerInfo.last_name }} {{ workerInfo.first_name }} {{
                         workerInfo.middle_name }} </h2>
-                    <div class="main__info-item">
+                    <div class="worker__info-item">
                         <span>{{ workerInfo.academic_rank }}</span>
                     </div>
-                    <div class="main__info-item mb-4">
+                    <div class="worker__info-item mb-4">
                         <span>{{ workerInfo.position }}</span>
                     </div>
-                    <div v-if="Object.keys(workerInfo.science_interests).length" class="main__info-item mb-4">
+                    <div v-if="Object.keys(workerInfo.science_interests).length" class="worker__info-item mb-4">
                         <h6 class="science-interests__title">Научные интересы:</h6>
                         <span class="science-interests__item" v-for="(item,index) in workerInfo.science_interests">
-                            <span v-if="index == workerInfo.science_interests.length - 1">{{item.science_interest}}</span>
+                            <span
+                                v-if="index == workerInfo.science_interests.length - 1">{{item.science_interest}}</span>
                             <span v-else>{{item.science_interest}}, </span>
                         </span>
                     </div>
                 </div>
-                <div class="main__contacts col-lg-3 col-md-12">
+                <div class="worker__contacts col-lg-3 col-md-12">
                     <h4>
                         Контакты
                     </h4>
-                    <div class="main__info-item">
+                    <div class="worker__info-item">
                         <span>{{ workerInfo.adress }}</span>
                     </div>
-                    <div class="main__info-item">
+                    <div class="worker__info-item">
                         <span>{{ workerInfo.mail }}</span>
                     </div>
-                    <div class="main__info-item">
+                    <div class="worker__info-item">
                         <span>{{ workerInfo.phone }}</span>
                     </div>
 
-                    <div v-if="workerInfo.google_academy" class="main__info-item">
+                    <div v-if="workerInfo.google_academy" class="worker__info-item">
                         <a v-bind:href="workerInfo.google_academy" target="_blank">
                             <span>Страница Google Академии</span>
                         </a>
@@ -111,14 +112,16 @@
 
     </section>
 
-    <section v-if="Object.keys(workerInfo.publications).length" class="publications publications-info pt-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+    <section v-if="Object.keys(workerInfo.publications).length" class="publications publications-info pt-5"
+        data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
         <div class="container">
             <div class="section-title">
                 <h2>Избранные публикации</h2>
             </div>
             <ol class="publications__list">
                 <li v-for="item in workerInfo.publications" class="publications__item">
-                    <p>{{item.publication_description}} <a v-bind:href="item.publication_link" v-if="item.publication_link" target="_blank">[Ссылка]</a></p>
+                    <p>{{item.publication_description}} <a v-bind:href="item.publication_link"
+                            v-if="item.publication_link" target="_blank">[Ссылка]</a></p>
                 </li>
             </ol>
         </div>
