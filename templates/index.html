@@ -1,0 +1,180 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="container h-100 d-flex flex-column justify-content-end align-items-center">
+            <div class="d-flex h-75 flex-column justify-content-center align-items-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="animate__animated animate__fadeInDown animate__fast">ННИЦ МО </h1>
+                </div>
+                <div class="col-lg-12 mb-5">
+                    <p class="b-page-subtitle animate__animated animate__fadeInDown animate__fast" >
+                        Учреждение <a href="https://bsu.by" target="_blank" class="b-bsu-link">Белорусского государственного
+                            университета</a> <br>"Национальный научно-исследовательский центр мониторинга озоносферы"
+                    </p>
+                </div>
+                <div class="col-lg-1 flex-grow-1 d-flex justify-content-center align-items-end">
+                    <div class="b-arrow">
+                        <a class="b-arrow-link" href="#main">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Main Section ======= -->
+    <main id="main" class="main-page">
+
+        <!-- ======= About Section ======= -->
+        <section class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>О нас</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="450">
+                        <div class="icon-box icon-box-cyan">
+                            <div class="icon">
+                                <i class="bi bi-clipboard-pulse"></i>
+                            </div>
+                            <h4 class="title">
+                                Мониторинг
+                            </h4>
+                            <p class="description">
+                                Оперативный мониторинг, анализ и прогноз состояния озоносферы и уровней приземного УФ
+                                -излучения, обмен информацией с отечественными, зарубежными центрами и международными
+                                организациями.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="550">
+                        <div class="icon-box icon-box-cyan">
+                            <div class="icon">
+                                <i class="bi bi-device-hdd"></i>
+                            </div>
+                            <h4 class="title">
+                                Приборы
+                            </h4>
+                            <p class="description">
+                                Разработка и создание новой измерительной аппаратуры для мониторинга атмосферы. Исследование
+                                медицинских и биологических аспектов воздействия УФ - излучения и химических веществ,
+                                загрязняющих атмосферу.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                        <div class="icon-box icon-box-cyan">
+                            <div class="icon">
+                                <i class="bi bi-globe"></i>
+                            </div>
+                            <h4 class="title">
+                                Экспедиции
+                            </h4>
+                            <p class="description">
+                                Сотрудники ННИЦ МО — одни из немногих белорусских ученых, которые регулярно принимают участие в
+                                антарктических экспедициях, организуемых Республиканским центром полярных исследований.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="750">
+                        <div class="icon-box icon-box-cyan">
+                            <div class="icon">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <h4 class="title">
+                                Обучение
+                            </h4>
+                            <p class="description">
+                                Обеспечение учебного процесса и повышение квалификации отечественных и зарубежных специалистов в
+                                области мониторинга озоносферы и разработки новой измерительной аппаратуры.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ======= News Section ======= -->
+        <section class="news section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Последние новости</h2>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+
+                    {% for news_item in news %}
+                        <div class="col-lg-6 col-sm-12 mb-5">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="{{ news_item.image_logo.url }}" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{% url 'blog-page-url' %}">{{ news_item.title }}</a></h5>
+                                    <p class="card-text text-center">{{ news_item.subtitle }}</p>
+                                    <div class="card-meta d-flex justify-content-between align-items-center">
+                                        <div class="date">
+                                            <i class="bi bi-clock"></i>
+                                            <time>{{ news_item.published }}</time>
+                                        </div>
+                                        <div class="read-more">
+                                            <a href="{% url 'blog-page-url' %}">Подробнее</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+        <!-- ======= Devices Section ======= -->
+        <section class="devices">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наши приборы</h2>
+                </div>
+                <div class="row devices-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+
+                    {% for device in devices %}
+                        <div class="col-lg-4 col-md-6 devices-wrap filter-app">
+                            <div class="devices-item d-flex flex-column justify-content-center">
+                                <div class="device-img">
+                                    <img src="{{ device.image.url }}" class="img-fluid" alt="">
+                                </div>
+                                <div class="devices-info">
+                                    <h3 class="b-devices-title">{{ device.name }}</h3>
+                                    <p class="b-devices-description">{{ device.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/index/editDOM.js' %}"></script>
+
+{% endblock %}

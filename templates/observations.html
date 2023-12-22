@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <main id="main">
+    <!-- ======= Observations Section ======= -->
+    {% verbatim %}
+        <section class="observations pb-0" id="observations">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наблюдения</h2>
+                </div>
+                <div class="annual-observ row mb-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                    <div class="annual-info col-lg-7 col-sm-12">
+                        <blockquote class="annual-blockquote">
+                            <p class="annual-text">
+                                Данные мониторинга общего содержания озона служат экспериментальной базой для оценки состояния озонового слоя и его трансформации в результате антропогенного воздействия и естественных процессов.<br> Они используются для изучения степени влияния этих изменений на климат в глобальном и региональном масштабах, а также для прогноза изменения уровней и доз биологически активного солнечного ультрафиолетового излучения у поверхности Земли.<br>Измерения ультрафиолетового индекса проводятся на Минской озонометрической станции, которая расположена в  ННИЦ МО БГУ. Обновление показаний производится еженедельно. <span>Ниже представлена таблица актуальных измерений</span>.
+                            </p>
+                        </blockquote>
+                    </div>
+                    <div class="annual-list col-lg-5 col-sm-12">
+                        <h3 class="observ-subtitle">Результаты наблюдений по годам:</h3>
+                        <a v-for="report in annualReports" v-bind:href="report.report_file" class="annual-link" target="_blank">
+                            {{ report.year }}
+                        </a>
+                    </div>
+                </div>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar mb-4">
+                    <table class="observ-table animate__animated animate__fadeInDown">
+                        <thead class="">
+                            <tr>
+                                <th scope="col">Дата</th>
+                                <th scope="col">Общее содержание озона (ОСО), единицы Добсона</th>
+                                <th scope="col">УФ-индекс</th>
+                                <th scope="col">УФ макс.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            <tr v-for="measure in dailyMeasures">
+                                <td class="observ-date" scope="row">{{ measure.date_field }}</td>
+                                <td>{{ measure.common_ozone }}</td>
+                                <td>{{ measure.ultraviolet_index }}</td>
+                                <td>{{ measure.ultraviolet_max }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="table-download d-flex align-items-center gap-2">
+                    <a id="exportCSV" class="download-button">Загрузить</a>
+                    <p class="download-text">
+                        - загрузить данные таблицы в CSV-формате
+                    </p>
+                </div>
+            </div>
+        </section>
+    {% endverbatim %}
+
+
+    </main>
+
+    <script src="{% static 'js/observ/editDOM.js' %}"></script>
+    <script src="{% static 'js/observ/apiData.js' %}"></script>
+    <script src="{% static 'js/observ/exportData.js' %}"></script>
+
+
+{% endblock %}
+

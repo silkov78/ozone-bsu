@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <main id="main">
+
+        <section class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Документация</h2>
+                </div>
+
+
+                <div class="row justify-content-between"  data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                    <div class="col-lg-5 doc-img">
+                        <img src="{% static 'img/documents/doc3.png' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                      <h3>Документация, регламентирующую работу ННИЦ МО</h3>
+
+                        <ul>
+                          {% for doc in object_list %}
+                            <a href="{{ doc.document.url }}">
+                                <li>
+                                    <i class="bi bi-check2-circle"></i>
+                                    {{ doc.name }}
+                                </li>
+                            </a>
+                          {% endfor %}
+
+                        </ul>
+
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/documents/editDOM.js' %}"></script>
+
+{% endblock %}
+
