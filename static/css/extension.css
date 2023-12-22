@@ -464,28 +464,28 @@
 /*--------------------------------------------------------------
 # Documents
 --------------------------------------------------------------*/
-.about h3 {
+.documetns h3 {
     font-weight: 400;
     font-size: 20px;
     font-style: italic;
 }
 
-.about ul {
+.documetns ul {
     list-style: none;
     padding: 0;
 }
   
-.about ul li {
+.documetns ul li {
     padding-bottom: 10px;
 }
 
-.about ul i {
+.documetns ul i {
     font-size: 20px;
     padding-right: 4px;
     color: #68A4C4;
 }
 
-.about p:last-child {
+.documetns p:last-child {
     margin-bottom: 0;
 }
 
