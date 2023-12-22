@@ -19,7 +19,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/worker_page/1_hero/atm2.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/main_page/1_hero/atm2.jpg") center top no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
