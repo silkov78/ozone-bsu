@@ -303,7 +303,7 @@
   font-weight: 600;
 }
 
-.annual-info blockquote::after {
+blockquote::after {
   content: "";
   position: absolute;
   left: 0;
@@ -659,4 +659,20 @@ Team-single
     display: block;
     font-size: 18px;
     line-height: 22px;
+}
+
+
+/* --------------------------------- 
+About-single
+-------------------------------------*/
+
+.history__body {
+    margin-bottom: 20px;
+
+}
+
+.history__abstract {
+    font-size: 18px;
+    font-style: italic;
+    color: #383838;
 }

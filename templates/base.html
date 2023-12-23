@@ -58,19 +58,11 @@
                 <nav id="navbar" class="navbar">
                     <ul class="navbar-list">
                         <li><a href="{% url 'main-page-url' %}">Главная</a></li>
-                        <li class="dropdown"><a href="#"><span>О нас</span> <i class="bi bi-chevron-down"></i></a>
+                        <li class="dropdown"><a href="{% url 'about-page-url' %}"><span>О нас</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                               <li><a href="{% url 'about-page-url' %}">О нас</a></li>
-                              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                  <li><a href="#">Deep Drop Down 1</a></li>
-                                  <li><a href="#">Deep Drop Down 2</a></li>
-                                  <li><a href="#">Deep Drop Down 3</a></li>
-                                  <li><a href="#">Deep Drop Down 4</a></li>
-                                  <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
                               </li>
-                              <li><a href="{% url 'workers-list-url' %}">Структура ННИЦ МО</a></li>
+                              <li><a href="{% url 'workers-list-url' %}">Структура ННИЦ</a></li>
                             </ul>
                         </li>
                         <li><a href="{% url 'observ-url' %}">Наблюдения</a></li>
