@@ -33,3 +33,7 @@ class NewsItemView(DetailView):
 class DocumetsPageView(ListView):
     template_name = 'documents.html'
     model = Document
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+    # model = Document

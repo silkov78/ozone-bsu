@@ -494,6 +494,19 @@
 # Team
 --------------------------------------------------------------*/
 
+.departments__box {
+    width: 100%;
+}
+
+.departments__title {
+    margin-bottom: 0;
+    color: #1e4356;
+    /* font-style: italic; */
+    /* text-align: left; */
+    font-weight: 300;
+    /* font-family: 'Open-sans' serif; */
+}
+
 .member {
     display: flex;
     justify-content: space-between;
@@ -544,16 +557,16 @@
 
 .member-img {
     /* flex: 0 0 200px; */
-    padding: 0 -8px;
-    height: 166.5px;
+    margin: 0 8px;
+    height: 210px;
 }
 
 .member-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: 0 8px;
-    border-radius: 5px;
+    /* padding: 0 8px; */
+    border-radius: 3px;
 }
 
 

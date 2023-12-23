@@ -10,5 +10,6 @@ urlpatterns = [
     path('', MainPageView.as_view(), name='main-page-url'),
     path('blog/', BlogPageView.as_view(), name='blog-page-url'),
     path('blog/<int:pk>/', NewsItemView.as_view(), name='news-item-url'),
-    path('documents/', DocumetsPageView.as_view(), name='documents-page-url')
+    path('documents/', DocumetsPageView.as_view(), name='documents-page-url'),
+    # path('about/', DocumetsPageView.as_view(), name='documents-page-url')
 ]
