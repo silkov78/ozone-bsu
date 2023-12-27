@@ -29,7 +29,20 @@ class NewsItemView(DetailView):
     model = News
     template_name = 'blog-single.html'
 
+# ------------------------------------------------------------
+class DevicesPageView(ListView):
+    template_name = 'devices.html'
+    model = Devices
+    paginate_by = 4
 
+
+class DeviceItemView(DetailView):
+    model = Devices
+    template_name = 'devices-single.html'
+
+
+# ----------------------------------------------------
+    
 class DocumetsPageView(ListView):
     template_name = 'documents.html'
     model = Document
