@@ -1,9 +1,6 @@
 from django.db import models
 
 
-# class BaseIte(models.Model):
-#     title = 
-
 class News(models.Model):
 
     title = models.CharField(max_length=100, verbose_name='Заголовок')
