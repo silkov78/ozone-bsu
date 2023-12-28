@@ -54,6 +54,16 @@
 
 </main>
 
-<script src="{% static 'js/documents/editDOM.js' %}"></script>
+
+
+<script>
+
+    const pageTitle = document.querySelector('title')
+    pageTitle.innerHTML = 'Приборы'
+
+    const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[1]
+    activeNavPage.classList.add('active')
+
+</script>
 
 {% endblock %}

@@ -13,7 +13,7 @@
                 </div>
                 <div class="row d-flex flex-wrap">
 
-                    {% for devices_item in page_obj %}
+                    {% for devices_item in object_list %}
                         <div class="col-lg-4 col-sm-12 mb-5"  data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
                             <div class="card align-items-stretch">
                                 <div class="card-img">
@@ -35,7 +35,7 @@
                 </div>
 
                 
-                <div class="blog-pagination">
+                <!-- <div class="blog-pagination">
                     
                     <ul class="justify-content-center">
                         {% for p in page_obj.paginator.page_range %}
@@ -48,11 +48,20 @@
                             {% endif %}
                         {% endfor %}
                     </ul>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
 
-    <script src="{% static 'js/blog/editDOM.js' %}"></script>
+    <!-- <script src="{% static 'js/blog/editDOM.js' %}"></script> -->
+    <script>
+
+        const pageTitle = document.querySelector('title')
+        pageTitle.innerHTML = 'Приборы'
+
+        const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[1]
+        activeNavPage.classList.add('active')
+
+    </script>
 
 {% endblock %}

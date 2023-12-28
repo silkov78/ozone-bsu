@@ -33,7 +33,7 @@ class NewsItemView(DetailView):
 class DevicesPageView(ListView):
     template_name = 'devices.html'
     model = Devices
-    paginate_by = 4
+    # paginate_by = 4
 
 
 class DeviceItemView(DetailView):
