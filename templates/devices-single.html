@@ -9,35 +9,48 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Документация</h2>
+                <h2> {{ object.name }} </h2>
             </div>
 
-
-            <div class="row justify-content-between" data-aos="fade-up" data-aos-easing="ease-in-out"
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-easing="ease-in-out"
                 data-aos-duration="650">
-                <div class="col-lg-5 doc-img">
-                    <img src="{% static 'img/documents/doc3.png' %}" class="img-fluid" alt="">
+                <div class="col-lg-3">
+                    <div class="device__img">
+                        <img src=" {{object.main_image.url }} " alt="">
+                    </div>
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0">
-                    <h3>Документация, регламентирующую работу ННИЦ МО</h3>
-
-                    <ul>
-                        {% for doc in object_list %}
-                        <a href="{{ doc.document.url }}">
-                            <li>
-                                <i class="bi bi-check2-circle"></i>
-                                {{ doc.name }}
-                            </li>
-                        </a>
-                        {% endfor %}
-
-                    </ul>
-
+                <div class="col-lg-7 pt-4 pt-lg-0">
+                    <h3>{{ object.subtitle }}</h3>
+                    <p>{{ object.description }}</p>
                 </div>
             </div>
 
         </div>
     </section>
+
+    <section data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="750" class="pt-0">
+        <div class="list-block ">
+            <div class="container">
+                <div class="section-title">
+                    <h2> Технические характеристики </h2>
+                </div>
+
+                <div class="list-block__list">
+                    {% for char in object.characteristics.all %}
+
+                    <div class="list-block__item">
+                        <span class="list-block__item-desciption col-lg-7 col-md-9">
+                            <i class="col-1 bi bi-gear"></i>&nbsp&nbsp{{ char.characteristic_name }}
+                        </span>
+                        <span class="list-block__item-desciption col-lg-2 col-md-2">
+                            {{ char.characteristic_value }}
+                        </span>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
 </main>
 

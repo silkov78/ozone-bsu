@@ -662,6 +662,7 @@ Team-single
 }
 
 
+
 /* --------------------------------- 
 About-single
 -------------------------------------*/
@@ -675,4 +676,40 @@ About-single
     font-size: 18px;
     font-style: italic;
     color: #383838;
+}
+
+/* --------------------------------- 
+Devices-single
+-------------------------------------*/
+
+.list-block__list {
+    
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 2px -2px rgb(251, 251, 251);
+}
+.list-block__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.list-block__item-desciption {
+    display: block;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.device__img {
+    margin: 0px 10px 10px 0px;
+    height: 306px;
+    width: 100%;
+}
+
+.device__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
 }

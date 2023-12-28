@@ -120,7 +120,8 @@ class TechCharacteristic(models.Model):
     device = models.ForeignKey(
         Devices,
         on_delete=models.CASCADE,
-        verbose_name='Прибор'
+        verbose_name='Прибор',
+        related_name='characteristics'
     )
 
     characteristic_name = models.CharField(
@@ -144,7 +145,7 @@ class TechCharacteristic(models.Model):
     )
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.characteristic_name}'
 
     class Meta:
         verbose_name = 'Характеристика прибора'
@@ -158,7 +159,8 @@ class GalleryImage(models.Model):
     device = models.ForeignKey(
         Devices,
         on_delete=models.CASCADE,
-        verbose_name='Прибор'
+        verbose_name='Прибор',
+        related_name='gallery'
     )
 
     gallery_image = models.ImageField(
@@ -177,7 +179,7 @@ class GalleryImage(models.Model):
     )
 
     def __str__(self):
-        return f'{self.characteristic_name}'
+        return f'{self.device} {self.id}'
 
     class Meta:
         verbose_name = 'Галерея прибора'
