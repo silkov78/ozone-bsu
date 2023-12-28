@@ -32,18 +32,18 @@ class DeviceTechCharacteristic(admin.TabularInline):
     classes = ('collapse', )
 
 
-class DeviceGalleryImage(admin.TabularInline):
-    model = GalleryImage
-    extra = 1
-    classes = ('collapse', )
+# class DeviceGalleryImage(admin.TabularInline):
+#     model = GalleryImage
+#     extra = 1
+#     classes = ('collapse', )
 
 
 @admin.register(Devices)
 class ProductAdmin(admin.ModelAdmin):
 
     inlines = [
-        DeviceTechCharacteristic,
-        DeviceGalleryImage
+        DeviceTechCharacteristic
+        # DeviceGalleryImage
     ]
 
     # list_display = ['last_name', 'first_name',  'academic_rank', 'ordering', ]
