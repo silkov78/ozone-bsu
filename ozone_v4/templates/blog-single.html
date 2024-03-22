@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="450">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-9 entries ">
+
+            <article class="entry entry-single">
+
+                <div class="entry-img">
+                  <img src="{{ object.image_logo.url }}" alt="" class="img-fluid">
+                </div>
+
+                <h2 class="entry-title">
+                {{ object.title }}
+                </h2>
+
+                <p class="entry-subtitle">
+                {{ object.subtitle }}
+                </p>
+
+                <div class="entry-content">
+                    <p>{{ object.body|linebreaks }}</p>
+                </div>
+
+                <div class="entry-meta">
+                    <i class="bi bi-clock"></i>
+                    <time datetime="2020-01-01">{{ object.published }}</time>
+                  </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="{% static 'js/blog/editDOM.js' %}"></script>
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+# To ignore
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+
+# Coverage
+htmlcov
+.coverage
+
+# Certificates
+certs
+
+# Environments 
+.env
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/ 
+
+# If you are using PyCharm #
+.idea
+
+# Visual Studio Code # 
+.vscode
+
+

@@ -1,0 +1,67 @@
+
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block content %}
+
+    <main id="main">
+
+        <section id="devices" class="news blog">
+            <div class="container">
+                <div class="section-title">
+                    <h2>{% trans 'Приборы' %}</h2>
+                </div>
+                <div class="row d-flex flex-wrap">
+
+                    {% for devices_item in object_list %}
+                        <div class="col-lg-4 col-sm-12 mb-5"  data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                            <div class="card align-items-stretch">
+                                <div class="card-img">
+                                    <img src="{{ devices_item.main_image.url }}" class="" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{{ devices_item.id }}">{{ devices_item.name }}</a></h5>
+                                    <p class="card-text text-center">{{ devices_item.subtitle }}</p>
+                                    <div class="card-meta d-flex justify-content-end align-items-center">
+                                        <div class="read-more">
+                                            <a href="{{ devices_item.id }}">{% trans 'Подробнее' %}</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                
+                <!-- <div class="blog-pagination">
+                    
+                    <ul class="justify-content-center">
+                        {% for p in page_obj.paginator.page_range %}
+                            {% if page_obj.number == p %}
+
+                            <li class="active"><a href="?page={{p}}">{{p}}</a></li>
+
+                            {% else %}
+                            <li><a href="?page={{p}}">{{p}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <!-- <script src="{% static 'js/blog/editDOM.js' %}"></script> -->
+    <script>
+
+        const pageTitle = document.querySelector('title')
+        pageTitle.innerHTML = 'Приборы'
+
+        const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[4]
+        activeNavPage.classList.add('active')
+
+    </script>
+
+{% endblock %}

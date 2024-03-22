@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+
+{% block content %}
+<main id="main">
+
+    <section class="documetns">
+        <div class="container">
+
+            <div class="section-title">
+                <h2> {{ object.name }} </h2>
+            </div>
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-easing="ease-in-out"
+                data-aos-duration="650">
+                <div class="col-lg-3">
+                    <div class="device__img">
+                        <img src=" {{object.main_image.url }} " alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7 pt-4 pt-lg-0">
+                    <h3>{{ object.subtitle }}</h3>
+                    <p>{{ object.description }}</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="750" class="pt-0">
+        <div class="list-block ">
+            <div class="container">
+                <div class="section-title">
+                    <h2>{% trans 'Технические характеристики' %} </h2>
+                </div>
+
+                <div class="list-block__list">
+                    {% for char in object.characteristics.all %}
+
+                    <div class="list-block__item">
+                        <span class="list-block__item-desciption col-lg-7 col-md-9">
+                            <i class="col-1 bi bi-gear"></i>&nbsp&nbsp{{ char.characteristic_name }}
+                        </span>
+                        <span class="list-block__item-desciption col-lg-2 col-md-2">
+                            {{ char.characteristic_value }}
+                        </span>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+</main>
+
+
+
+<script>
+
+    const pageTitle = document.querySelector('title')
+    pageTitle.innerHTML = 'Приборы'
+
+    const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[4]
+    activeNavPage.classList.add('active')
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load i18n static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>{% trans 'ННИЦ МО' %}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon-32x32.png' %}" rel="icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/extension.css' %}" rel="stylesheet">
+
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <!-- =======================================================
+    * Template Name: Moderna
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header" class="fixed-top d-flex align-items-center">
+
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <a href="{% url 'main-page-url' %}">
+                        <img src="{% static 'img/nomrec_logo3.png' %}" alt="" class="img-fluid">
+                    </a>
+                </div>
+
+                <nav id="navbar" class="navbar">
+                    <ul class="navbar-list">
+                        <li><a href="{% url 'main-page-url' %}">{% trans 'Главная' %}</a></li>
+                        <li><a href="{% url 'observ-url' %}">{% trans 'Наблюдения' %}</a></li>
+
+                        <li><a href="{% url 'blog-page-url' %}">{% trans 'Новости' %}</a></li>
+                        <li><a href="{% url 'documents-page-url' %}">{% trans 'Документация' %}</a></li>
+                        <li class="dropdown"><a href="{% url 'about-page-url' %}"><span>{% trans 'О нас' %}</span>
+                                <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="{% url 'about-page-url' %}">{% trans 'О нас' %}</a></li>
+                                <li><a href="{% url 'articles-page-url' %}">{% trans 'Статьи' %}</a></li>
+                                <li><a href="{% url 'workers-list-url' %}">{% trans 'Структура ННИЦ' %}</a></li>
+                                <li><a href="{% url 'devices-page-url' %}">{% trans 'Приборы' %}</a></li>
+                                <li><a href="{% url 'cookies-page-url' %}">{% trans 'Политика cookies' %}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+
+                <div class="d-flex align-items-center">
+                    <div class="search">
+                        <form action="{% url 'search-page-url' %}" method="get">
+                            <input name="search" type="text" placeholder={% trans "Поиск . . ." %} autocomplete="off">
+                        </form>
+                    </div>
+                    <button class="bad-vision" onclick="badVision">
+                        <i class="bi bi-eyeglasses h2"></i>
+                    </button>
+                    <form action="{% url 'set_language' %}" method="post" class="language-switcher">
+                      {% csrf_token %}
+                      <input name="next" type="hidden" value="{{ redirect_to }}">
+                      <select name="language" onchange="this.form.submit()">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                          <option class="language-option" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.code }}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </form>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
+        <!-- ======= Footer ======= -->
+        <div class="cookies">
+            <header class="cookies__header">
+                <i class="bi bi-cookie h4"></i>
+                <h3>Cookies</h3>
+            </header>
+            <p class="cookies__info">
+                {% trans 'Сайт использует только cookie, необходимые для корректной и безопасной работы сайта. Cookies не хранят никакой информации о пользователях и его действиях на сайте. Потробнее о политике cookie можно прочитать' %}
+                <a href="{% url 'cookies-page-url' %}" class="cookies__url">{% trans "здесь" %}</a>.
+            </p>
+            <div class="cookies__buttons">
+                <button id="acceptBtn" class="cookies__button cookies__button_accept">
+                    {% trans "Принять" %}
+                </button>
+                <a href="{% url 'cookies-page-url' %}" id="detailBtn" class="cookies__button cookies__button_details">
+                    {% trans "Подробнее" %}
+                </a>
+            </div>
+        </div>
+
+        <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="700">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>{% trans 'ННИЦ МО' %}</h4>
+                            <ul class="footer-list">
+                                <li>{% trans 'г. Минск, ул. Курчатова 7, к. 907' %}</li>
+                                <li>{% trans '220064, Республика Беларусь' %}</li>
+                                <li> <strong>{% trans 'Телефон' %}:</strong> <a href="tel:+375173993611">+375 (17) 399-36-11</a></li>
+                                <li><strong>{% trans 'Телефон' %}:</strong> <a href="tel:+375173185312">+375 (17) 318-53-12</a></li>
+                                <li><strong>Email:</strong> <a href="mailto:nomrec@bsu.by">nomrec@bsu.by</a></li>
+
+                            </ul>
+                            <div class="social-links mt-3">
+                                <a href="https://web.telegram.org/k/#@nomrec" class="twitter"><i
+                                        class="bx bxl-telegram"></i></a>
+                                <a href="https://m.facebook.com/groups/300381939614203/?ref=share&mibextid=NSMWBT" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://www.instagram.com/nomrec/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>{% trans 'БГУ' %}</h4>
+                            <ul class="footer-list">
+                                <li>{% trans 'г. Минск, пр. Независимости, 4' %}</li>
+                                <li>{% trans '220030, Республика Беларусь' %}</li>
+                                <li><strong>{% trans 'Сайт' %}: </strong><a href="https://bsu.by">bsu.by</a></li>
+                                <li> <strong>{% trans 'Телефон' %}:</strong><a href="tel:+375172095044">+ 375 17 209-50-44 {% trans '(справочная)' %}</a></li>
+                                <li><strong>{% trans 'Моб. телефон:' %}</strong><a href="tel:+375172705940">+ 375 17 270-59-40 {% trans '(факс)' %}</a></li>
+                                <li><strong>Email:</strong> <a href="mailto:bsu@bsu.by">bsu@bsu.by</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>{% trans 'Ссылки' %}</h4>
+                            <ul class="footer-list">
+                                <li class="footer-link">
+                                    <a href="https://president.gov.by/en" target="_blank">
+                                        {% trans 'Интернет-портал Президента Республики Беларусь' %}
+                                    </a>
+                                </li>
+                                <li class="footer-link">
+                                    <a href="https://edu.gov.by/" target="_blank">
+                                        {% trans 'Министерство образования Республики Беларусь' %}
+                                    </a>
+                                </li>
+                                <li class="footer-link">
+                                    <a href="https://pravo.by/" target="_blank">
+                                        {% trans 'Национальный правовой портал' %}
+                                    </a>
+                                </li>
+                                <li class="footer-link">
+                                    <a href="https://www.elib.bsu.by/" target="_blank">
+                                        {% trans 'Электронная библиотека БГУ' %}
+                                    </a>
+                                </li>
+                                <hr>
+                                <li class="footer-link">
+                                    <a href="{% url 'cookies-page-url' %}" target="_blank">
+                                        {% trans 'Политика cookies' %}
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    Copyright &copy; 2024 <strong><span>NOMREC BSU</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+        </footer>
+        <!-- Vendor JS Files -->
+        <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+        <script src="{% static 'vendor/aos/aos.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+
+</body>
+
+</html>
