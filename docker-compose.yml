@@ -3,6 +3,7 @@ services:
     image: postgres:16-alpine
     container_name: ozone_postgres
     env_file:
+      - ./ozone_v4/.env.dev
       - ./ozone_v4/.env
     ports:
       - "5432:5432"
@@ -19,6 +20,7 @@ services:
       - postgres
 
     env_file:
+      - ./ozone_v4/.env.dev
       - ./ozone_v4/.env
 
   nginx:
