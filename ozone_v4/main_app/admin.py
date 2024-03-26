@@ -1,5 +1,5 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 
 from .models import News, Article, Devices, Document, DevicesCharacteristic
 
@@ -28,7 +28,7 @@ class DocumentAdmin(TranslationAdmin):
     readonly_fields = ['last_edit', 'time_creation', 'id']
 
 
-class DeviceTechCharacteristic(admin.TabularInline):
+class DeviceTechCharacteristic(TranslationStackedInline):
     model = DevicesCharacteristic
     extra = 1
     classes = ('collapse', )
