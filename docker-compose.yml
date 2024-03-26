@@ -12,6 +12,7 @@ services:
     build:
       context: ./ozone_v4
     volumes:
+      - ./ozone_v4/:/ozone
       - static_data:/ozone/staticfiles
     container_name: ozone_django_app
     ports:

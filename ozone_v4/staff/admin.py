@@ -5,13 +5,6 @@ from .models import (
 )
 
 
-# admin.site.register(Education)
-# admin.site.register(Career)
-# admin.site.register(Reward)
-# admin.site.register(ScienceInterest)
-# admin.site.register(Publication)
-
-
 class WorkersEducationInline(admin.TabularInline):
     model = Education
     extra = 1
