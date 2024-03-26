@@ -34,7 +34,7 @@ services:
      - static_data:/staticfiles
    ports:
      - "80:80"
-     - "443:443"
+#     - "443:443"
    depends_on:
      - django
 
