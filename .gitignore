@@ -7,6 +7,10 @@
 __pycache__
 media
 
+# Ozone_db_states
+db_backups
+db_data_ozone
+
 # Coverage
 htmlcov
 .coverage

@@ -5,6 +5,8 @@ services:
     env_file:
       - ./ozone_v4/.env.dev
       - ./ozone_v4/.env
+    volumes:
+      - ./db_data_ozone:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
