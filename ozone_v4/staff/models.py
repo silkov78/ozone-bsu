@@ -20,7 +20,9 @@ class Worker(models.Model):
 
     academic_rank = models.CharField(
         max_length=100,
-        verbose_name='Учёное звание'
+        verbose_name='Учёное звание',
+        null=True,
+        blank=True
     )
 
     position = models.CharField(

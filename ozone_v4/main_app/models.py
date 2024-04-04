@@ -45,7 +45,7 @@ class BasePost(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['-time_creation']
+        ordering = ['-published']
 
 
 class News(BasePost):
@@ -56,7 +56,7 @@ class News(BasePost):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['-time_creation']
+        ordering = ['-published']
 
 
 class Article(BasePost):

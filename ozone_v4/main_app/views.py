@@ -9,7 +9,7 @@ from .models import News, Article, Devices, Document
 
 def main_page(request):
     context = {
-        'news': News.objects.filter(status='PB').order_by('-time_creation')[0:2],
+        'news': News.objects.filter(status='PB').order_by('-published')[0:2],
         'devices': Devices.objects.all()[0:6]
     }
 
@@ -23,7 +23,7 @@ class BlogPageView(ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        return News.objects.filter(status='PB').order_by('-time_creation')
+        return News.objects.filter(status='PB').order_by('-published')
 
 
 class NewsItemView(DetailView):
@@ -42,7 +42,7 @@ class ArticlesPageView(ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        return Article.objects.filter(status='PB').order_by('-time_creation')
+        return Article.objects.filter(status='PB').order_by('-published')
 
 
 class ArticlesItemView(DetailView):
