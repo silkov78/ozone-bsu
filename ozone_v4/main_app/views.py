@@ -42,7 +42,7 @@ class ArticlesPageView(ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        return Article.objects.filter(status='PB').order_by('-time_creation')
+        return Article.objects.filter(status='PB').order_by('-published')
 
 
 class ArticlesItemView(DetailView):
