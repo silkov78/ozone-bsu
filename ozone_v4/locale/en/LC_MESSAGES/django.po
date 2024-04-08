@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-08 12:54+0000\n"
+"POT-Creation-Date: 2024-04-08 16:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,75 +18,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:137
+#: ozone_v4/config/settings.py:137
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:138
+#: ozone_v4/config/settings.py:138
 msgid "Belarusian"
 msgstr ""
 
-#: config/settings.py:139
+#: ozone_v4/config/settings.py:139
 msgid "English"
 msgstr ""
 
-#: observations/forms.py:7
+#: ozone_v4/observations/forms.py:7
 msgid "Все пункты"
 msgstr "All stations"
 
-#: observations/forms.py:8
+#: ozone_v4/observations/forms.py:8
 msgid "Минск"
 msgstr "Minsk"
 
-#: observations/forms.py:9
+#: ozone_v4/observations/forms.py:9
 msgid "Гомель"
 msgstr "Homel"
 
-#: observations/forms.py:10
+#: ozone_v4/observations/forms.py:10
 msgid "Нарочь"
 msgstr "Naroch"
 
-#: observations/forms.py:14
+#: ozone_v4/observations/forms.py:14
 msgid "Все параметры"
 msgstr "All parameters"
 
-#: observations/forms.py:15
+#: ozone_v4/observations/forms.py:15
 msgid "Общий озон"
 msgstr "Commom ozone"
 
-#: observations/forms.py:16
+#: ozone_v4/observations/forms.py:16
 msgid "Приземный озон"
 msgstr "Ground ozone"
 
-#: observations/forms.py:17 templates/observations.html:37
+#: ozone_v4/observations/forms.py:17 ozone_v4/templates/observations.html:37
 msgid "УФ-индекс"
 msgstr "UV-index"
 
-#: observations/forms.py:18
+#: ozone_v4/observations/forms.py:18
 msgid "УФ-макс"
 msgstr "UV-max"
 
-#: observations/forms.py:22
+#: ozone_v4/observations/forms.py:22
 msgid "Параметры измерений:"
 msgstr "Measure parameters"
 
-#: observations/forms.py:31
+#: ozone_v4/observations/forms.py:31
 msgid "Пункты измерений:"
 msgstr "Stations"
 
-#: observations/forms.py:40
+#: ozone_v4/observations/forms.py:40
 msgid "Начальная дата:"
 msgstr "Start date"
 
-#: observations/forms.py:49
+#: ozone_v4/observations/forms.py:49
 msgid "Конечная дата:"
 msgstr "Finish date"
 
-#: templates/about.html:13
+#: ozone_v4/templates/about.html:13
 msgid "Направления исследований"
 msgstr "Researches"
 
-#: templates/about.html:20
+#: ozone_v4/templates/about.html:20
 msgid ""
 "Учреждение Белорусского государственного университета Национальный научно-"
 "исследовательский центр мониторинга озоносферы; (ННИЦ МО БГУ) создано 14 "
@@ -101,7 +101,7 @@ msgstr ""
 "Ministry of Education dated 06.27.1997 No. 353, order of the Rector of the "
 "BSU dated 07.22.1997 "
 
-#: templates/about.html:23
+#: ozone_v4/templates/about.html:23
 msgid ""
 "Основные задачи ННИЦ МО БГУ - мониторинг озонового слоя, приземной "
 "ультрафиолетовой радиации, других параметров атмосферы, выполнение научно-"
@@ -123,7 +123,7 @@ msgstr ""
 "of Belarus within the framework of the Vienna Convention on the Protection "
 "of the Ozone Layer. "
 
-#: templates/about.html:26
+#: ozone_v4/templates/about.html:26
 msgid ""
 "Утвержденное название ННИЦ МО БГУ на английском языке - National Ozone "
 "Monitoring Research and Education Center of the Belarusian State University. "
@@ -138,11 +138,11 @@ msgstr ""
 "the ozone center at World Ozone and Ultraviolet Data Center (WOUDC) and "
 "other international organizations."
 
-#: templates/about.html:39 templates/index.html:49
+#: ozone_v4/templates/about.html:39 ozone_v4/templates/index.html:49
 msgid "Озоносфера"
 msgstr "Ozone layer"
 
-#: templates/about.html:42 templates/index.html:52
+#: ozone_v4/templates/about.html:42 ozone_v4/templates/index.html:52
 msgid ""
 "Исследования в области физики озоносферы и актуальных проблем сохранения "
 "озонового слоя"
@@ -150,7 +150,7 @@ msgstr ""
 "Research in the field of physics of the ozonosphere and current problems of "
 "conservation of the ozone layer"
 
-#: templates/about.html:56 templates/index.html:66
+#: ozone_v4/templates/about.html:56 ozone_v4/templates/index.html:66
 msgid ""
 "Проведение измерений в соответствии с программой Всемирной метеорологической "
 "организации Global Atmosphere Watch"
@@ -158,11 +158,12 @@ msgstr ""
 "Carrying out measurements in accordance with the program of the World "
 "Meteorological Organization Global Atmosphere Watch"
 
-#: templates/about.html:67 templates/devices.html:12 templates/index.html:77
+#: ozone_v4/templates/about.html:67 ozone_v4/templates/devices.html:12
+#: ozone_v4/templates/index.html:77
 msgid "Приборы"
 msgstr "Devices"
 
-#: templates/about.html:70 templates/index.html:80
+#: ozone_v4/templates/about.html:70 ozone_v4/templates/index.html:80
 msgid ""
 "Разработка и создание новой измерительной аппаратуры для мониторинга "
 "различных атмосферных показателей"
@@ -170,11 +171,11 @@ msgstr ""
 "Development and creation of new measuring equipment for monitoring various "
 "atmospheric indicators"
 
-#: templates/about.html:81 templates/index.html:91
+#: ozone_v4/templates/about.html:81 ozone_v4/templates/index.html:91
 msgid "Мониторинг"
 msgstr "Monitoring"
 
-#: templates/about.html:84 templates/index.html:94
+#: ozone_v4/templates/about.html:84 ozone_v4/templates/index.html:94
 msgid ""
 "Оперативный мониторинг, анализ и прогноз состояния озоносферы и уровней "
 "приземного УФ-излучения"
@@ -182,11 +183,11 @@ msgstr ""
 "Operational monitoring, analysis and forecast of the state of the "
 "ozonosphere and levels of surface UV radiation"
 
-#: templates/about.html:95 templates/index.html:105
+#: ozone_v4/templates/about.html:95 ozone_v4/templates/index.html:105
 msgid "УФ и человек"
 msgstr "UV and man"
 
-#: templates/about.html:98 templates/index.html:108
+#: ozone_v4/templates/about.html:98 ozone_v4/templates/index.html:108
 msgid ""
 "Исследование медицинских и биологических аспектов воздействия УФ - излучения "
 "и химических веществ, загрязняющих атмосферу"
@@ -194,11 +195,11 @@ msgstr ""
 "Research of medical and biological aspects of UV radiation exposure and "
 "chemicals polluting the atmosphere"
 
-#: templates/about.html:109 templates/index.html:119
+#: ozone_v4/templates/about.html:109 ozone_v4/templates/index.html:119
 msgid "Обучение"
 msgstr "Education"
 
-#: templates/about.html:112 templates/index.html:122
+#: ozone_v4/templates/about.html:112 ozone_v4/templates/index.html:122
 msgid ""
 "Обеспечение учебного процесса и повышение квалификации специалистов в "
 "области мониторинга озоносферы "
@@ -206,68 +207,69 @@ msgstr ""
 "Providing the educational process and professional development of "
 "specialists inthe field of ozone monitoring "
 
-#: templates/articles.html:11
+#: ozone_v4/templates/articles.html:11
 msgid "Статьи"
 msgstr "Articles"
 
-#: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
-#: templates/devices.html:27 templates/index.html:155 templates/index.html:189
+#: ozone_v4/templates/articles.html:30 ozone_v4/templates/base.html:127
+#: ozone_v4/templates/blog.html:30 ozone_v4/templates/devices.html:27
+#: ozone_v4/templates/index.html:155 ozone_v4/templates/index.html:189
 msgid "Подробнее"
 msgstr "Details"
 
-#: templates/base.html:9 templates/base.html:137 templates/index.html:11
-msgid "ННИЦ МО"
-msgstr "NOMREC"
+#: ozone_v4/templates/base.html:
+msgid "ННИЦ МО БГУ"
+msgstr "NOMREC BSU"
 
-#: templates/base.html:62
+#: ozone_v4/templates/base.html:62
 msgid "Главная"
 msgstr "Main"
 
-#: templates/base.html:64 templates/index.html:39
+#: ozone_v4/templates/base.html:64 ozone_v4/templates/index.html:39
 msgid "О нас"
 msgstr "About"
 
-#: templates/base.html:67
+#: ozone_v4/templates/base.html:67
 msgid "Общая информация"
 msgstr "Common info"
 
-#: templates/base.html:68
+#: ozone_v4/templates/base.html:68
 msgid "Структура ННИЦ МО БГУ"
 msgstr "NOMREC structure"
 
-#: templates/base.html:69
+#: ozone_v4/templates/base.html:69
 msgid "Приборная база"
 msgstr "The instrument base"
 
-#: templates/base.html:70
+#: ozone_v4/templates/base.html:70
 msgid "Научно-исследовательская деятельность"
 msgstr "Research activities"
 
-#: templates/base.html:71
+#: ozone_v4/templates/base.html:71
 msgid "Профсоюз работников БГУ"
 msgstr "The BSU Workers' Union"
 
-#: templates/base.html:72
+#: ozone_v4/templates/base.html:72
 msgid "Политика конфиденциальности"
 msgstr "Privacy policy"
 
-#: templates/base.html:75 templates/blog.html:11
+#: ozone_v4/templates/base.html:75 ozone_v4/templates/blog.html:11
 msgid "Новости"
 msgstr "News"
 
-#: templates/base.html:76 templates/observations.html:10
+#: ozone_v4/templates/base.html:76 ozone_v4/templates/observations.html:10
 msgid "Наблюдения"
 msgstr "Observations"
 
-#: templates/base.html:78 templates/documents.html:12
+#: ozone_v4/templates/base.html:78 ozone_v4/templates/documents.html:12
 msgid "Документация"
 msgstr "Documents"
 
-#: templates/base.html:87
+#: ozone_v4/templates/base.html:87
 msgid "Поиск . . ."
 msgstr "Search . . ."
 
-#: templates/base.html:119
+#: ozone_v4/templates/base.html:119
 msgid ""
 "Сайт использует только cookie, необходимые для корректной и безопасной "
 "работы сайта. Cookies не хранят никакой информации о пользователях и его "
@@ -277,107 +279,112 @@ msgstr ""
 "the site. Disabling their site may lead to incorrect operation. You can read "
 "more about the cookie policy"
 
-#: templates/base.html:120
+#: ozone_v4/templates/base.html:120
 msgid "здесь"
 msgstr "here"
 
-#: templates/base.html:124
+#: ozone_v4/templates/base.html:124
 msgid "Принять"
 msgstr "Accept"
 
-#: templates/base.html:139
+#: ozone_v4/templates/base.html:137 ozone_v4/templates/index.html:11
+msgid "ННИЦ МО"
+msgstr "NOMREC"
+
+#: ozone_v4/templates/base.html:139
 msgid "г. Минск, ул. Курчатова 7, к. 907"
 msgstr "Minsk, Kurchatov str. 7, room 907"
 
-#: templates/base.html:140
+#: ozone_v4/templates/base.html:140
 msgid "220064, Республика Беларусь"
 msgstr "220064, Republic of Belarus"
 
-#: templates/base.html:141 templates/base.html:142 templates/base.html:160
+#: ozone_v4/templates/base.html:141 ozone_v4/templates/base.html:142
+#: ozone_v4/templates/base.html:160
 msgid "Телефон"
 msgstr "Telephone"
 
-#: templates/base.html:155
+#: ozone_v4/templates/base.html:155
 msgid "БГУ"
 msgstr "BSU"
 
-#: templates/base.html:157
+#: ozone_v4/templates/base.html:157
 msgid "г. Минск, пр. Независимости, 4"
 msgstr "Minsk, Nezavisimosti ave., 4"
 
-#: templates/base.html:158
+#: ozone_v4/templates/base.html:158
 msgid "220030, Республика Беларусь"
 msgstr "220030, Republic of Belarus"
 
-#: templates/base.html:159
+#: ozone_v4/templates/base.html:159
 msgid "Сайт"
 msgstr "Site"
 
-#: templates/base.html:160
+#: ozone_v4/templates/base.html:160
 msgid "(справочная)"
 msgstr "(inquiry office)"
 
-#: templates/base.html:161
+#: ozone_v4/templates/base.html:161
 msgid "Моб. телефон:"
 msgstr "Mobile phone:"
 
-#: templates/base.html:161
+#: ozone_v4/templates/base.html:161
 msgid "(факс)"
 msgstr "(fax)"
 
-#: templates/base.html:167
+#: ozone_v4/templates/base.html:167
 msgid "Ссылки"
 msgstr "Links"
 
-#: templates/base.html:171
+#: ozone_v4/templates/base.html:171
 msgid "Интернет-портал Президента Республики Беларусь"
 msgstr "Internet portal of the President of the Republic of Belarus"
 
-#: templates/base.html:176
+#: ozone_v4/templates/base.html:176
 msgid "Министерство образования Республики Беларусь"
 msgstr "Ministry of Education of the Republic of Belarus"
 
-#: templates/base.html:181
+#: ozone_v4/templates/base.html:181
 msgid "Национальный правовой портал"
 msgstr "National Legal Portal"
 
-#: templates/base.html:186
+#: ozone_v4/templates/base.html:186
 msgid "Электронная библиотека БГУ"
 msgstr "BSU online Library"
 
-#: templates/base.html:192
+#: ozone_v4/templates/base.html:192
 msgid "Политика cookies"
 msgstr "Cookies policy"
 
-#: templates/cookies.html:13
+#: ozone_v4/templates/cookies.html:13
 msgid "Политика использования файлов cookie"
 msgstr "Cookies policy"
 
-#: templates/devices-single.html:35
+#: ozone_v4/templates/devices-single.html:35
 msgid "Технические характеристики"
 msgstr "Characteristics"
 
-#: templates/documents.html:22
+#: ozone_v4/templates/documents.html:22
 msgid "Документация, регламентирующую работу ННИЦ МО"
 msgstr "Documentation regulating the work of the NOMREC"
 
-#: templates/index.html:16
+#: ozone_v4/templates/index.html:16
 msgid "Учреждение Белорусского государственного университета"
 msgstr "Establishment of the Belarusian State University"
 
-#: templates/index.html:18
+#: ozone_v4/templates/index.html:18
 msgid "\"Национальный научно-исследовательский центр мониторинга озоносферы\""
 msgstr "\"National Ozone Monitoring Research and Education Center\""
 
-#: templates/index.html:135
+#: ozone_v4/templates/index.html:135
 msgid "Последние новости"
 msgstr "Last news"
 
-#: templates/index.html:176
+#: ozone_v4/templates/index.html:176
 msgid "Наши приборы"
 msgstr "Devices"
 
-#: templates/observations.html:15
+#: ozone_v4/templates/observations.html:15
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
 "для оценки состояния озонового слоя и его трансформации в результате "
@@ -408,35 +415,35 @@ msgstr ""
 "of total ozone, ground-level ozone and UV index. The start date and end date "
 "fields are required!"
 
-#: templates/observations.html:21
+#: ozone_v4/templates/observations.html:21
 msgid "Загрузить данные наблюдений:"
 msgstr "Download observation data"
 
-#: templates/observations.html:25
+#: ozone_v4/templates/observations.html:25
 msgid "Загрузить"
 msgstr "Download"
 
-#: templates/observations.html:34
+#: ozone_v4/templates/observations.html:34
 msgid "Дата"
 msgstr "Date"
 
-#: templates/observations.html:35
+#: ozone_v4/templates/observations.html:35
 msgid "ПСО, ppb"
 msgstr "ground ozone, ppb"
 
-#: templates/observations.html:36
+#: ozone_v4/templates/observations.html:36
 msgid "ОСО, ед. Добсона"
 msgstr "common ozone, Dobson units"
 
-#: templates/observations.html:38
+#: ozone_v4/templates/observations.html:38
 msgid "УФ макс."
 msgstr "UV-max"
 
-#: templates/observations.html:61
+#: ozone_v4/templates/observations.html:61
 msgid "Результаты наблюдений по годам"
 msgstr "Annual reports of observations "
 
-#: templates/search.html:12
+#: ozone_v4/templates/search.html:12
 msgid "Результаты поиска"
 msgstr "Search results"
 
