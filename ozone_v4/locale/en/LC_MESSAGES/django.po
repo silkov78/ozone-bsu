@@ -229,33 +229,27 @@ msgstr "About"
 
 #: templates/base.html:67
 msgid "Общая информация"
-msgstr ""
+msgstr "Common info"
 
 #: templates/base.html:68
-#, fuzzy
-#| msgid "Структура ННИЦ"
 msgid "Структура ННИЦ МО БГУ"
 msgstr "NOMREC structure"
 
 #: templates/base.html:69
-#, fuzzy
-#| msgid "Конечная дата:"
 msgid "Приборная база"
-msgstr "Finish date"
+msgstr "The instrument base"
 
 #: templates/base.html:70
 msgid "Научно-исследовательская деятельность"
-msgstr ""
+msgstr "Research activities"
 
 #: templates/base.html:71
 msgid "Профсоюз работников БГУ"
-msgstr ""
+msgstr "The BSU Workers' Union"
 
 #: templates/base.html:72
-#, fuzzy
-#| msgid "Политика использования файлов cookie"
 msgid "Политика конфиденциальности"
-msgstr "Cookies policy"
+msgstr "Privacy policy"
 
 #: templates/base.html:75 templates/blog.html:11
 msgid "Новости"
