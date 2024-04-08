@@ -60,20 +60,23 @@
                 <nav id="navbar" class="navbar">
                     <ul class="navbar-list">
                         <li><a href="{% url 'main-page-url' %}">{% trans 'Главная' %}</a></li>
-                        <li><a href="{% url 'observ-url' %}">{% trans 'Наблюдения' %}</a></li>
-
-                        <li><a href="{% url 'blog-page-url' %}">{% trans 'Новости' %}</a></li>
-                        <li><a href="{% url 'documents-page-url' %}">{% trans 'Документация' %}</a></li>
-                        <li class="dropdown"><a href="{% url 'about-page-url' %}"><span>{% trans 'О нас' %}</span>
+                        <li class="dropdown"><a href="{% url 'about-page-url' %}">
+                                <span>{% trans 'О нас' %}</span>
                                 <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="{% url 'about-page-url' %}">{% trans 'О нас' %}</a></li>
-                                <li><a href="{% url 'articles-page-url' %}">{% trans 'Статьи' %}</a></li>
-                                <li><a href="{% url 'workers-list-url' %}">{% trans 'Структура ННИЦ' %}</a></li>
-                                <li><a href="{% url 'devices-page-url' %}">{% trans 'Приборы' %}</a></li>
-                                <li><a href="{% url 'cookies-page-url' %}">{% trans 'Политика cookies' %}</a></li>
+                                <li><a href="{% url 'about-page-url' %}">{% trans 'Общая информация' %}</a></li>
+                                <li><a href="{% url 'workers-list-url' %}">{% trans 'Структура ННИЦ МО БГУ' %}</a></li>
+                                <li><a href="{% url 'devices-page-url' %}">{% trans 'Приборная база' %}</a></li>
+                                <li><a href="{% url 'articles-page-url' %}">{% trans 'Научно-исследовательская деятельность' %}</a></li>
+                                <li><a href="https://tradeunion.bsu.by/">{% trans 'Профсоюз работников БГУ' %}</a></li>
+                                <li><a href="{% url 'cookies-page-url' %}">{% trans 'Политика конфиденциальности' %}</a></li>
                             </ul>
                         </li>
+                        <li><a href="{% url 'blog-page-url' %}">{% trans 'Новости' %}</a></li>
+                        <li><a href="{% url 'observ-url' %}">{% trans 'Наблюдения' %}</a></li>
+
+                        <li><a href="{% url 'documents-page-url' %}">{% trans 'Документация' %}</a></li>
+
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
