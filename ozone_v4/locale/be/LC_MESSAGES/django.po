@@ -224,7 +224,7 @@ msgstr "Палітыка прыватнасці"
 
 #: ozone_v4/templates/base.html:75 ozone_v4/templates/blog.html:11
 msgid "Новости"
-msgstr "Навіна"
+msgstr "Навіны"
 
 #: ozone_v4/templates/base.html:76 ozone_v4/templates/observations.html:10
 msgid "Наблюдения"
