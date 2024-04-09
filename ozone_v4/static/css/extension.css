@@ -234,6 +234,10 @@
   position: relative;
 }
 
+.news .card-img_blog {
+   padding: 0px 0px 58% 0px;
+}
+
 .news .card-img img {
   position: absolute;
   top: 0;
@@ -259,6 +263,10 @@
   margin: 0 auto;
   margin-top: -50px;
   transition: 0.3s;
+}
+
+.news .card-body_blog {
+    width: 92.5%;
 }
 
 .news .card-title {
