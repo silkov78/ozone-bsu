@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-09 14:30+0300\n"
+"POT-Creation-Date: 2024-04-09 14:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,11 +138,11 @@ msgstr ""
 "the ozone center at World Ozone and Ultraviolet Data Center (WOUDC) and "
 "other international organizations."
 
-#: templates/about.html:39 templates/index.html:53
+#: templates/about.html:39 templates/index.html:48
 msgid "Озоносфера"
 msgstr "Ozone layer"
 
-#: templates/about.html:42 templates/index.html:56
+#: templates/about.html:42 templates/index.html:51
 msgid ""
 "Исследования в области физики озоносферы и актуальных проблем сохранения "
 "озонового слоя"
@@ -150,7 +150,7 @@ msgstr ""
 "Research in the field of physics of the ozonosphere and current problems of "
 "conservation of the ozone layer"
 
-#: templates/about.html:56 templates/index.html:70
+#: templates/about.html:56 templates/index.html:65
 msgid ""
 "Проведение измерений в соответствии с программой Всемирной метеорологической "
 "организации Global Atmosphere Watch"
@@ -158,11 +158,11 @@ msgstr ""
 "Carrying out measurements in accordance with the program of the World "
 "Meteorological Organization Global Atmosphere Watch"
 
-#: templates/about.html:67 templates/devices.html:12 templates/index.html:81
+#: templates/about.html:67 templates/devices.html:12 templates/index.html:76
 msgid "Приборы"
 msgstr "Devices"
 
-#: templates/about.html:70 templates/index.html:84
+#: templates/about.html:70 templates/index.html:79
 msgid ""
 "Разработка и создание новой измерительной аппаратуры для мониторинга "
 "различных атмосферных показателей"
@@ -170,11 +170,11 @@ msgstr ""
 "Development and creation of new measuring equipment for monitoring various "
 "atmospheric indicators"
 
-#: templates/about.html:81 templates/index.html:95
+#: templates/about.html:81 templates/index.html:90
 msgid "Мониторинг"
 msgstr "Monitoring"
 
-#: templates/about.html:84 templates/index.html:98
+#: templates/about.html:84 templates/index.html:93
 msgid ""
 "Оперативный мониторинг, анализ и прогноз состояния озоносферы и уровней "
 "приземного УФ-излучения"
@@ -182,11 +182,11 @@ msgstr ""
 "Operational monitoring, analysis and forecast of the state of the "
 "ozonosphere and levels of surface UV radiation"
 
-#: templates/about.html:95 templates/index.html:109
+#: templates/about.html:95 templates/index.html:104
 msgid "УФ и человек"
 msgstr "UV and man"
 
-#: templates/about.html:98 templates/index.html:112
+#: templates/about.html:98 templates/index.html:107
 msgid ""
 "Исследование медицинских и биологических аспектов воздействия УФ - излучения "
 "и химических веществ, загрязняющих атмосферу"
@@ -194,11 +194,11 @@ msgstr ""
 "Research of medical and biological aspects of UV radiation exposure and "
 "chemicals polluting the atmosphere"
 
-#: templates/about.html:109 templates/index.html:123
+#: templates/about.html:109 templates/index.html:118
 msgid "Обучение"
 msgstr "Education"
 
-#: templates/about.html:112 templates/index.html:126
+#: templates/about.html:112 templates/index.html:121
 msgid ""
 "Обеспечение учебного процесса и повышение квалификации специалистов в "
 "области мониторинга озоносферы "
@@ -211,11 +211,11 @@ msgid "Статьи"
 msgstr "Articles"
 
 #: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
-#: templates/devices.html:27 templates/index.html:159 templates/index.html:193
+#: templates/devices.html:27 templates/index.html:154 templates/index.html:188
 msgid "Подробнее"
 msgstr "Details"
 
-#: templates/base.html:9 templates/index.html:22
+#: templates/base.html:9 templates/index.html:17
 msgid "ННИЦ МО БГУ"
 msgstr "NOMREC BSU"
 
@@ -223,7 +223,7 @@ msgstr "NOMREC BSU"
 msgid "Главная"
 msgstr "Main"
 
-#: templates/base.html:64 templates/index.html:43
+#: templates/base.html:64 templates/index.html:38
 msgid "О нас"
 msgstr "About"
 
@@ -285,7 +285,7 @@ msgstr "here"
 msgid "Принять"
 msgstr "Accept"
 
-#: templates/base.html:137 templates/index.html:11
+#: templates/base.html:137
 msgid "ННИЦ МО"
 msgstr "NOMREC"
 
@@ -365,31 +365,19 @@ msgstr "Characteristics"
 msgid "Документация, регламентирующую работу ННИЦ МО"
 msgstr "Documentation regulating the work of the NOMREC"
 
-#: templates/index.html:13
+#: templates/index.html:12
 msgid ""
 "УЧРЕЖДЕНИЕ БЕЛОРУССКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА НАЦИОНАЛЬНЫЙ НАУЧНО-"
 "ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР МОНИТОРИНГА ОЗОНОСФЕРЫ"
 msgstr ""
-"NATIONAL OZONE MONITORING RESEARCH AND EDUCATION CENTER OF THE BELARUSIAN STATE UNIVERSITY"
+"NATIONAL OZONE MONITORING RESEARCH AND EDUCATION CENTER OF THE BELARUSIAN "
+"STATE UNIVERSITY"
 
-
-#: templates/index.html:18
-#, fuzzy
-#| msgid "Обучение"
-msgid "Учреждение"
-msgstr "Education"
-
-#: templates/index.html:20
-#, fuzzy
-#| msgid "Учреждение Белорусского государственного университета"
-msgid "Белорусского государственного университета"
-msgstr "Establishment of the Belarusian State University"
-
-#: templates/index.html:139
+#: templates/index.html:134
 msgid "Последние новости"
 msgstr "Last news"
 
-#: templates/index.html:180
+#: templates/index.html:175
 msgid "Наши приборы"
 msgstr "Devices"
 
