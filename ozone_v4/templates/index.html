@@ -7,15 +7,14 @@
     <section id="hero">
         <div class="container h-100 d-flex flex-column justify-content-end align-items-center">
             <div class="d-flex h-75 flex-column justify-content-center align-items-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="animate__animated animate__fadeInDown animate__fast">{% trans 'ННИЦ МО' %}</h1>
+                <div class="col-lg-12">
+                    <h1 class="animate__animated animate__fadeInDown animate__fast">
+                        {% trans 'УЧРЕЖДЕНИЕ БЕЛОРУССКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА НАЦИОНАЛЬНЫЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР МОНИТОРИНГА ОЗОНОСФЕРЫ' %}
+                    </h1>
                 </div>
                 <div class="col-lg-12 mb-5">
-                    <p class="b-page-subtitle animate__animated animate__fadeInDown animate__fast" > 
-                        <a href="https://bsu.by" target="_blank" class="b-bsu-link">
-                            {% trans 'Учреждение Белорусского государственного университета' %}
-                        </a> 
-                        <br>{% trans '"Национальный научно-исследовательский центр мониторинга озоносферы"' %}
+                    <p class="b-page-subtitle animate__animated animate__fadeInDown animate__fast" >
+                        {% trans 'ННИЦ МО БГУ' %}
                     </p>
                 </div>
                 <div class="col-lg-1 flex-grow-1 d-flex justify-content-center align-items-end">
@@ -135,37 +134,48 @@
                     <h2>{% trans 'Последние новости' %}</h2>
                 </div>
 
-                <div class="row" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
 
-                    {% for news_item in news %}
-                        <div class="col-lg-6 col-sm-12 mb-5">
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="{{ news_item.image_logo.url }}" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="{% url 'blog-page-url' %}">{{ news_item.title }}</a></h5>
-                                    <p class="card-text text-center">{{ news_item.subtitle }}</p>
-                                    <div class="card-meta d-flex justify-content-between align-items-center">
-                                        <div class="date">
-                                            <i class="bi bi-clock"></i>
-                                            <time>{{ news_item.published }}</time>
-                                        </div>
-                                        <div class="read-more">
-                                            <a href="{% url 'blog-page-url' %}">{% trans 'Подробнее' %}</a>
-                                        </div>
+                      {% for news_item in news %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <div class="col-lg-12 col-sm-12 mb-5">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{ news_item.image_logo.url }}" alt="...">
                                     </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="{% url 'blog-page-url' %}">{{ news_item.title }}</a></h5>
+                                        <p class="card-text text-center">{{ news_item.subtitle }}</p>
+                                        <div class="card-meta d-flex justify-content-between align-items-center">
+                                            <div class="date">
+                                                <i class="bi bi-clock"></i>
+                                                <time>{{ news_item.published }}</time>
+                                            </div>
+                                            <div class="read-more">
+                                                <a href="{% url 'blog-page-url' %}">{% trans 'Подробнее' %}</a>
+                                            </div>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
-                    
+                      {% endfor %}
+
+                  </div>
+
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
 
             </div>
-
-
 
         </section>
 

@@ -16,7 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: config/settings.py:138
 msgid "Russian"
@@ -32,59 +34,59 @@ msgstr ""
 
 #: observations/forms.py:7
 msgid "Все пункты"
-msgstr "All stations"
+msgstr ""
 
 #: observations/forms.py:8
 msgid "Минск"
-msgstr "Minsk"
+msgstr ""
 
 #: observations/forms.py:9
 msgid "Гомель"
-msgstr "Homel"
+msgstr ""
 
 #: observations/forms.py:10
 msgid "Нарочь"
-msgstr "Naroch"
+msgstr ""
 
 #: observations/forms.py:14
 msgid "Все параметры"
-msgstr "All parameters"
+msgstr ""
 
 #: observations/forms.py:15
 msgid "Общий озон"
-msgstr "Commom ozone"
+msgstr ""
 
 #: observations/forms.py:16
 msgid "Приземный озон"
-msgstr "Ground ozone"
+msgstr ""
 
 #: observations/forms.py:17 templates/observations.html:37
 msgid "УФ-индекс"
-msgstr "UV-index"
+msgstr ""
 
 #: observations/forms.py:18
 msgid "УФ-макс"
-msgstr "UV-max"
+msgstr ""
 
 #: observations/forms.py:22
 msgid "Параметры измерений:"
-msgstr "Measure parameters"
+msgstr ""
 
 #: observations/forms.py:31
 msgid "Пункты измерений:"
-msgstr "Stations"
+msgstr ""
 
 #: observations/forms.py:40
 msgid "Начальная дата:"
-msgstr "Start date"
+msgstr ""
 
 #: observations/forms.py:49
 msgid "Конечная дата:"
-msgstr "Finish date"
+msgstr ""
 
 #: templates/about.html:13
 msgid "Направления исследований"
-msgstr "Researches"
+msgstr ""
 
 #: templates/about.html:20
 msgid ""
@@ -94,12 +96,6 @@ msgid ""
 "Беларусь от 14.05.97 №484, приказом Министерства образования от 27.06.97 "
 "№353, приказом ректора Белгосуниверситета от 02.07.97 №573-Д. "
 msgstr ""
-"The establishment of the Belarusian State University National Scientific  "
-"and Research Center for Monitoring the Ozonosphere; NOMREC was established "
-"on June 14, 1997 in accordance with the resolution of the Council of "
-"Ministers of the Republic of Belarus dated 05.14.1997 №484, Order of the "
-"Ministry of Education dated 06.27.1997 No. 353, order of the Rector of the "
-"BSU dated 07.22.1997 "
 
 #: templates/about.html:23
 msgid ""
@@ -112,16 +108,6 @@ msgid ""
 "соответствии с обязательствами, принятыми Республикой Беларусь в рамках "
 "Венской конвенции об охране озонового слоя."
 msgstr ""
-"The main tasks of the National Ozone Monitoring Research and Education "
-"Center are monitoring the ozone layer, ground -level ultraviolet radiation, "
-"and other atmospheric parameters, performing scientific and research work on "
-"atmospheric physics and related issues. The National Research Institute of "
-"the BSU MO is an organization responsible for monitoring the stratospheric "
-"ozone layer, measuring the surface level of ultraviolet radiation and the "
-"concentration of surface ozone on the territory of Belarus. The observations "
-"are carried out in accordance with the obligations assumed by the Republic "
-"of Belarus within the framework of the Vienna Convention on the Protection "
-"of the Ozone Layer. "
 
 #: templates/about.html:26
 msgid ""
@@ -132,140 +118,123 @@ msgid ""
 "ультрафиолетовой радиации (World Ozone and Ultraviolet Data Center, WOUDC) и "
 "других международных организациях."
 msgstr ""
-"The approved name of \"ННИЦ МО БГУ\" in English is National Ozone Monitoring "
-"Research and Education Center of the Belarusian State University The "
-"abbreviated forms NOMREC, NOMREC BSU or BSU-NOMREC are used as the name of "
-"the ozone center at World Ozone and Ultraviolet Data Center (WOUDC) and "
-"other international organizations."
 
 #: templates/about.html:39 templates/index.html:48
 msgid "Озоносфера"
-msgstr "Ozone layer"
+msgstr ""
 
 #: templates/about.html:42 templates/index.html:51
 msgid ""
 "Исследования в области физики озоносферы и актуальных проблем сохранения "
 "озонового слоя"
 msgstr ""
-"Research in the field of physics of the ozonosphere and current problems of "
-"conservation of the ozone layer"
 
 #: templates/about.html:56 templates/index.html:65
 msgid ""
 "Проведение измерений в соответствии с программой Всемирной метеорологической "
 "организации Global Atmosphere Watch"
 msgstr ""
-"Carrying out measurements in accordance with the program of the World "
-"Meteorological Organization Global Atmosphere Watch"
 
 #: templates/about.html:67 templates/devices.html:12 templates/index.html:76
 msgid "Приборы"
-msgstr "Devices"
+msgstr ""
 
 #: templates/about.html:70 templates/index.html:79
 msgid ""
 "Разработка и создание новой измерительной аппаратуры для мониторинга "
 "различных атмосферных показателей"
 msgstr ""
-"Development and creation of new measuring equipment for monitoring various "
-"atmospheric indicators"
 
 #: templates/about.html:81 templates/index.html:90
 msgid "Мониторинг"
-msgstr "Monitoring"
+msgstr ""
 
 #: templates/about.html:84 templates/index.html:93
 msgid ""
 "Оперативный мониторинг, анализ и прогноз состояния озоносферы и уровней "
 "приземного УФ-излучения"
 msgstr ""
-"Operational monitoring, analysis and forecast of the state of the "
-"ozonosphere and levels of surface UV radiation"
 
 #: templates/about.html:95 templates/index.html:104
 msgid "УФ и человек"
-msgstr "UV and man"
+msgstr ""
 
 #: templates/about.html:98 templates/index.html:107
 msgid ""
 "Исследование медицинских и биологических аспектов воздействия УФ - излучения "
 "и химических веществ, загрязняющих атмосферу"
 msgstr ""
-"Research of medical and biological aspects of UV radiation exposure and "
-"chemicals polluting the atmosphere"
 
 #: templates/about.html:109 templates/index.html:118
 msgid "Обучение"
-msgstr "Education"
+msgstr ""
 
 #: templates/about.html:112 templates/index.html:121
 msgid ""
 "Обеспечение учебного процесса и повышение квалификации специалистов в "
 "области мониторинга озоносферы "
 msgstr ""
-"Providing the educational process and professional development of "
-"specialists inthe field of ozone monitoring "
 
 #: templates/articles.html:11
 msgid "Статьи"
-msgstr "Articles"
+msgstr ""
 
 #: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
 #: templates/devices.html:27 templates/index.html:154 templates/index.html:188
 msgid "Подробнее"
-msgstr "Details"
+msgstr ""
 
 #: templates/base.html:9 templates/index.html:17
 msgid "ННИЦ МО БГУ"
-msgstr "NOMREC BSU"
+msgstr "ННДЦ МА БДУ"
 
 #: templates/base.html:62
 msgid "Главная"
-msgstr "Main"
+msgstr "Галоўная"
 
 #: templates/base.html:64 templates/index.html:38
 msgid "О нас"
-msgstr "About"
+msgstr "Пра нас"
 
 #: templates/base.html:67
 msgid "Общая информация"
-msgstr "Common info"
+msgstr "Агульная інфармацыя"
 
 #: templates/base.html:68
 msgid "Структура ННИЦ МО БГУ"
-msgstr "NOMREC structure"
+msgstr "Структура ННДЦ МА БДУ"
 
 #: templates/base.html:69
 msgid "Приборная база"
-msgstr "The instrument base"
+msgstr "Прыборная база"
 
 #: templates/base.html:70
 msgid "Научно-исследовательская деятельность"
-msgstr "Research activities"
+msgstr "Навукова-даследчая дзейнасць"
 
 #: templates/base.html:71
 msgid "Профсоюз работников БГУ"
-msgstr "The BSU Workers' Union"
+msgstr "Прафсаюз работнікаў БДУ"
 
 #: templates/base.html:72
 msgid "Политика конфиденциальности"
-msgstr "Privacy policy"
+msgstr "Палітыка прыватнасці"
 
 #: templates/base.html:75 templates/blog.html:11
 msgid "Новости"
-msgstr "News"
+msgstr "Навіны"
 
 #: templates/base.html:76 templates/observations.html:10
 msgid "Наблюдения"
-msgstr "Observations"
+msgstr "Назіранні"
 
 #: templates/base.html:78 templates/documents.html:12
 msgid "Документация"
-msgstr "Documents"
+msgstr "Дакументацыя"
 
 #: templates/base.html:87
 msgid "Поиск . . ."
-msgstr "Search . . ."
+msgstr "Пошук . . ."
 
 #: templates/base.html:119
 msgid ""
@@ -273,113 +242,110 @@ msgid ""
 "работы сайта. Cookies не хранят никакой информации о пользователях и его "
 "действиях на сайте. Потробнее о политике cookie можно прочитать"
 msgstr ""
-"The site uses only cookies necessary for the correct and safe operation of "
-"the site. Disabling their site may lead to incorrect operation. You can read "
-"more about the cookie policy"
 
 #: templates/base.html:120
 msgid "здесь"
-msgstr "here"
+msgstr ""
 
 #: templates/base.html:124
 msgid "Принять"
-msgstr "Accept"
+msgstr ""
 
 #: templates/base.html:137
 msgid "ННИЦ МО"
-msgstr "NOMREC"
+msgstr ""
 
 #: templates/base.html:139
 msgid "г. Минск, ул. Курчатова 7, к. 907"
-msgstr "Minsk, Kurchatov str. 7, room 907"
+msgstr ""
 
 #: templates/base.html:140
 msgid "220064, Республика Беларусь"
-msgstr "220064, Republic of Belarus"
+msgstr ""
 
 #: templates/base.html:141 templates/base.html:142 templates/base.html:160
 msgid "Телефон"
-msgstr "Telephone"
+msgstr ""
 
 #: templates/base.html:155
 msgid "БГУ"
-msgstr "BSU"
+msgstr ""
 
 #: templates/base.html:157
 msgid "г. Минск, пр. Независимости, 4"
-msgstr "Minsk, Nezavisimosti ave., 4"
+msgstr ""
 
 #: templates/base.html:158
 msgid "220030, Республика Беларусь"
-msgstr "220030, Republic of Belarus"
+msgstr ""
 
 #: templates/base.html:159
 msgid "Сайт"
-msgstr "Site"
+msgstr ""
 
 #: templates/base.html:160
 msgid "(справочная)"
-msgstr "(inquiry office)"
+msgstr ""
 
 #: templates/base.html:161
 msgid "Моб. телефон:"
-msgstr "Mobile phone:"
+msgstr ""
 
 #: templates/base.html:161
 msgid "(факс)"
-msgstr "(fax)"
+msgstr ""
 
 #: templates/base.html:167
 msgid "Ссылки"
-msgstr "Links"
+msgstr ""
 
 #: templates/base.html:171
 msgid "Интернет-портал Президента Республики Беларусь"
-msgstr "Internet portal of the President of the Republic of Belarus"
+msgstr ""
 
 #: templates/base.html:176
 msgid "Министерство образования Республики Беларусь"
-msgstr "Ministry of Education of the Republic of Belarus"
+msgstr ""
 
 #: templates/base.html:181
 msgid "Национальный правовой портал"
-msgstr "National Legal Portal"
+msgstr ""
 
 #: templates/base.html:186
 msgid "Электронная библиотека БГУ"
-msgstr "BSU online Library"
+msgstr ""
 
 #: templates/base.html:192
 msgid "Политика cookies"
-msgstr "Cookies policy"
+msgstr ""
 
 #: templates/cookies.html:13
 msgid "Политика использования файлов cookie"
-msgstr "Cookies policy"
+msgstr ""
 
 #: templates/devices-single.html:35
 msgid "Технические характеристики"
-msgstr "Characteristics"
+msgstr ""
 
 #: templates/documents.html:22
 msgid "Документация, регламентирующую работу ННИЦ МО"
-msgstr "Documentation regulating the work of the NOMREC"
+msgstr ""
 
 #: templates/index.html:12
 msgid ""
 "УЧРЕЖДЕНИЕ БЕЛОРУССКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА НАЦИОНАЛЬНЫЙ НАУЧНО-"
 "ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР МОНИТОРИНГА ОЗОНОСФЕРЫ"
 msgstr ""
-"NATIONAL OZONE MONITORING RESEARCH AND EDUCATION CENTER OF THE BELARUSIAN "
-"STATE UNIVERSITY"
+"УСТАНОВА БЕЛАРУСКАГА ДЗЯРЖАЎНАГА ЎНІВЕРСІТЭТУ НАЦЫЯНАЛЬНЫ НАВУКОВА-ДАСЛЕДЧЫ"
+"ЦЭНТР МАНІТОРЫНГА АЗОНАСФЕРЫ"
 
 #: templates/index.html:134
 msgid "Последние новости"
-msgstr "Last news"
+msgstr ""
 
 #: templates/index.html:175
 msgid "Наши приборы"
-msgstr "Devices"
+msgstr ""
 
 #: templates/observations.html:15
 msgid ""
@@ -397,56 +363,35 @@ msgid ""
 "еженедельно. Ниже вы можете ознакомиться с ежегодными отчётами по "
 "наблюдениям."
 msgstr ""
-"The monitoring data of common ozone is a experimental base for assessing the "
-"state of the ozone layer and its transformation as a result of anthropogenic "
-"impact and natural processes. They are used to study the degree of influence "
-"of these changes on the climate on a global and regional scale, as well as "
-"to predict changes in levels and doses of biologically active "
-"solarultraviolet radiation at the Earth surface. Ozone measurements are "
-"carried out in three 3 points of Belarus: Minsk (NOMREC BSU), Gomel (Gomel "
-"State University named after F. Skaryna.) and Naroch (Naroch biological "
-"station named after G.G. Vinberg). Observations of the ultraviolet index are "
-"measured in the NOMREC BSU station, which is located in the Research "
-"Institute of the BSU MO. Readings are updated weekly. Below you can find the "
-"annual reports on observations. On the right, you can download measurements "
-"of total ozone, ground-level ozone and UV index. The start date and end date "
-"fields are required!"
 
 #: templates/observations.html:21
 msgid "Загрузить данные наблюдений:"
-msgstr "Download observation data"
+msgstr ""
 
 #: templates/observations.html:25
 msgid "Загрузить"
-msgstr "Download"
+msgstr ""
 
 #: templates/observations.html:34
 msgid "Дата"
-msgstr "Date"
+msgstr ""
 
 #: templates/observations.html:35
 msgid "ПСО, ppb"
-msgstr "ground ozone, ppb"
+msgstr ""
 
 #: templates/observations.html:36
 msgid "ОСО, ед. Добсона"
-msgstr "common ozone, Dobson units"
+msgstr ""
 
 #: templates/observations.html:38
 msgid "УФ макс."
-msgstr "UV-max"
+msgstr ""
 
 #: templates/observations.html:61
 msgid "Результаты наблюдений по годам"
-msgstr "Annual reports of observations "
+msgstr ""
 
 #: templates/search.html:12
 msgid "Результаты поиска"
-msgstr "Search results"
-
-#~ msgid ""
-#~ "\"Национальный научно-исследовательский центр мониторинга озоносферы\""
-#~ msgstr "\"National Ozone Monitoring Research and Education Center\""
-
-#~ msgid "Политика куки"
-#~ msgstr "Cookies policy"
+msgstr ""

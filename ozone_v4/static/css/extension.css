@@ -138,7 +138,7 @@
 #hero h1 {
   color: #fff;
   margin-bottom: 40px;
-  font-size: 66px;
+  font-size: 38px;
   font-weight: 300;
 }
 
@@ -146,19 +146,39 @@
   display: inline;
   animation-delay: 0.6s;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 38px;
   font-weight: 300;
   text-align: center;
 }
 
-.b-bsu-link {
-  color: #fff;
-  font-weight: 400;
+@media (max-width: 786px) {
+    #hero h1 {
+      font-size: 30px;
+    }
+
+    .b-page-subtitle {
+      font-size: 30px;
+    }
 }
-.b-bsu-link:hover {
-  font-size: 26px;
-  transition: 0.3s;
+
+@media (max-width: 576px) {
+    #hero h1 {
+      font-size: 24px;
+      font-weight: 300;
+    }
+
+    .b-page-subtitle {
+      font-size: 24px;
+    }
 }
+
+/*
+@media (max-width: 1400px) {
+  .news .card-img {
+    flex: 0 1 auto;
+  }
+}
+*/
 
 .b-arrow {
   position: relative;
@@ -210,7 +230,7 @@
 }
 
 .news .card-img {
-  padding: 0px 0px 58% 0px;
+  padding: 0px 0px 45% 0px;
   position: relative;
 }
 
@@ -231,7 +251,7 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  width: 92.5%;
+  width: 100%;
   background: #fff;
   border-top: 4px solid #fff;
   padding: 15px 30px;
@@ -242,6 +262,7 @@
 }
 
 .news .card-title {
+  font-size: 21px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
@@ -251,7 +272,7 @@
 
 .news .card-text {
   color: #5e5e5e;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .news .card-meta .read-more a {
