@@ -14,7 +14,7 @@ class TestOservationsViews(TestCase):
     def test_observations_page(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'observations.html')
+        self.assertTemplateUsed(response, 'observations-info.html')
 
     def test_observations_page_GET_body(self):
         form_values = {

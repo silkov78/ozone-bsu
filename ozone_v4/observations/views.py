@@ -18,7 +18,7 @@ def observations_info_page(request):
         "annual_reports": AnnualReport.objects.all()
     }
 
-    return render(request, "observations.html", context)
+    return render(request, "observations-info.html", context)
 
 
 def observations_download_page(request):
@@ -46,4 +46,4 @@ def observations_download_page(request):
 
     context = {'form': form}
 
-    return render(request, "observations.html", context)
+    return render(request, "observations-download.html", context)
