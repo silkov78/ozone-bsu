@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-09 14:39+0300\n"
+"POT-Creation-Date: 2024-04-10 12:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:138
+#: config/settings.py:139
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:139
+#: config/settings.py:140
 msgid "Belarusian"
 msgstr ""
 
-#: config/settings.py:140
+#: config/settings.py:141
 msgid "English"
 msgstr ""
+
+#: main_app/models.py:55 templates/base.html:64 templates/index.html:38
+msgid "О нас"
+msgstr "About"
+
+#: main_app/models.py:56
+msgid "Наука"
+msgstr "Science"
 
 #: observations/forms.py:7
 msgid "Все пункты"
@@ -210,8 +218,9 @@ msgstr ""
 msgid "Статьи"
 msgstr "Articles"
 
-#: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
-#: templates/devices.html:27 templates/index.html:154 templates/index.html:188
+#: templates/articles.html:30 templates/base.html:127 templates/blog.html:33
+#: templates/devices.html:27 templates/index.html:156 templates/index.html:208
+#: templates/index.html:251
 msgid "Подробнее"
 msgstr "Details"
 
@@ -222,10 +231,6 @@ msgstr "NOMREC BSU"
 #: templates/base.html:62
 msgid "Главная"
 msgstr "Main"
-
-#: templates/base.html:64 templates/index.html:38
-msgid "О нас"
-msgstr "About"
 
 #: templates/base.html:67
 msgid "Общая информация"
@@ -374,10 +379,14 @@ msgstr ""
 "STATE UNIVERSITY"
 
 #: templates/index.html:134
-msgid "Последние новости"
-msgstr "Last news"
+msgid "Новости центра"
+msgstr "NOMRREC news"
 
-#: templates/index.html:175
+#: templates/index.html:186
+msgid "Новости науки"
+msgstr "Science news"
+
+#: templates/index.html:238
 msgid "Наши приборы"
 msgstr "Devices"
 
@@ -443,6 +452,9 @@ msgstr "Annual reports of observations "
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr "Search results"
+
+#~ msgid "Научные новости"
+#~ msgstr "Last news"
 
 #~ msgid ""
 #~ "\"Национальный научно-исследовательский центр мониторинга озоносферы\""

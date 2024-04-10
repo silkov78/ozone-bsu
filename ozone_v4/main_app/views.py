@@ -9,7 +9,8 @@ from .models import News, Article, Devices, Document
 
 def main_page(request):
     context = {
-        'news': News.objects.filter(status='PB').order_by('-published')[0:2],
+        'about_us_news': News.objects.filter(status='PB', tag="WE").order_by('-published')[0:3],
+        'science_news': News.objects.filter(status='PB', tag="SCI").order_by('-published')[0:3],
         'devices': Devices.objects.all()[0:6]
     }
 

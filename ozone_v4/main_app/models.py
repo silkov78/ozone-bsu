@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class BasePost(models.Model):
@@ -49,6 +50,18 @@ class BasePost(models.Model):
 
 
 class News(BasePost):
+
+    TAGS = (
+        ("WE", _("О нас")),
+        ("SCI", _("Наука")),
+    )
+
+    tag = models.CharField(
+        max_length=3,
+        choices=TAGS,
+        default='WE',
+        verbose_name='Тэг'
+    )
 
     def __str__(self):
         return f'News | {self.title} | {self.published}'
