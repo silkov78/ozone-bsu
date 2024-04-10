@@ -300,6 +300,11 @@
   color: #1e4356;
 }
 
+.news .card-meta .news-tag {
+  font-size: 15px;
+  color: #1e4356;
+}
+
 @media (max-width: 1400px) {
   .news .card-img {
     flex: 0 1 auto;
@@ -551,7 +556,6 @@ blockquote::after {
 }
 
 .blog .entry .entry-meta {
-    margin-bottom: 15px;
     color: #969696;
 }
 
