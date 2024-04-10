@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-09 14:39+0300\n"
+"POT-Creation-Date: 2024-04-10 10:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,73 +20,81 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: config/settings.py:138
+#: config/settings.py:139
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:139
+#: config/settings.py:140
 msgid "Belarusian"
 msgstr ""
 
-#: config/settings.py:140
+#: config/settings.py:141
 msgid "English"
 msgstr ""
 
+#: main_app/models.py:55 templates/base.html:64 templates/index.html:38
+msgid "О нас"
+msgstr "Пра нас"
+
+#: main_app/models.py:56
+msgid "Наука"
+msgstr "Навука"
+
 #: observations/forms.py:7
 msgid "Все пункты"
-msgstr ""
+msgstr "Усе пункты"
 
 #: observations/forms.py:8
 msgid "Минск"
-msgstr ""
+msgstr "Мінск"
 
 #: observations/forms.py:9
 msgid "Гомель"
-msgstr ""
+msgstr "Гомель"
 
 #: observations/forms.py:10
 msgid "Нарочь"
-msgstr ""
+msgstr "Нарач"
 
 #: observations/forms.py:14
 msgid "Все параметры"
-msgstr ""
+msgstr "Усе параметры"
 
 #: observations/forms.py:15
 msgid "Общий озон"
-msgstr ""
+msgstr "Агульны азон"
 
 #: observations/forms.py:16
 msgid "Приземный озон"
-msgstr ""
+msgstr "Прыземны азон"
 
 #: observations/forms.py:17 templates/observations.html:37
 msgid "УФ-индекс"
-msgstr ""
+msgstr "УФ-індекс"
 
 #: observations/forms.py:18
 msgid "УФ-макс"
-msgstr ""
+msgstr "УФ-макс"
 
 #: observations/forms.py:22
 msgid "Параметры измерений:"
-msgstr ""
+msgstr "Параметры памераў:"
 
 #: observations/forms.py:31
 msgid "Пункты измерений:"
-msgstr ""
+msgstr "Пункты памераў:"
 
 #: observations/forms.py:40
 msgid "Начальная дата:"
-msgstr ""
+msgstr "Пачатковая дата"
 
 #: observations/forms.py:49
 msgid "Конечная дата:"
-msgstr ""
+msgstr "Канчатковая дата:"
 
 #: templates/about.html:13
 msgid "Направления исследований"
-msgstr ""
+msgstr "Напрамкі даследванняў"
 
 #: templates/about.html:20
 msgid ""
@@ -180,7 +188,7 @@ msgid "Статьи"
 msgstr ""
 
 #: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
-#: templates/devices.html:27 templates/index.html:154 templates/index.html:188
+#: templates/devices.html:27 templates/index.html:156 templates/index.html:199
 msgid "Подробнее"
 msgstr ""
 
@@ -191,10 +199,6 @@ msgstr "ННДЦ МА БДУ"
 #: templates/base.html:62
 msgid "Главная"
 msgstr "Галоўная"
-
-#: templates/base.html:64 templates/index.html:38
-msgid "О нас"
-msgstr "Пра нас"
 
 #: templates/base.html:67
 msgid "Общая информация"
@@ -336,14 +340,14 @@ msgid ""
 "УЧРЕЖДЕНИЕ БЕЛОРУССКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА НАЦИОНАЛЬНЫЙ НАУЧНО-"
 "ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР МОНИТОРИНГА ОЗОНОСФЕРЫ"
 msgstr ""
-"УСТАНОВА БЕЛАРУСКАГА ДЗЯРЖАЎНАГА ЎНІВЕРСІТЭТУ НАЦЫЯНАЛЬНЫ НАВУКОВА-ДАСЛЕДЧЫ"
-"ЦЭНТР МАНІТОРЫНГА АЗОНАСФЕРЫ"
+"УСТАНОВА БЕЛАРУСКАГА ДЗЯРЖАЎНАГА ЎНІВЕРСІТЭТУ НАЦЫЯНАЛЬНЫ НАВУКОВА-"
+"ДАСЛЕДЧЫЦЭНТР МАНІТОРЫНГА АЗОНАСФЕРЫ"
 
 #: templates/index.html:134
 msgid "Последние новости"
 msgstr ""
 
-#: templates/index.html:175
+#: templates/index.html:186
 msgid "Наши приборы"
 msgstr ""
 
