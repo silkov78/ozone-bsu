@@ -10,13 +10,19 @@ from .forms import ObservationsForm
 from .services import ObservationsInMatrix
 
 
-def observations_page(request):
-    """Представление для страницы observations.html"""
+def observations_info_page(request):
+    """Представление для страницы observations/info"""
 
     context = {
         "last_minsk_observations": Observations.objects.all().order_by('-date')[:30],
         "annual_reports": AnnualReport.objects.all()
     }
+
+    return render(request, "observations.html", context)
+
+
+def observations_download_page(request):
+    """Представление для страницы observations/download"""
 
     if request.GET:
         form = ObservationsForm(request.GET)
@@ -38,6 +44,6 @@ def observations_page(request):
     else:
         form = ObservationsForm()
 
-    context['form'] = form
+    context = {'form': form}
 
     return render(request, "observations.html", context)
