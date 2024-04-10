@@ -27,7 +27,7 @@
                                             <time>{{ news_item.published }}</time>
                                         </div>
                                         <div class="news-tag">
-                                            <p class="mb-0">#{{ news_item.get_tag_display }}</p>
+                                            <p class="mb-0">#{% trans news_item.get_tag_display %}</p>
                                         </div>
                                         <div class="read-more">
                                             <a href="{{ news_item.id }}">{% trans 'Подробнее' %}</a>

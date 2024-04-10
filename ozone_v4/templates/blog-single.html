@@ -1,6 +1,5 @@
-
 {% extends 'base.html' %}
-{% load static %}
+{% load i18n static %}
 
 {% block content %}
   <main id="main">
@@ -38,7 +37,7 @@
                     </div>
 
                     <div class="news-tag">
-                        <p class="mb-0">#{{ object.get_tag_display }}</p>
+                        <p class="mb-0">#{% trans object.get_tag_display %}</p>
                     </div>
                 </div>
 

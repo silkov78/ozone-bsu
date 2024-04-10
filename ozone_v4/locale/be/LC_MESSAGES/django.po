@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-10 10:51+0300\n"
+"POT-Creation-Date: 2024-04-10 11:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,7 +188,8 @@ msgid "Статьи"
 msgstr ""
 
 #: templates/articles.html:30 templates/base.html:127 templates/blog.html:30
-#: templates/devices.html:27 templates/index.html:156 templates/index.html:199
+#: templates/devices.html:27 templates/index.html:156 templates/index.html:208
+#: templates/index.html:251
 msgid "Подробнее"
 msgstr ""
 
@@ -344,12 +345,16 @@ msgstr ""
 "ДАСЛЕДЧЫЦЭНТР МАНІТОРЫНГА АЗОНАСФЕРЫ"
 
 #: templates/index.html:134
-msgid "Последние новости"
-msgstr ""
+msgid "Новости центра"
+msgstr "Навіны цэнтра"
 
 #: templates/index.html:186
+msgid "Новости науки"
+msgstr "Навіны навукі"
+
+#: templates/index.html:238
 msgid "Наши приборы"
-msgstr ""
+msgstr "Нашы прыборы"
 
 #: templates/observations.html:15
 msgid ""
@@ -399,3 +404,8 @@ msgstr ""
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Новости"
+#~ msgid "Научные новости"
+#~ msgstr "Навіны"
