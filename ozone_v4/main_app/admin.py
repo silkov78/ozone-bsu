@@ -8,9 +8,9 @@ admin.site.site_header = 'ННИЦ МО'
 
 @admin.register(News)
 class NewsAdmin(TranslationAdmin):
-    list_display = ['title', 'time_creation', 'image_logo', 'status']
+    list_display = ['title', 'time_creation', 'image_logo', 'tag', 'status']
     readonly_fields = ['last_edit', 'time_creation', 'id']
-    list_editable = ['status']
+    list_editable = ['tag', 'status']
     save_as = True
 
 
