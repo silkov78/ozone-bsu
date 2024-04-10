@@ -9,13 +9,7 @@
             <div class="section-title">
                 <h2>{% trans 'Наблюдения' %}</h2>
             </div>
-            <div class="annual-info col-12">
-				<blockquote class="annual-blockquote">
-					<p class="annual-text">
-						{% trans 'Данные мониторинга общего содержания озона служат экспериментальной базой для оценки состояния озонового слоя и его трансформации в результате антропогенного воздействия и естественных процессов. Они используются для изучения степени влияния этих изменений на климат в глобальном и региональном масштабах, а также для прогноза изменения уровней и доз биологически активного солнечного ультрафиолетового излучения у поверхности Земли. Измерения озона проводится в 3 трёх точках Беларуси: Минск (ННИЦ МО БГУ), Гомель (Гомельский государственный университет им. Ф. Скорины.) и Нарочь (Нарочанская биологическая станция имени Г.Г. Винберга).Измерения ультрафиолетового индекса проводятся на Минской озонометрической станции, которая расположена в ННИЦ МО БГУ. Обновление показаний производится еженедельно. Ниже вы можете ознакомиться с ежегодными отчётами по наблюдениям.' %}
-					</p>
-				</blockquote>
-			</div>
+
             <div class="annual-observ row mb-4 px-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
                 <div class="form-body col-lg-6 col-sm-12 p-3" style="box-shadow: 0px 0px 10px 5px #f1f1f1;">
                     <h4 class="observ-subtitle mb-3">{% trans 'Загрузить данные наблюдений:' %}</h4>
@@ -27,57 +21,17 @@
                     </div>
                 </div>
 
-                <div class="table-wrapper-scroll-y my-custom-scrollbar col-lg-6 col-sm-12">
-					<table class="observ-table animate__animated animate__fadeInDown">
-						<thead class="">
-							<tr>
-								<th scope="col">{% trans 'Дата' %}</th>
-								<th scope="col">{% trans 'ПСО, ppb' %}</th>
-								<th scope="col">{% trans 'ОСО, ед. Добсона' %}</th>
-								<th scope="col">{% trans 'УФ-индекс' %}</th>
-								<th scope="col">{% trans 'УФ макс.' %}</th>
-							</tr>
-						</thead>
-						<tbody class="">
-							{% for item in last_minsk_observations %}
-								<tr>
-									<td class="observ-date" scope="row">{{ item.date|date:'Y-m-d' }}</td>
-									<td>{{ item.common_ozone_minsk }}</td>
-									<td>{{ item.ground_ozone_minsk }}</td>
-									<td>{{ item.uf_index_minsk }}</td>
-									<td>{{ item.uf_max_minsk }}</td>
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
+				<div class="annual-info col-lg-6 col-sm-12">
+					<blockquote class="annual-blockquote">
+						<p class="annual-text">
+							{% trans 'Данные мониторинга общего содержания озона служат экспериментальной базой для оценки состояния озонового слоя и его трансформации в результате антропогенного воздействия и естественных процессов. Они используются для изучения степени влияния этих изменений на климат в глобальном и региональном масштабах, а также для прогноза изменения уровней и доз биологически активного солнечного ультрафиолетового излучения у поверхности Земли. Измерения озона проводится в 3 трёх точках Беларуси: Минск (ННИЦ МО БГУ), Гомель (Гомельский государственный университет им. Ф. Скорины.) и Нарочь (Нарочанская биологическая станция имени Г.Г. Винберга).Измерения ультрафиолетового индекса проводятся на Минской озонометрической станции, которая расположена в ННИЦ МО БГУ. Обновление показаний производится еженедельно. Ниже вы можете ознакомиться с ежегодными отчётами по наблюдениям.' %}
+						</p>
+					</blockquote>
 				</div>
+
             </div>
         </div>
     </section>
-
-    <section class="report about">
-		<div class="container">
-			<div class="section-title">
-				<h2>{% trans 'Результаты наблюдений по годам' %}</h2>
-			</div>
-
-			<div class="row">
-				{% for report in annual_reports %}
-				<div class="col-md-4 col-lg-2 d-flex align-items-stretch" data-aos="fade-up"
-					data-aos-easing="ease-in-out" data-aos-duration="450">
-					<div class="icon-box icon-box-cyan reports__box">
-						<a href="{{report.report_file.url}}" target="_blank" class="reports__url">
-							<h4 class="reports__title">
-								{{report.year}}
-							</h4>
-							<i class="bi bi-file-earmark-text h1 reports__button"></i>
-						</a>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</section>
 
 </main>
 
