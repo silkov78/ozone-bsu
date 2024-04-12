@@ -14,7 +14,7 @@ def observations_info_page(request):
     """Представление для страницы observations/info"""
 
     context = {
-        "last_minsk_observations": Observations.objects.all().order_by('-date')[:30],
+        "last_minsk_observations": Observations.objects.all().order_by('-date')[:7],
         "annual_reports": AnnualReport.objects.all()
     }
 
