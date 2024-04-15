@@ -56,7 +56,7 @@ def articles_page_view(request):
 
     context = {
         "page_obj": page_obj,
-        "annual_reports": AnnualReport.objects.all()
+        "annual_reports": AnnualReport.objects.all().order_by('year')
     }
     return render(request, "articles.html", context)
 
