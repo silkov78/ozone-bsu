@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from import_export.resources import ModelResource
 
-from .models import Observations, AnnualReport
+from .models import Observations
 
 
 class ObservationsResource(ModelResource):
@@ -22,9 +22,3 @@ class ObservationsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         'common_ozone_homel',
         'common_ozone_naroch'
     ]
-
-
-@admin.register(AnnualReport)
-class AnnualReportAdmin(admin.ModelAdmin):
-    list_display = ['year', 'report_file']
-    readonly_fields = ['last_edit']

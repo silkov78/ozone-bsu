@@ -8,17 +8,32 @@
         <section id="blog" class="news blog">
             <div class="container">
                 <div class="section-title">
-                    <h2>{% trans 'Статьи' %}</h2>
+                    <h2>{% trans 'Публикации' %}</h2>
                 </div>
+
+                <blockquote class="annual-blockquote col-lg-12 col-sm-12 mb-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
+                    <p class="annual-text">
+                        {% trans 'Мониторинг озонового слоя представляет собой систему наблюдений за состоянием озонового слоя, а также оценку и прогнозирование его изменений в целях своевременного выявления негативных воздействий природных и антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:' %}
+
+                        &nbsp
+
+                        {% for report in annual_reports %}
+                            <a href="url 'report.report_file.url' ">{{report.year}}</a>
+                            &nbsp
+                        {% endfor %}
+                    </p>
+                </blockquote>
+
+
                 <div class="row d-flex flex-wrap">
 
                     {% for article_item in page_obj %}
                         <div class="col-lg-6 col-sm-12 mb-5"  data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
                             <div class="card align-items-stretch">
-                                <div class="card-img">
+                                <div class="card-img card-img_blog">
                                     <img src="{{ article_item.image_logo.url }}" class="" alt="...">
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body card-body_blog">
                                     <h5 class="card-title"><a href="{{ article_item.id }}">{{ article_item.title }}</a></h5>
                                     <p class="card-text text-center">{{ article_item.subtitle }}</p>
                                     <div class="card-meta d-flex justify-content-between align-items-center">
@@ -37,7 +52,6 @@
                     {% endfor %}
                 </div>
 
-                
                 <div class="blog-pagination">
                     
                     <ul class="justify-content-center">
@@ -61,7 +75,7 @@
         const pageTitle = document.querySelector('title')
         pageTitle.innerHTML = 'Статьи'
 
-        const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[4]
+        const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[1]
         activeNavPage.classList.add('active')
 
     </script>

@@ -73,7 +73,15 @@
                             </ul>
                         </li>
                         <li><a href="{% url 'blog-page-url' %}">{% trans 'Новости' %}</a></li>
-                        <li><a href="{% url 'observ-url' %}">{% trans 'Наблюдения' %}</a></li>
+
+                        <li class="dropdown"><a href="{% url 'observ-info-url' %}">
+                                <span>{% trans 'Наблюдения' %}</span>
+                                <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="{% url 'observ-info-url' %}">{% trans 'Общая информация' %}</a></li>
+                                <li><a href="{% url 'observ-download-url' %}">{% trans 'Архив наблюдений' %}</a></li>
+                            </ul>
+                        </li>
 
                         <li><a href="{% url 'documents-page-url' %}">{% trans 'Документация' %}</a></li>
 

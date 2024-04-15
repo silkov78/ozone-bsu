@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 
-from .models import News, Article, Devices, Document, DevicesCharacteristic
+from .models import News, Article, Devices, Document, DevicesCharacteristic, AnnualReport
 
 admin.site.site_header = 'ННИЦ МО'
 
@@ -20,6 +20,12 @@ class ArticleAdmin(TranslationAdmin):
     readonly_fields = ['last_edit', 'time_creation', 'id']
     list_editable = ['status']
     save_as = True
+
+
+@admin.register(AnnualReport)
+class AnnualReportAdmin(admin.ModelAdmin):
+    list_display = ['year', 'report_file']
+    readonly_fields = ['last_edit']
 
 
 @admin.register(Document)

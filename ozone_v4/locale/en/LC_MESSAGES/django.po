@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-10 12:07+0300\n"
+"POT-Creation-Date: 2024-04-15 18:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "Commom ozone"
 msgid "Приземный озон"
 msgstr "Ground ozone"
 
-#: observations/forms.py:17 templates/observations.html:37
+#: observations/forms.py:17 templates/observations-info.html:31
 msgid "УФ-индекс"
 msgstr "UV-index"
 
@@ -215,10 +215,22 @@ msgstr ""
 "specialists inthe field of ozone monitoring "
 
 #: templates/articles.html:11
-msgid "Статьи"
-msgstr "Articles"
+msgid "Публикации"
+msgstr "Publications"
 
-#: templates/articles.html:30 templates/base.html:127 templates/blog.html:33
+#: templates/articles.html:16
+msgid ""
+"Мониторинг озонового слоя представляет собой систему наблюдений за "
+"состоянием озонового слоя, а также оценку и прогнозирование его изменений в "
+"целях своевременного выявления негативных воздействий природных и "
+"антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
+msgstr ""
+"Monitoring of the ozone layer is a system of observations of the "
+"state of the ozone layer, as well as assessment and forecasting of its changes in "
+"order to timely identify the negative effects of natural and "
+"anthropogenic factors. Annual ozone layer monitoring reports:"
+
+#: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
 #: templates/index.html:251
 msgid "Подробнее"
@@ -232,7 +244,7 @@ msgstr "NOMREC BSU"
 msgid "Главная"
 msgstr "Main"
 
-#: templates/base.html:67
+#: templates/base.html:67 templates/base.html:81
 msgid "Общая информация"
 msgstr "Common info"
 
@@ -260,19 +272,24 @@ msgstr "Privacy policy"
 msgid "Новости"
 msgstr "News"
 
-#: templates/base.html:76 templates/observations.html:10
+#: templates/base.html:78 templates/observations-download.html:10
+#: templates/observations-info.html:10
 msgid "Наблюдения"
 msgstr "Observations"
 
-#: templates/base.html:78 templates/documents.html:12
+#: templates/base.html:82
+msgid "Архив наблюдений"
+msgstr "Observations archive"
+
+#: templates/base.html:86 templates/documents.html:12
 msgid "Документация"
 msgstr "Documents"
 
-#: templates/base.html:87
+#: templates/base.html:95
 msgid "Поиск . . ."
 msgstr "Search . . ."
 
-#: templates/base.html:119
+#: templates/base.html:127
 msgid ""
 "Сайт использует только cookie, необходимые для корректной и безопасной "
 "работы сайта. Cookies не хранят никакой информации о пользователях и его "
@@ -282,79 +299,79 @@ msgstr ""
 "the site. Disabling their site may lead to incorrect operation. You can read "
 "more about the cookie policy"
 
-#: templates/base.html:120
+#: templates/base.html:128
 msgid "здесь"
 msgstr "here"
 
-#: templates/base.html:124
+#: templates/base.html:132
 msgid "Принять"
 msgstr "Accept"
 
-#: templates/base.html:137
+#: templates/base.html:145
 msgid "ННИЦ МО"
 msgstr "NOMREC"
 
-#: templates/base.html:139
+#: templates/base.html:147
 msgid "г. Минск, ул. Курчатова 7, к. 907"
 msgstr "Minsk, Kurchatov str. 7, room 907"
 
-#: templates/base.html:140
+#: templates/base.html:148
 msgid "220064, Республика Беларусь"
 msgstr "220064, Republic of Belarus"
 
-#: templates/base.html:141 templates/base.html:142 templates/base.html:160
+#: templates/base.html:149 templates/base.html:150 templates/base.html:168
 msgid "Телефон"
 msgstr "Telephone"
 
-#: templates/base.html:155
+#: templates/base.html:163
 msgid "БГУ"
 msgstr "BSU"
 
-#: templates/base.html:157
+#: templates/base.html:165
 msgid "г. Минск, пр. Независимости, 4"
 msgstr "Minsk, Nezavisimosti ave., 4"
 
-#: templates/base.html:158
+#: templates/base.html:166
 msgid "220030, Республика Беларусь"
 msgstr "220030, Republic of Belarus"
 
-#: templates/base.html:159
+#: templates/base.html:167
 msgid "Сайт"
 msgstr "Site"
 
-#: templates/base.html:160
+#: templates/base.html:168
 msgid "(справочная)"
 msgstr "(inquiry office)"
 
-#: templates/base.html:161
+#: templates/base.html:169
 msgid "Моб. телефон:"
 msgstr "Mobile phone:"
 
-#: templates/base.html:161
+#: templates/base.html:169
 msgid "(факс)"
 msgstr "(fax)"
 
-#: templates/base.html:167
+#: templates/base.html:175
 msgid "Ссылки"
 msgstr "Links"
 
-#: templates/base.html:171
+#: templates/base.html:179
 msgid "Интернет-портал Президента Республики Беларусь"
 msgstr "Internet portal of the President of the Republic of Belarus"
 
-#: templates/base.html:176
+#: templates/base.html:184
 msgid "Министерство образования Республики Беларусь"
 msgstr "Ministry of Education of the Republic of Belarus"
 
-#: templates/base.html:181
+#: templates/base.html:189
 msgid "Национальный правовой портал"
 msgstr "National Legal Portal"
 
-#: templates/base.html:186
+#: templates/base.html:194
 msgid "Электронная библиотека БГУ"
 msgstr "BSU online Library"
 
-#: templates/base.html:192
+#: templates/base.html:200
 msgid "Политика cookies"
 msgstr "Cookies policy"
 
@@ -390,7 +407,16 @@ msgstr "Science news"
 msgid "Наши приборы"
 msgstr "Devices"
 
-#: templates/observations.html:15
+#: templates/observations-download.html:15
+msgid "Загрузить данные наблюдений:"
+msgstr "Download observation data"
+
+#: templates/observations-download.html:19
+msgid "Загрузить"
+msgstr "Download"
+
+#: templates/observations-download.html:27 templates/observations-info.html:15
+#: templates/observations-info.html:52
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
 "для оценки состояния озонового слоя и его трансформации в результате "
@@ -421,37 +447,34 @@ msgstr ""
 "of total ozone, ground-level ozone and UV index. The start date and end date "
 "fields are required!"
 
-#: templates/observations.html:21
-msgid "Загрузить данные наблюдений:"
-msgstr "Download observation data"
-
-#: templates/observations.html:25
-msgid "Загрузить"
-msgstr "Download"
-
-#: templates/observations.html:34
+#: templates/observations-info.html:28
 msgid "Дата"
 msgstr "Date"
 
-#: templates/observations.html:35
+#: templates/observations-info.html:29
 msgid "ПСО, ppb"
 msgstr "ground ozone, ppb"
 
-#: templates/observations.html:36
+#: templates/observations-info.html:30
 msgid "ОСО, ед. Добсона"
 msgstr "common ozone, Dobson units"
 
-#: templates/observations.html:38
+#: templates/observations-info.html:32
 msgid "УФ макс."
 msgstr "UV-max"
-
-#: templates/observations.html:61
-msgid "Результаты наблюдений по годам"
-msgstr "Annual reports of observations "
 
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr "Search results"
+
+#~ msgid "Статьи"
+#~ msgstr "Articles"
+
+#~ msgid "Результаты наблюдений по годам"
+#~ msgstr "Annual reports of observations "
+
+#~ msgid "Архив данных"
+#~ msgstr "Data archive"
 
 #~ msgid "Научные новости"
 #~ msgstr "Last news"

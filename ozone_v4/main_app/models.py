@@ -88,6 +88,27 @@ class Article(BasePost):
         ordering = ['-time_creation']
 
 
+class AnnualReport(models.Model):
+    year = models.IntegerField(verbose_name='Год')
+    report_file = models.FileField(
+        upload_to='observations/reports',
+        verbose_name='Файл отчёта'
+    )
+
+    last_edit = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Последнее изменение'
+    )
+
+    def __str__(self):
+        return f'Отчёт за {self.year} год'
+
+    class Meta:
+        verbose_name = 'Годовой отчёт'
+        verbose_name_plural = 'Годовые отчёты'
+        ordering = ['-year']
+
+
 class Document(models.Model):
     name = models.CharField(max_length=150, verbose_name='Название')
 

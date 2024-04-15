@@ -1,10 +1,11 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.http import Http404
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
 
-from .models import News, Article, Devices, Document
+from .models import News, Article, Devices, Document, AnnualReport
 
 
 def main_page(request):
@@ -38,12 +39,26 @@ class NewsItemView(DetailView):
             return redirect(reverse('blog-page-url'))
 
 
-class ArticlesPageView(ListView):
-    template_name = 'articles.html'
-    paginate_by = 4
+# class ArticlesPageView(ListView):
+#     template_name = 'articles.html'
+#     paginate_by = 4
+#
+#     def get_queryset(self):
+#         return Article.objects.filter(status='PB').order_by('-published')
 
-    def get_queryset(self):
-        return Article.objects.filter(status='PB').order_by('-published')
+
+def articles_page_view(request):
+    articles_list = Article.objects.filter(status='PB').order_by('-published')
+    paginator = Paginator(articles_list, 4)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        "page_obj": page_obj,
+        "annual_reports": AnnualReport.objects.all().order_by('year')
+    }
+    return render(request, "articles.html", context)
 
 
 class ArticlesItemView(DetailView):
@@ -87,7 +102,7 @@ class DeviceItemView(DetailView):
         except Http404:
             return redirect(reverse('devices-page-url'))
 
-                            
+
 # ----------------------------------------------------
 
 class DocumetsPageView(ListView):

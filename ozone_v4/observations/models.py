@@ -81,24 +81,3 @@ class Observations(models.Model):
         verbose_name = 'Наблюдение'
         verbose_name_plural = 'Наблюдения'
         ordering = ['-date']
-
-
-class AnnualReport(models.Model):
-    year = models.IntegerField(verbose_name='Год')
-    report_file = models.FileField(
-        upload_to='observations/reports',
-        verbose_name='Файл отчёта'
-    )
-
-    last_edit = models.DateTimeField(
-        auto_now=True,
-        verbose_name='Последнее изменение'
-    )
-
-    def __str__(self):
-        return f'Отчёт за {self.year} год'
-
-    class Meta:
-        verbose_name = 'Годовой отчёт'
-        verbose_name_plural = 'Годовые отчёты'
-        ordering = ['-year']
