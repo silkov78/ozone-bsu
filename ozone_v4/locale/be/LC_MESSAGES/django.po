@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-10 12:07+0300\n"
+"POT-Creation-Date: 2024-04-15 12:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr "Агульны азон"
 msgid "Приземный озон"
 msgstr "Прыземны азон"
 
-#: observations/forms.py:17 templates/observations.html:37
+#: observations/forms.py:17 templates/observations-info.html:31
 msgid "УФ-индекс"
 msgstr "УФ-індекс"
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Статьи"
 msgstr ""
 
-#: templates/articles.html:30 templates/base.html:127 templates/blog.html:33
+#: templates/articles.html:30 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
 #: templates/index.html:251
 msgid "Подробнее"
@@ -201,7 +201,7 @@ msgstr "ННДЦ МА БДУ"
 msgid "Главная"
 msgstr "Галоўная"
 
-#: templates/base.html:67
+#: templates/base.html:67 templates/base.html:81
 msgid "Общая информация"
 msgstr "Агульная інфармацыя"
 
@@ -229,98 +229,103 @@ msgstr "Палітыка прыватнасці"
 msgid "Новости"
 msgstr "Навіны"
 
-#: templates/base.html:76 templates/observations.html:10
+#: templates/base.html:78 templates/observations-download.html:10
+#: templates/observations-info.html:10
 msgid "Наблюдения"
 msgstr "Назіранні"
 
-#: templates/base.html:78 templates/documents.html:12
+#: templates/base.html:82
+msgid "Архив наблюдений"
+msgstr "Архіў назіранняў"
+
+#: templates/base.html:86 templates/documents.html:12
 msgid "Документация"
 msgstr "Дакументацыя"
 
-#: templates/base.html:87
+#: templates/base.html:95
 msgid "Поиск . . ."
 msgstr "Пошук . . ."
 
-#: templates/base.html:119
+#: templates/base.html:127
 msgid ""
 "Сайт использует только cookie, необходимые для корректной и безопасной "
 "работы сайта. Cookies не хранят никакой информации о пользователях и его "
 "действиях на сайте. Потробнее о политике cookie можно прочитать"
 msgstr ""
 
-#: templates/base.html:120
+#: templates/base.html:128
 msgid "здесь"
 msgstr ""
 
-#: templates/base.html:124
+#: templates/base.html:132
 msgid "Принять"
 msgstr ""
 
-#: templates/base.html:137
+#: templates/base.html:145
 msgid "ННИЦ МО"
 msgstr ""
 
-#: templates/base.html:139
+#: templates/base.html:147
 msgid "г. Минск, ул. Курчатова 7, к. 907"
 msgstr ""
 
-#: templates/base.html:140
+#: templates/base.html:148
 msgid "220064, Республика Беларусь"
 msgstr ""
 
-#: templates/base.html:141 templates/base.html:142 templates/base.html:160
+#: templates/base.html:149 templates/base.html:150 templates/base.html:168
 msgid "Телефон"
 msgstr ""
 
-#: templates/base.html:155
+#: templates/base.html:163
 msgid "БГУ"
 msgstr ""
 
-#: templates/base.html:157
+#: templates/base.html:165
 msgid "г. Минск, пр. Независимости, 4"
 msgstr ""
 
-#: templates/base.html:158
+#: templates/base.html:166
 msgid "220030, Республика Беларусь"
 msgstr ""
 
-#: templates/base.html:159
+#: templates/base.html:167
 msgid "Сайт"
 msgstr ""
 
-#: templates/base.html:160
+#: templates/base.html:168
 msgid "(справочная)"
 msgstr ""
 
-#: templates/base.html:161
+#: templates/base.html:169
 msgid "Моб. телефон:"
 msgstr ""
 
-#: templates/base.html:161
+#: templates/base.html:169
 msgid "(факс)"
 msgstr ""
 
-#: templates/base.html:167
+#: templates/base.html:175
 msgid "Ссылки"
 msgstr ""
 
-#: templates/base.html:171
+#: templates/base.html:179
 msgid "Интернет-портал Президента Республики Беларусь"
 msgstr ""
 
-#: templates/base.html:176
+#: templates/base.html:184
 msgid "Министерство образования Республики Беларусь"
 msgstr ""
 
-#: templates/base.html:181
+#: templates/base.html:189
 msgid "Национальный правовой портал"
 msgstr ""
 
-#: templates/base.html:186
+#: templates/base.html:194
 msgid "Электронная библиотека БГУ"
 msgstr ""
 
-#: templates/base.html:192
+#: templates/base.html:200
 msgid "Политика cookies"
 msgstr ""
 
@@ -356,7 +361,16 @@ msgstr "Навіны навукі"
 msgid "Наши приборы"
 msgstr "Нашы прыборы"
 
-#: templates/observations.html:15
+#: templates/observations-download.html:15
+msgid "Загрузить данные наблюдений:"
+msgstr ""
+
+#: templates/observations-download.html:19
+msgid "Загрузить"
+msgstr ""
+
+#: templates/observations-download.html:27 templates/observations-info.html:15
+#: templates/observations-info.html:52
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
 "для оценки состояния озонового слоя и его трансформации в результате "
@@ -373,37 +387,32 @@ msgid ""
 "наблюдениям."
 msgstr ""
 
-#: templates/observations.html:21
-msgid "Загрузить данные наблюдений:"
-msgstr ""
-
-#: templates/observations.html:25
-msgid "Загрузить"
-msgstr ""
-
-#: templates/observations.html:34
+#: templates/observations-info.html:28
 msgid "Дата"
 msgstr ""
 
-#: templates/observations.html:35
+#: templates/observations-info.html:29
 msgid "ПСО, ppb"
 msgstr ""
 
-#: templates/observations.html:36
+#: templates/observations-info.html:30
 msgid "ОСО, ед. Добсона"
 msgstr ""
 
-#: templates/observations.html:38
+#: templates/observations-info.html:32
 msgid "УФ макс."
 msgstr ""
 
-#: templates/observations.html:61
+#: templates/observations-info.html:63
 msgid "Результаты наблюдений по годам"
 msgstr ""
 
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr ""
+
+#~ msgid "Архив данных"
+#~ msgstr "Архіў дада"
 
 #, fuzzy
 #~| msgid "Новости"
