@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from rest_framework.generics import ListAPIView
 import csv
 
-from .models import AnnualReport, Observations
+from .models import Observations
 from .forms import ObservationsForm
 
 from .services import ObservationsInMatrix
@@ -15,7 +15,6 @@ def observations_info_page(request):
 
     context = {
         "last_minsk_observations": Observations.objects.all().order_by('-date')[:7],
-        "annual_reports": AnnualReport.objects.all()
     }
 
     return render(request, "observations-info.html", context)

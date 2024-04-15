@@ -7,7 +7,7 @@ urlpatterns = [
     path('', main_page, name='main-page-url'),
     path('blog/', BlogPageView.as_view(), name='blog-page-url'),
     path('blog/<int:pk>/', NewsItemView.as_view()),
-    path('articles/', ArticlesPageView.as_view(), name='articles-page-url'),
+    path('articles/', articles_page_view, name='articles-page-url'),
     path('articles/<int:pk>/', ArticlesItemView.as_view(), name='articles-item-url'),
     path('search/', search_page, name='search-page-url'),
     path('search/<int:pk>/', NewsItemView.as_view(), name='search-item-url'),
