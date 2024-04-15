@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 12:15+0300\n"
+"POT-Creation-Date: 2024-04-15 18:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,10 +215,22 @@ msgstr ""
 "specialists inthe field of ozone monitoring "
 
 #: templates/articles.html:11
-msgid "Статьи"
-msgstr "Articles"
+msgid "Публикации"
+msgstr "Publications"
 
-#: templates/articles.html:30 templates/base.html:135 templates/blog.html:33
+#: templates/articles.html:16
+msgid ""
+"Мониторинг озонового слоя представляет собой систему наблюдений за "
+"состоянием озонового слоя, а также оценку и прогнозирование его изменений в "
+"целях своевременного выявления негативных воздействий природных и "
+"антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
+msgstr ""
+"Monitoring of the ozone layer is a system of observations of the "
+"state of the ozone layer, as well as assessment and forecasting of its changes in "
+"order to timely identify the negative effects of natural and "
+"anthropogenic factors. Annual ozone layer monitoring reports:"
+
+#: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
 #: templates/index.html:251
 msgid "Подробнее"
@@ -451,13 +463,15 @@ msgstr "common ozone, Dobson units"
 msgid "УФ макс."
 msgstr "UV-max"
 
-#: templates/observations-info.html:63
-msgid "Результаты наблюдений по годам"
-msgstr "Annual reports of observations "
-
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr "Search results"
+
+#~ msgid "Статьи"
+#~ msgstr "Articles"
+
+#~ msgid "Результаты наблюдений по годам"
+#~ msgstr "Annual reports of observations "
 
 #~ msgid "Архив данных"
 #~ msgstr "Data archive"

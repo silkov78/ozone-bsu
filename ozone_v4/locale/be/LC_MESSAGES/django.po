@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 12:15+0300\n"
+"POT-Creation-Date: 2024-04-15 18:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,10 +184,23 @@ msgid ""
 msgstr ""
 
 #: templates/articles.html:11
-msgid "Статьи"
-msgstr ""
+msgid "Публикации"
+msgstr "Публікацыі"
 
-#: templates/articles.html:30 templates/base.html:135 templates/blog.html:33
+#: templates/articles.html:16
+msgid ""
+"Мониторинг озонового слоя представляет собой систему наблюдений за "
+"состоянием озонового слоя, а также оценку и прогнозирование его изменений в "
+"целях своевременного выявления негативных воздействий природных и "
+"антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
+msgstr ""
+"Маніторынг азонавага слоя ўяўляе сабой сістэму назіранняў за "
+"станам азонавага слоя, а таксама ацэнку і прагназаванне яго змяненняў у "
+"мэтах своечасовага выяўлення негатыўных уздзеянняў прыродных і "
+"антрапагенных фактараў. Штогадовыя справаздачы па маніторынгу азонавага пласта:"
+
+
+#: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
 #: templates/index.html:251
 msgid "Подробнее"
@@ -401,10 +414,6 @@ msgstr ""
 
 #: templates/observations-info.html:32
 msgid "УФ макс."
-msgstr ""
-
-#: templates/observations-info.html:63
-msgid "Результаты наблюдений по годам"
 msgstr ""
 
 #: templates/search.html:12
