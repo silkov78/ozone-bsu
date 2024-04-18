@@ -12,7 +12,7 @@ function colorByValues(cell) {
    if (intCell < 5){
        cell.classList.add('observ-cell_green')
 
-   } else if (intCell >= 5 && cell < 7) {
+   } else if (intCell >= 5 && intCell < 7) {
        cell.classList.add('observ-cell_yellow')
    } else {
        cell.classList.add('observ-cell_red')

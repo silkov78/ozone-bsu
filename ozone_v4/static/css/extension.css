@@ -495,6 +495,18 @@ blockquote::after {
   text-align: center;
 }
 
+.observ-cell_green {
+    background: rgba(117, 255, 210, 0.7);
+}
+
+.observ-cell_yellow {
+    background: rgba(237, 255, 153, 0.7);
+}
+
+.observ-cell_red {
+    background: rgba(255, 15, 15, 0.47);
+}
+
 .download-text {
   font-style: italic;
   font-size: 15px;
