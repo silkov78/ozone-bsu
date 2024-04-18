@@ -472,9 +472,7 @@ blockquote::after {
 .observ-table thead {
   background: rgba(102, 153, 180, 0.8);
 }
-.observ-table tr:nth-of-type(2n) {
-  background-color: rgba(136, 201, 235, 0.3);
-}
+
 .observ-table td {
   padding: 8px;
   width: 11%;
