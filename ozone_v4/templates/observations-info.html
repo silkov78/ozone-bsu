@@ -35,11 +35,11 @@
 					<tbody class="">
 						{% for item in last_minsk_observations %}
 							<tr>
-								<td class="observ-date" scope="row">{{ item.date|date:'Y-m-d' }}</td>
+								<td class="observ-date" scope="row">{{ item.date }}</td>
 								<td>{{ item.common_ozone_minsk }}</td>
 								<td>{{ item.ground_ozone_minsk }}</td>
-								<td>{{ item.uf_index_minsk }}</td>
-								<td>{{ item.uf_max_minsk }}</td>
+								<td class="observ-ufi">{{ item.uf_index_minsk }}</td>
+								<td class="observ-ufi-max">{{ item.uf_max_minsk }}</td>
 							</tr>
 						{% endfor %}
 					</tbody>

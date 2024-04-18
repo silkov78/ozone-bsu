@@ -472,9 +472,7 @@ blockquote::after {
 .observ-table thead {
   background: rgba(102, 153, 180, 0.8);
 }
-.observ-table tr:nth-of-type(2n) {
-  background-color: rgba(136, 201, 235, 0.3);
-}
+
 .observ-table td {
   padding: 8px;
   width: 11%;
@@ -495,6 +493,18 @@ blockquote::after {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+}
+
+.observ-cell_green {
+    background: rgba(117, 255, 210, 0.7);
+}
+
+.observ-cell_yellow {
+    background: rgba(237, 255, 153, 0.7);
+}
+
+.observ-cell_red {
+    background: rgba(255, 15, 15, 0.47);
 }
 
 .download-text {
