@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 18:06+0300\n"
+"POT-Creation-Date: 2024-04-19 15:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "Commom ozone"
 msgid "Приземный озон"
 msgstr "Ground ozone"
 
-#: observations/forms.py:17 templates/observations-info.html:31
+#: observations/forms.py:17 templates/observations-info.html:40
 msgid "УФ-индекс"
 msgstr "UV-index"
 
@@ -225,10 +225,10 @@ msgid ""
 "целях своевременного выявления негативных воздействий природных и "
 "антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
 msgstr ""
-"Monitoring of the ozone layer is a system of observations of the "
-"state of the ozone layer, as well as assessment and forecasting of its changes in "
-"order to timely identify the negative effects of natural and "
-"anthropogenic factors. Annual ozone layer monitoring reports:"
+"Monitoring of the ozone layer is a system of observations of the state of "
+"the ozone layer, as well as assessment and forecasting of its changes in "
+"order to timely identify the negative effects of natural and anthropogenic "
+"factors. Annual ozone layer monitoring reports:"
 
 #: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
@@ -415,8 +415,7 @@ msgstr "Download observation data"
 msgid "Загрузить"
 msgstr "Download"
 
-#: templates/observations-download.html:27 templates/observations-info.html:15
-#: templates/observations-info.html:52
+#: templates/observations-download.html:27 templates/observations-info.html:61
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
 "для оценки состояния озонового слоя и его трансформации в результате "
@@ -447,19 +446,54 @@ msgstr ""
 "of total ozone, ground-level ozone and UV index. The start date and end date "
 "fields are required!"
 
-#: templates/observations-info.html:28
+#: templates/observations-info.html:15
+msgid ""
+"Данные мониторинга общего содержания озона служат экспериментальной базой "
+"для оценки состояния озонового слоя"
+msgstr ""
+"The monitoring data of the total ozone content serves as an experimental base "
+"for assessing the state of the ozone layer"
+
+#: templates/observations-info.html:16
+msgid ""
+"и его трансформации в результате антропогенного воздействия и естественных процессов"
+msgstr ""
+"and its transformation as a result of anthropogenic impact and natural processes"
+
+#: templates/observations-info.html:17
+msgid ""
+"Они используются для изучения степени влияния этих изменений на климат в "
+"глобальном и региональном масштабах, "
+msgstr ""
+"They are used to study the extent to which these changes affect the climate on a "
+"global and regional scale,"
+
+#: templates/observations-info.html:18
+msgid ""
+"а также для прогноза изменения уровней и доз биологически активного "
+"солнечного ультрафиолетового излучения у поверхности Земли."
+msgstr ""
+"as well as to predict changes in levels and doses of biologically active "
+"solar ultraviolet radiation near the Earth's surface."
+
+#: templates/observations-info.html:19
+msgid "Измерения проводится в 3 трёх точках Беларуси в локальный полдень: "
+msgstr ""
+"Измерения проводится в 3 трёх точках Беларуси в локальный полдень:"
+
+#: templates/observations-info.html:37
 msgid "Дата"
 msgstr "Date"
 
-#: templates/observations-info.html:29
+#: templates/observations-info.html:38
 msgid "ПСО, ppb"
 msgstr "ground ozone, ppb"
 
-#: templates/observations-info.html:30
+#: templates/observations-info.html:39
 msgid "ОСО, ед. Добсона"
 msgstr "common ozone, Dobson units"
 
-#: templates/observations-info.html:32
+#: templates/observations-info.html:41
 msgid "УФ макс."
 msgstr "UV-max"
 
