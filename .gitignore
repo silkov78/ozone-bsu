@@ -1,7 +1,7 @@
 # To ignore
 
 # PROD <-> DEV
-settings.py
+ozone_v4/config/settings.py
 docker-compose.yml
 .env.dev
 

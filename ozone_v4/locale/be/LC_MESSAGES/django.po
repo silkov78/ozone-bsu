@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 18:06+0300\n"
+"POT-Creation-Date: 2024-04-19 15:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr "Агульны азон"
 msgid "Приземный озон"
 msgstr "Прыземны азон"
 
-#: observations/forms.py:17 templates/observations-info.html:31
+#: observations/forms.py:17 templates/observations-info.html:40
 msgid "УФ-индекс"
 msgstr "УФ-індекс"
 
@@ -194,11 +194,10 @@ msgid ""
 "целях своевременного выявления негативных воздействий природных и "
 "антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
 msgstr ""
-"Маніторынг азонавага слоя ўяўляе сабой сістэму назіранняў за "
-"станам азонавага слоя, а таксама ацэнку і прагназаванне яго змяненняў у "
-"мэтах своечасовага выяўлення негатыўных уздзеянняў прыродных і "
-"антрапагенных фактараў. Штогадовыя справаздачы па маніторынгу азонавага пласта:"
-
+"Маніторынг азонавага слоя ўяўляе сабой сістэму назіранняў за станам "
+"азонавага слоя, а таксама ацэнку і прагназаванне яго змяненняў у мэтах "
+"своечасовага выяўлення негатыўных уздзеянняў прыродных і антрапагенных "
+"фактараў. Штогадовыя справаздачы па маніторынгу азонавага пласта:"
 
 #: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
@@ -265,42 +264,45 @@ msgid ""
 "работы сайта. Cookies не хранят никакой информации о пользователях и его "
 "действиях на сайте. Потробнее о политике cookie можно прочитать"
 msgstr ""
+"Сайт выкарыстоўвае толькі cookie, неабходныя для карэктнай і бяспечнай"
+"працы сайта. Cookies не захоўваюць ніякай інфармацыі пра карыстальнікаў і яго "
+"дзеянні на сайце. Больш падрабязна пра палітыку cookie можна прачытаць"
 
 #: templates/base.html:128
 msgid "здесь"
-msgstr ""
+msgstr "тут"
 
 #: templates/base.html:132
 msgid "Принять"
-msgstr ""
+msgstr "Прыняць"
 
 #: templates/base.html:145
 msgid "ННИЦ МО"
-msgstr ""
+msgstr "ННДЦ МА"
 
 #: templates/base.html:147
 msgid "г. Минск, ул. Курчатова 7, к. 907"
-msgstr ""
+msgstr "г. Мінск, вул. Курчатова 7, к. 907"
 
 #: templates/base.html:148
 msgid "220064, Республика Беларусь"
-msgstr ""
+msgstr "220064, Рэспубліка Беларусь"
 
 #: templates/base.html:149 templates/base.html:150 templates/base.html:168
 msgid "Телефон"
-msgstr ""
+msgstr "Тэлефон"
 
 #: templates/base.html:163
 msgid "БГУ"
-msgstr ""
+msgstr "БДУ"
 
 #: templates/base.html:165
 msgid "г. Минск, пр. Независимости, 4"
-msgstr ""
+msgstr "г. Мінск, пр. незалежнасці, 4"
 
 #: templates/base.html:166
 msgid "220030, Республика Беларусь"
-msgstr ""
+msgstr "220030, Рэспубліка Беларусь"
 
 #: templates/base.html:167
 msgid "Сайт"
@@ -308,11 +310,11 @@ msgstr ""
 
 #: templates/base.html:168
 msgid "(справочная)"
-msgstr ""
+msgstr "(даведакі)"
 
 #: templates/base.html:169
 msgid "Моб. телефон:"
-msgstr ""
+msgstr "Моб. тэлефон"
 
 #: templates/base.html:169
 msgid "(факс)"
@@ -320,39 +322,39 @@ msgstr ""
 
 #: templates/base.html:175
 msgid "Ссылки"
-msgstr ""
+msgstr "Спасылкі"
 
 #: templates/base.html:179
 msgid "Интернет-портал Президента Республики Беларусь"
-msgstr ""
+msgstr "Інтэрнэт-партал Прэзідэнта Рэспублікі Беларусь"
 
 #: templates/base.html:184
 msgid "Министерство образования Республики Беларусь"
-msgstr ""
+msgstr "Міністэрства адукацыі Рэспублікі Беларусь"
 
 #: templates/base.html:189
 msgid "Национальный правовой портал"
-msgstr ""
+msgstr "Нацыянальны прававы партал"
 
 #: templates/base.html:194
 msgid "Электронная библиотека БГУ"
-msgstr ""
+msgstr "Электронная бібліятэка БДУ"
 
 #: templates/base.html:200
 msgid "Политика cookies"
-msgstr ""
+msgstr "Палітыка канфідэнцыальнасці"
 
 #: templates/cookies.html:13
 msgid "Политика использования файлов cookie"
-msgstr ""
+msgstr "Палітыка канфідэнцыальнасці"
 
 #: templates/devices-single.html:35
 msgid "Технические характеристики"
-msgstr ""
+msgstr "Тэхнічныя характэрыстыкі"
 
 #: templates/documents.html:22
 msgid "Документация, регламентирующую работу ННИЦ МО"
-msgstr ""
+msgstr "Дакументацыя, рэгламентыруюшчая працу ННДЦ МА БДУ"
 
 #: templates/index.html:12
 msgid ""
@@ -364,7 +366,7 @@ msgstr ""
 
 #: templates/index.html:134
 msgid "Новости центра"
-msgstr "Навіны цэнтра"
+msgstr "Навіны цэнтру"
 
 #: templates/index.html:186
 msgid "Новости науки"
@@ -382,8 +384,7 @@ msgstr ""
 msgid "Загрузить"
 msgstr ""
 
-#: templates/observations-download.html:27 templates/observations-info.html:15
-#: templates/observations-info.html:52
+#: templates/observations-download.html:27 templates/observations-info.html:61
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
 "для оценки состояния озонового слоя и его трансформации в результате "
@@ -400,30 +401,58 @@ msgid ""
 "наблюдениям."
 msgstr ""
 
-#: templates/observations-info.html:28
-msgid "Дата"
+#: templates/observations-info.html:15
+msgid ""
+"Данные мониторинга общего содержания озона служат экспериментальной базой "
+"для оценки состояния озонового слоя"
+msgstr ""
+"Дадзеныя маніторынгу агульнага ўтрымання азону служаць эксперыментальнай базай "
+"для ацэнкі стану азонавага cлою"
+
+#: templates/observations-info.html:16
+msgid ""
+"и его трансформации в результате антропогенного воздействия и естественных "
+"процессов"
+msgstr ""
+"і яго трансфармацыі ў выніку антрапагеннага ўздзеяння і натуральных "
+"працэс"
+
+#: templates/observations-info.html:17
+msgid ""
+"Они используются для изучения степени влияния этих изменений на климат в "
+"глобальном и региональном масштабах, "
 msgstr ""
 
-#: templates/observations-info.html:29
+#: templates/observations-info.html:18
+msgid ""
+"а также для прогноза изменения уровней и доз биологически активного "
+"солнечного ультрафиолетового излучения у поверхности Земли."
+msgstr ""
+"Яны выкарыстоўваюцца для вывучэння ступені ўплыву гэтых змяненняў на клімат у "
+"глабальным і рэгіянальным маштабах, "
+
+#: templates/observations-info.html:19
+msgid "Измерения проводится в 3 трёх точках Беларуси в локальный полдень:"
+msgstr ""
+"Вымярэння праводзіцца ў 3 трох кропках Беларусі ў лакальны апоўдні: "
+
+#: templates/observations-info.html:37
+msgid "Дата"
+msgstr "Дата"
+
+#: templates/observations-info.html:38
 msgid "ПСО, ppb"
 msgstr ""
 
-#: templates/observations-info.html:30
+#: templates/observations-info.html:39
 msgid "ОСО, ед. Добсона"
 msgstr ""
 
-#: templates/observations-info.html:32
+#: templates/observations-info.html:41
 msgid "УФ макс."
 msgstr ""
 
 #: templates/search.html:12
 msgid "Результаты поиска"
-msgstr ""
+msgstr "Вынікі пошука"
 
-#~ msgid "Архив данных"
-#~ msgstr "Архіў дада"
-
-#, fuzzy
-#~| msgid "Новости"
-#~ msgid "Научные новости"
-#~ msgstr "Навіны"
