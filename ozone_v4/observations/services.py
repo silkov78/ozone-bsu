@@ -53,7 +53,7 @@ class ObservationsInMatrix:
 
             if "common_ozone" in field_name:
                 return field_name + ', DU'
-            elif "ground_ozone" in field_name:
+            elif "surface_ozone" in field_name:
                 return field_name + ', ppb'
             return field_name
 

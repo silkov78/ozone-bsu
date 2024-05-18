@@ -32,43 +32,43 @@ class Observations(models.Model):
         verbose_name='ОСО Нарочь'
     )
 
-    uf_index_minsk = models.FloatField(
+    uvi_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Минск'
     )
 
-    uf_index_homel = models.FloatField(
+    uvi_homel = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Гомель'
     )
 
-    uf_index_naroch = models.FloatField(
+    uvi_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Нарочь'
     )
 
-    uf_max_minsk = models.FloatField(
+    uvi_max_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Минск'
     )
 
-    uf_max_homel = models.FloatField(
+    uvi_max_homel = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Гомель'
     )
 
-    uf_max_naroch = models.FloatField(
+    uvi_max_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Нарочь'
     )
 
-    ground_ozone_minsk = models.FloatField(
+    surface_ozone_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='ПСО Минск'
