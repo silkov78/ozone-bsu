@@ -617,7 +617,13 @@ blockquote::after {
     border-radius: 2px;
 }
 
+.entry-attach {
+    margin: 20px 0 10px;
+}
 
+.entry-attach__head {
+    margin-bottom: 0;
+}
 /*--------------------------------------------------------------
 # Documents
 --------------------------------------------------------------*/
