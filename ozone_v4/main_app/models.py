@@ -115,8 +115,8 @@ class ArticleFile(models.Model):
 
     class Meta:
         verbose_name = 'Файл к Статье'
-        verbose_name_plural = 'Файлы к Статье'
-        ordering = ['-time_creation']
+        verbose_name_plural = 'Файлы к Статьям'
+        ordering = ['article']
 
 
 class AnnualReport(models.Model):
