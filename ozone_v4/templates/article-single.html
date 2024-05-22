@@ -31,15 +31,17 @@
                     <p>{{ object.body|linebreaks }}</p>
                 </div>
 
-                {% if object.article_files %}
+                {% if object.article_files.all %}
                     <div class="entry-attach">
 
                         <h6 class="entry-attach__head">{% trans 'К прочтению' %}</h6>
 
-                        {% for article_file in object.article_files.all %}
-                            <a href="{{ article_file.file.url }} " class="entry-attach__files">{{article_file.filename}}</a>
-                            &nbsp
-                        {% endfor %}
+                        <div class="entry-attach__files">
+                            {% for article_file in object.article_files.all %}
+                                <a href="{{ article_file.file.url }}">{{article_file.filename}}</a>
+                                &nbsp
+                            {% endfor %}
+                        </div>
 
                     </div>
                 {% endif %}
@@ -47,7 +49,8 @@
                 <div class="entry-meta">
                     <i class="bi bi-clock"></i>
                     <time datetime="2020-01-01">{{ object.published }}</time>
-                  </div>
+                </div>
+
             </article>
           </div>
         </div>
