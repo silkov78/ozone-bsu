@@ -44,47 +44,9 @@ class BasePost(models.Model):
         verbose_name='Последнее изменение'
     )
 
-    def __str__(self):
-        return f"{self.name} | {self.time_creation}"
-
     class Meta:
         abstract = True
         ordering = ['-published']
-
-
-class BasePostFile(models.Model):
-    """Файлы, прикрепляемые к статьям (BasePost)"""
-
-    base_post = models.ForeignKey(
-        to=BasePost,
-        on_delete=models.CASCADE,
-        related_name="base_post_files"
-    )
-
-    file = models.FileField(
-        upload_to="main/base_post_attach",
-        verbose_name="Файл"
-    )
-
-    name = models.CharField(
-        max_length=255,
-        null=True,
-        blank=True,
-        verbose_name="Название файла (опционально)"
-    )
-
-    last_edit = models.DateTimeField(
-        auto_now=True,
-        verbose_name='Последнее изменение'
-    )
-
-    def __str__(self):
-        return f'{self.base_post} | {self.id}'
-
-    class Meta:
-        verbose_name = 'Годовой отчёт'
-        verbose_name_plural = 'Годовые отчёты'
-        ordering = ['-year']
 
 
 class News(BasePost):
@@ -114,7 +76,8 @@ class Article(BasePost):
 
     body = models.TextField(
         verbose_name='Содержание',
-        null=True
+        null=True,
+        blank=True
     )
 
     def __str__(self):
@@ -123,6 +86,36 @@ class Article(BasePost):
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
+        ordering = ['-time_creation']
+
+
+class ArticleFile(models.Model):
+    """Файлы, прикрепляемые к статьям (Article)"""
+
+    article = models.ForeignKey(
+        to=Article,
+        on_delete=models.CASCADE,
+        related_name="article_files"
+    )
+
+    file = models.FileField(
+        upload_to="main/base_post_attach",
+        verbose_name="Файл"
+    )
+
+    name = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name="Название файла (опционально)"
+    )
+
+    def __str__(self):
+        return f'{self.article} | {self.pk}'
+
+    class Meta:
+        verbose_name = 'Файл к Статье'
+        verbose_name_plural = 'Файлы к Статье'
         ordering = ['-time_creation']
 
 
