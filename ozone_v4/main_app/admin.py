@@ -14,7 +14,7 @@ class NewsAdmin(TranslationAdmin):
     save_as = True
 
 
-class ArticleFileInline(admin.StackedInline):
+class ArticleFileInline(admin.TabularInline):
     model = ArticleFile
     extra = 1
 

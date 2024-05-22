@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from os.path import basename
 
 
 class BasePost(models.Model):
@@ -103,12 +104,8 @@ class ArticleFile(models.Model):
         verbose_name="Файл"
     )
 
-    name = models.CharField(
-        max_length=255,
-        null=True,
-        blank=True,
-        verbose_name="Название файла (опционально)"
-    )
+    def filename(self):
+        return basename(self.file.name)
 
     def __str__(self):
         return f'{self.article} | {self.pk}'
