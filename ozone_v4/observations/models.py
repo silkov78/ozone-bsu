@@ -20,16 +20,10 @@ class Observations(models.Model):
         verbose_name='ОСО Минск'
     )
 
-    common_ozone_homel = models.FloatField(
+    surface_ozone_minsk = models.FloatField(
         null=True,
         blank=True,
-        verbose_name='ОСО Гомель'
-    )
-
-    common_ozone_naroch = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name='ОСО Нарочь'
+        verbose_name='ПСО Минск'
     )
 
     uvi_minsk = models.FloatField(
@@ -38,22 +32,22 @@ class Observations(models.Model):
         verbose_name='УФ-индекс Минск'
     )
 
-    uvi_homel = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name='УФ-индекс Гомель'
-    )
-
-    uvi_naroch = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name='УФ-индекс Нарочь'
-    )
-
     uvi_max_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Минск'
+    )
+
+    common_ozone_homel = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name='ОСО Гомель'
+    )
+
+    uvi_homel = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name='УФ-индекс Гомель'
     )
 
     uvi_max_homel = models.FloatField(
@@ -62,16 +56,22 @@ class Observations(models.Model):
         verbose_name='УФ-макс Гомель'
     )
 
+    common_ozone_naroch = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name='ОСО Нарочь'
+    )
+
+    uvi_naroch = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name='УФ-индекс Нарочь'
+    )
+
     uvi_max_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Нарочь'
-    )
-
-    surface_ozone_minsk = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name='ПСО Минск'
     )
 
     def __str__(self):
