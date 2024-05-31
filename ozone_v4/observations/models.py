@@ -20,12 +20,6 @@ class Observations(models.Model):
         verbose_name='ОСО Минск'
     )
 
-    surface_ozone_minsk = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name='ПСО Минск'
-    )
-
     uvi_minsk = models.FloatField(
         null=True,
         blank=True,
@@ -36,6 +30,12 @@ class Observations(models.Model):
         null=True,
         blank=True,
         verbose_name='УФ-макс Минск'
+    )
+
+    surface_ozone_minsk = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name='ПСО Минск'
     )
 
     common_ozone_homel = models.FloatField(
