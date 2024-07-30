@@ -22,6 +22,7 @@ htmlcov
 
 # Certificates
 certs
+certs_2024
 
 # Environments 
 .env
