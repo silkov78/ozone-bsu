@@ -1,6 +1,6 @@
 
 {% extends 'base.html' %}
-{% load static %}
+{% load i18n static %}
 
 {% block content %}
   <main id="main">
@@ -31,10 +31,26 @@
                     <p>{{ object.body|linebreaks }}</p>
                 </div>
 
+                {% if object.article_files.all %}
+                    <div class="entry-attach">
+
+                        <h6 class="entry-attach__head">{% trans 'К прочтению' %}</h6>
+
+                        <div class="entry-attach__files">
+                            {% for article_file in object.article_files.all %}
+                                <a href="{{ article_file.file.url }}">{{article_file.filename}}</a>
+                                &nbsp
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                {% endif %}
+
                 <div class="entry-meta">
                     <i class="bi bi-clock"></i>
                     <time datetime="2020-01-01">{{ object.published }}</time>
-                  </div>
+                </div>
+
             </article>
           </div>
         </div>
@@ -45,7 +61,7 @@
 
   <script>
     const pageTitle = document.querySelector('title')
-    pageTitle.innerHTML = 'Статьи'
+    pageTitle.innerHTML = 'Научные труды'
 
     const activeNavPage = document.querySelectorAll('.navbar-list>li>a')[1]
     activeNavPage.classList.add('active')

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from os.path import basename
 
 
 class BasePost(models.Model):
@@ -76,7 +77,8 @@ class Article(BasePost):
 
     body = models.TextField(
         verbose_name='Содержание',
-        null=True
+        null=True,
+        blank=True
     )
 
     def __str__(self):
@@ -86,6 +88,32 @@ class Article(BasePost):
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
         ordering = ['-time_creation']
+
+
+class ArticleFile(models.Model):
+    """Файлы, прикрепляемые к статьям (Article)"""
+
+    article = models.ForeignKey(
+        to=Article,
+        on_delete=models.CASCADE,
+        related_name="article_files"
+    )
+
+    file = models.FileField(
+        upload_to="main/base_post_attach",
+        verbose_name="Файл"
+    )
+
+    def filename(self):
+        return basename(self.file.name)
+
+    def __str__(self):
+        return f'{self.article} | {self.pk}'
+
+    class Meta:
+        verbose_name = 'Файл к Статье'
+        verbose_name_plural = 'Файлы к Статьям'
+        ordering = ['article']
 
 
 class AnnualReport(models.Model):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 18:06+0300\n"
+"POT-Creation-Date: 2024-05-22 15:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,11 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: main_app/models.py:55 templates/base.html:64 templates/index.html:38
+#: main_app/models.py:56 templates/base.html:64 templates/index.html:38
 msgid "О нас"
 msgstr "About"
 
-#: main_app/models.py:56
+#: main_app/models.py:57
 msgid "Наука"
 msgstr "Science"
 
@@ -66,7 +66,7 @@ msgstr "Commom ozone"
 msgid "Приземный озон"
 msgstr "Ground ozone"
 
-#: observations/forms.py:17 templates/observations-info.html:31
+#: observations/forms.py:17 templates/observations-info.html:40
 msgid "УФ-индекс"
 msgstr "UV-index"
 
@@ -214,9 +214,13 @@ msgstr ""
 "Providing the educational process and professional development of "
 "specialists inthe field of ozone monitoring "
 
+#: templates/article-single.html:37
+msgid "К прочтению"
+msgstr "To read"
+
 #: templates/articles.html:11
-msgid "Публикации"
-msgstr "Publications"
+msgid "Научные труды"
+msgstr "Science activity"
 
 #: templates/articles.html:16
 msgid ""
@@ -225,10 +229,10 @@ msgid ""
 "целях своевременного выявления негативных воздействий природных и "
 "антропогенных факторов. Ежегодные отчеты по мониторингу озонового слоя:"
 msgstr ""
-"Monitoring of the ozone layer is a system of observations of the "
-"state of the ozone layer, as well as assessment and forecasting of its changes in "
-"order to timely identify the negative effects of natural and "
-"anthropogenic factors. Annual ozone layer monitoring reports:"
+"Monitoring of the ozone layer is a system of observations of the state of "
+"the ozone layer, as well as assessment and forecasting of its changes in "
+"order to timely identify the negative effects of natural and anthropogenic "
+"factors. Annual ozone layer monitoring reports:"
 
 #: templates/articles.html:45 templates/base.html:135 templates/blog.html:33
 #: templates/devices.html:27 templates/index.html:156 templates/index.html:208
@@ -407,65 +411,102 @@ msgstr "Science news"
 msgid "Наши приборы"
 msgstr "Devices"
 
-#: templates/observations-download.html:15
+#: templates/observations-download.html:46
 msgid "Загрузить данные наблюдений:"
 msgstr "Download observation data"
 
-#: templates/observations-download.html:19
+#: templates/observations-download.html:50
 msgid "Загрузить"
 msgstr "Download"
 
-#: templates/observations-download.html:27 templates/observations-info.html:15
-#: templates/observations-info.html:52
+#: templates/observations-info.html:15
 msgid ""
 "Данные мониторинга общего содержания озона служат экспериментальной базой "
-"для оценки состояния озонового слоя и его трансформации в результате "
-"антропогенного воздействия и естественных процессов. Они используются для "
-"изучения степени влияния этих изменений на климат в глобальном и "
-"региональном масштабах, а также для прогноза изменения уровней и доз "
-"биологически активного солнечного ультрафиолетового излучения у поверхности "
-"Земли. Измерения озона проводится в 3 трёх точках Беларуси: Минск (ННИЦ МО "
-"БГУ), Гомель (Гомельский государственный университет им. Ф. Скорины.) и "
-"Нарочь (Нарочанская биологическая станция имени Г.Г. Винберга).Измерения "
-"ультрафиолетового индекса проводятся на Минской озонометрической станции, "
-"которая расположена в ННИЦ МО БГУ. Обновление показаний производится "
-"еженедельно. Ниже вы можете ознакомиться с ежегодными отчётами по "
-"наблюдениям."
+"для оценки состояния озонового слоя"
 msgstr ""
-"The monitoring data of common ozone is a experimental base for assessing the "
-"state of the ozone layer and its transformation as a result of anthropogenic "
-"impact and natural processes. They are used to study the degree of influence "
-"of these changes on the climate on a global and regional scale, as well as "
-"to predict changes in levels and doses of biologically active "
-"solarultraviolet radiation at the Earth surface. Ozone measurements are "
-"carried out in three 3 points of Belarus: Minsk (NOMREC BSU), Gomel (Gomel "
-"State University named after F. Skaryna.) and Naroch (Naroch biological "
-"station named after G.G. Vinberg). Observations of the ultraviolet index are "
-"measured in the NOMREC BSU station, which is located in the Research "
-"Institute of the BSU MO. Readings are updated weekly. Below you can find the "
-"annual reports on observations. On the right, you can download measurements "
-"of total ozone, ground-level ozone and UV index. The start date and end date "
-"fields are required!"
+"The monitoring data of the total ozone content serves as an experimental "
+"base for assessing the state of the ozone layer"
 
-#: templates/observations-info.html:28
+#: templates/observations-info.html:16
+msgid ""
+"и его трансформации в результате антропогенного воздействия и естественных "
+"процессов"
+msgstr ""
+"and its transformation as a result of anthropogenic impact and natural "
+"processes"
+
+#: templates/observations-info.html:17
+msgid ""
+"Они используются для изучения степени влияния этих изменений на климат в "
+"глобальном и региональном масштабах, "
+msgstr ""
+"They are used to study the extent to which these changes affect the climate "
+"on a global and regional scale,"
+
+#: templates/observations-info.html:18
+msgid ""
+"а также для прогноза изменения уровней и доз биологически активного "
+"солнечного ультрафиолетового излучения у поверхности Земли."
+msgstr ""
+"as well as to predict changes in levels and doses of biologically active "
+"solar ultraviolet radiation near the Earth's surface."
+
+#: templates/observations-info.html:19
+msgid "Измерения проводится в 3 трёх точках Беларуси в локальный полдень:"
+msgstr "Measurements are carried out in 3 three points of Belarus at local noon:"
+
+#: templates/observations-info.html:37
 msgid "Дата"
 msgstr "Date"
 
-#: templates/observations-info.html:29
-msgid "ПСО, ppb"
-msgstr "ground ozone, ppb"
-
-#: templates/observations-info.html:30
+#: templates/observations-info.html:38
 msgid "ОСО, ед. Добсона"
-msgstr "common ozone, Dobson units"
+msgstr "Common ozone, Dobson units"
 
-#: templates/observations-info.html:32
+#: templates/observations-info.html:39
+msgid "ПСО, ppb"
+msgstr "Surface ozone, ppb"
+
+#: templates/observations-info.html:41
 msgid "УФ макс."
 msgstr "UV-max"
 
 #: templates/search.html:12
 msgid "Результаты поиска"
 msgstr "Search results"
+
+#~ msgid "Публикации"
+#~ msgstr "Publications"
+
+#~ msgid ""
+#~ "Данные мониторинга общего содержания озона служат экспериментальной базой "
+#~ "для оценки состояния озонового слоя и его трансформации в результате "
+#~ "антропогенного воздействия и естественных процессов. Они используются для "
+#~ "изучения степени влияния этих изменений на климат в глобальном и "
+#~ "региональном масштабах, а также для прогноза изменения уровней и доз "
+#~ "биологически активного солнечного ультрафиолетового излучения у "
+#~ "поверхности Земли. Измерения озона проводится в 3 трёх точках Беларуси: "
+#~ "Минск (ННИЦ МО БГУ), Гомель (Гомельский государственный университет им. "
+#~ "Ф. Скорины.) и Нарочь (Нарочанская биологическая станция имени Г.Г. "
+#~ "Винберга).Измерения ультрафиолетового индекса проводятся на Минской "
+#~ "озонометрической станции, которая расположена в ННИЦ МО БГУ. Обновление "
+#~ "показаний производится еженедельно. Ниже вы можете ознакомиться с "
+#~ "ежегодными отчётами по наблюдениям."
+#~ msgstr ""
+#~ "The monitoring data of common ozone is a experimental base for assessing "
+#~ "the state of the ozone layer and its transformation as a result of "
+#~ "anthropogenic impact and natural processes. They are used to study the "
+#~ "degree of influence of these changes on the climate on a global and "
+#~ "regional scale, as well as to predict changes in levels and doses of "
+#~ "biologically active solarultraviolet radiation at the Earth surface. "
+#~ "Ozone measurements are carried out in three 3 points of Belarus: Minsk "
+#~ "(NOMREC BSU), Gomel (Gomel State University named after F. Skaryna.) and "
+#~ "Naroch (Naroch biological station named after G.G. Vinberg). Observations "
+#~ "of the ultraviolet index are measured in the NOMREC BSU station, which is "
+#~ "located in the Research Institute of the BSU MO. Readings are updated "
+#~ "weekly. Below you can find the annual reports on observations. On the "
+#~ "right, you can download measurements of total ozone, ground-level ozone "
+#~ "and UV index. The start date and end date fields are required!"
 
 #~ msgid "Статьи"
 #~ msgstr "Articles"
@@ -475,9 +516,6 @@ msgstr "Search results"
 
 #~ msgid "Архив данных"
 #~ msgstr "Data archive"
-
-#~ msgid "Научные новости"
-#~ msgstr "Last news"
 
 #~ msgid ""
 #~ "\"Национальный научно-исследовательский центр мониторинга озоносферы\""

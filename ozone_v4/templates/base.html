@@ -173,35 +173,13 @@
                         </div>
                         <div class="col-lg-4 col-md-6 footer-contact">
                             <h4>{% trans 'Ссылки' %}</h4>
-                            <ul class="footer-list">
-                                <li class="footer-link">
-                                    <a href="https://president.gov.by/en" target="_blank">
-                                        {% trans 'Интернет-портал Президента Республики Беларусь' %}
-                                    </a>
-                                </li>
-                                <li class="footer-link">
-                                    <a href="https://edu.gov.by/" target="_blank">
-                                        {% trans 'Министерство образования Республики Беларусь' %}
-                                    </a>
-                                </li>
-                                <li class="footer-link">
-                                    <a href="https://pravo.by/" target="_blank">
-                                        {% trans 'Национальный правовой портал' %}
-                                    </a>
-                                </li>
-                                <li class="footer-link">
-                                    <a href="https://www.elib.bsu.by/" target="_blank">
-                                        {% trans 'Электронная библиотека БГУ' %}
-                                    </a>
-                                </li>
-                                <hr>
-                                <li class="footer-link">
-                                    <a href="{% url 'cookies-page-url' %}" target="_blank">
-                                        {% trans 'Политика cookies' %}
-                                    </a>
-                                </li>
 
-                            </ul>
+                            <div class="footer-link">
+                                <a href="{% url 'cookies-page-url' %}" target="_blank">
+                                    {% trans 'Политика cookies' %}
+                                </a>
+                            </div>
+
                         </div>
 
                     </div>
