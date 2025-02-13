@@ -116,7 +116,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to top, rgba(30, 67, 86, 0.3), rgba(47, 78, 94, 0.4)), url("../img/main_page/1_hero/gov.jpg") center top no-repeat;  background-position: center;
+  background: linear-gradient(to top, rgba(30, 67, 86, 0.3), rgba(47, 78, 94, 0.4)), url("../img/main_page/1_hero/atm2.jpg") center top no-repeat;  background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
