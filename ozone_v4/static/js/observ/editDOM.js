@@ -9,7 +9,11 @@ activeNavPage.classList.add('active')
 function colorByValues(cell) {
    const intCell = parseInt(cell.innerHTML)
 
-   if (intCell < 5){
+   if (isNaN(intCell)) {
+       return; 
+   }
+
+   if (intCell < 5) {
        cell.classList.add('observ-cell_green')
 
    } else if (intCell >= 5 && intCell < 7) {
