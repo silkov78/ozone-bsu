@@ -14,19 +14,19 @@ class Observations(models.Model):
     def weekday(self):
         return self.date.strftime("%A")
 
-    common_ozone_minsk = models.FloatField(
+    total_ozone_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='ОСО Минск'
     )
 
-    uvi_minsk = models.FloatField(
+    total_uvi_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Минск'
     )
 
-    uvi_max_minsk = models.FloatField(
+    max_uvi_minsk = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Минск'
@@ -38,37 +38,37 @@ class Observations(models.Model):
         verbose_name='ПСО Минск'
     )
 
-    common_ozone_homel = models.FloatField(
+    total_ozone_homel = models.FloatField(
         null=True,
         blank=True,
         verbose_name='ОСО Гомель'
     )
 
-    uvi_homel = models.FloatField(
+    total_uvi_homel = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Гомель'
     )
 
-    uvi_max_homel = models.FloatField(
+    max_uvi_homel = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Гомель'
     )
 
-    common_ozone_naroch = models.FloatField(
+    total_ozone_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='ОСО Нарочь'
     )
 
-    uvi_naroch = models.FloatField(
+    total_uvi_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-индекс Нарочь'
     )
 
-    uvi_max_naroch = models.FloatField(
+    max_uvi_naroch = models.FloatField(
         null=True,
         blank=True,
         verbose_name='УФ-макс Нарочь'

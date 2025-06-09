@@ -17,8 +17,8 @@ class ObservationsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_classes = [ObservationsResource]
     list_display = [
         'date',
-        'common_ozone_minsk',
-        'uvi_minsk',
-        'uvi_max_minsk',
+        'total_ozone_minsk',
+        'total_uvi_minsk',
+        'max_uvi_minsk',
         'surface_ozone_minsk'
     ]
