@@ -12,10 +12,10 @@ class ObservationsForm(forms.Form):
 
     PARAMETERS = (
         ("", _("Все параметры")),
-        ("common_ozone", _("Общий озон")),
-        ("ground_ozone", _("Приземный озон")),
-        ("uf_index", _("УФ-индекс")),
-        ("uf_max", _("УФ-макс")),
+        ("total_ozone", _("Общий озон")),
+        ("surface_ozone", _("Приземный озон")),
+        ("total_uvi", _("УФ-индекс")),
+        ("max_uvi", _("УФ-макс")),
     )
 
     parameter = forms.ChoiceField(
