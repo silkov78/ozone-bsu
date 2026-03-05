@@ -2455,13 +2455,26 @@ section {
 }
 
 .chart-controls {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 6px;
+  width: 100%; /* Гарантирует, что контейнер занимает всю ширину */
 }
 
+/* Для мобильных устройств - когда кнопки не помещаются */
+@media (max-width: 768px) {
+  .chart-controls {
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch !important;
+  }
+  
+  .chart-controls .btn-group {
+      width: 100%;
+      display: flex;
+  }
+  
+  .chart-controls .btn-group .btn {
+      flex: 1; /* Кнопки равномерно распределяются по ширине */
+  }
+}
 .range-btn {
   border: none;
   padding: 6px 12px;
@@ -2478,7 +2491,28 @@ section {
 }
 
 .range-btn.active {
-  background: #2b7cff;
+  background: rgba(30, 67, 86, 0.56);
+  color: white;
+  box-shadow: 0 3px 8px rgba(43,124,255,0.3);
+}
+
+.metric-btn {
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  background: #f1f3f5;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metric-btn:hover {
+  background: #e2e6ea;
+}
+
+.metric-btn.active {
+  background: rgba(30, 67, 86, 0.56);
   color: white;
   box-shadow: 0 3px 8px rgba(43,124,255,0.3);
 }

@@ -30,47 +30,45 @@
 			</div>
             <div class="annual-observ row  justify-content-betweeen mb-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="650">
 
-				<div class="col-12 col-lg-8">
+				<div class="col-12">
 
 					<div class="chart-container">
-
-						<div class="chart-controls d-flex flex-wrap gap-2 align-items-center mb-2">
-							<div class="btn-group" role="group" aria-label="{% trans 'Измерение' %}">
+						<!-- График -->
+						<canvas id="ozoneChart" data-endpoint="{% url 'observ-chart-data' %}"></canvas>
+					
+						<!-- Кнопки под графиком -->
+						<div class="chart-controls d-flex flex-wrap gap-2 align-items-center mt-3 justify-content-center">
+							<div class="btn-group" role="group" aria-label="Измерение">
 								<button type="button" data-metric="total_ozone" class="btn btn-outline-primary metric-btn active">
-									{% trans 'ОСО' %}
+									ОСО
 								</button>
 								<button type="button" data-metric="surface_ozone" class="btn btn-outline-primary metric-btn">
-									{% trans 'ПСО' %}
+									ПСО
 								</button>
 								<button type="button" data-metric="uvi" class="btn btn-outline-primary metric-btn">
-									{% trans 'УФ индекс' %}
+									УФ индекс
 								</button>
 								<button type="button" data-metric="uvi_max" class="btn btn-outline-primary metric-btn">
-									{% trans 'УФ макс' %}
+									УФ макс
 								</button>
 							</div>
-
-							<div class="btn-group ms-auto" role="group" aria-label="{% trans 'Диапазон' %}">
+					
+							<div class="btn-group ms-3" role="group" aria-label="Диапазон">
 								<button type="button" data-range="week" class="btn btn-outline-secondary range-btn active">
-									{% trans 'Неделя' %}
+									Неделя
 								</button>
 								<button type="button" data-range="month" class="btn btn-outline-secondary range-btn">
-									{% trans 'Месяц' %}
+									Месяц
 								</button>
 								<button type="button" data-range="year" class="btn btn-outline-secondary range-btn">
-									{% trans 'Год' %}
+									Год
 								</button>
 								<button type="button" data-range="all" class="btn btn-outline-secondary range-btn">
-									{% trans 'Всё время' %}
+									Всё время
 								</button>
 							</div>
 						</div>
-					
-						<canvas id="ozoneChart" data-endpoint="{% url 'observ-chart-data' %}">
-						</canvas>
-					
 					</div>
-				</div>
 
             </div>
         </div>

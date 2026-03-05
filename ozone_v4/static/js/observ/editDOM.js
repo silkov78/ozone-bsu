@@ -42,13 +42,41 @@ let ozoneChart = new Chart(ctx, {
             }
         },
         plugins: {
-            legend: { display: true },
+            legend: { 
+                display: true,
+                font: {
+                    size: 16,        // Увеличен шрифт легенды
+                },
+            },
+            title: {
+                display: true,
+                text: 'Измерения по Минску',
+                padding: {
+                    bottom: 10,
+                },
+                font: {
+                    size: 24
+                },
+            },
         },
         scales: {
             x: {
-                ticks: { maxRotation: 0, autoSkip: true },
+                ticks: { 
+                    font: {
+                        size: 13
+                    },
+                    maxRotation: 45,        // Увеличил поворот
+                    autoSkip: true,          // Автоматически пропускать подписи
+                    maxTicksLimit: 15,       // Максимальное количество подписей
+                    autoSkipPadding: 10,      // Отступ между подписями
+                 },
             },
             y: {
+                ticks: {
+                    font: {
+                        size: 13
+                    },
+                },
                 beginAtZero: false,
             },
         },
