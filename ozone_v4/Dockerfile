@@ -9,7 +9,7 @@ RUN apk add gettext
 #COPY . .
 
 CMD echo 'Start Django:' \
-    && sleep 15 \
+    && sleep 10 \
     && python manage.py makemigrations \
     && python manage.py migrate \
 #    && python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin').exists() or User.objects.create_superuser('admin', '', 'ozone')" \
