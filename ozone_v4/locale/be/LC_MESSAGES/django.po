@@ -289,8 +289,8 @@ msgid "г. Минск, ул. Курчатова 7, к. 907"
 msgstr "г. Мінск, вул. Курчатова 7, к. 907"
 
 #: templates/base.html:148
-msgid "220064, Республика Беларусь"
-msgstr "220064, Рэспубліка Беларусь"
+msgid "220045, Республика Беларусь"
+msgstr "220045, Рэспубліка Беларусь"
 
 #: templates/base.html:149 templates/base.html:150 templates/base.html:168
 msgid "Телефон"
