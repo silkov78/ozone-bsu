@@ -30,19 +30,27 @@ def observations_chart_data(request):
 
     qs = Observations.objects.all()
 
-    if range_type == "week":
-        qs = qs.filter(date__gte=now() - timedelta(days=7))
+    last_observation = qs.order_by("-date").first()
 
-    elif range_type == "month":
-        qs = qs.filter(date__gte=now() - timedelta(days=30))
+    if not last_observation:
+        return JsonResponse({"error": "No observations found"}, status=404)
 
-    elif range_type == "year":
-        qs = qs.filter(date__gte=now() - timedelta(days=365))
+    observations_map = {
+        "week": qs.filter(
+            date__gte=last_observation.date - timedelta(days=7)
+        ),
+        "month": qs.filter(
+            date__gte=last_observation.date - timedelta(days=30)
+        ),
+        "year": qs.filter(
+            date__gte=last_observation.date - timedelta(days=365)
+        ),
+        "all": qs,
+    }
 
-    elif range_type == "all":
-        pass
-
-    qs = qs.order_by("date")
+    qs = observations_map.get(
+        range_type, observations_map["week"]
+    ).order_by("date")
 
     data = {
         "labels": [o.date.strftime("%Y-%m-%d") for o in qs],
