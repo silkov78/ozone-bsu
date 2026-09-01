@@ -4,12 +4,15 @@ services:
     container_name: ozone_postgres_dev
     env_file:
       - ./ozone_v4/.env.dev
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
   django:
     build:
       context: ./ozone_v4
+      dockerfile: Dockerfile.dev
     container_name: ozone_django_app_dev
     volumes:
       - ./ozone_v4/:/ozone
@@ -36,5 +39,6 @@ services:
       - django
 
 volumes:
+  postgres_data_dev:
   media_data_dev:
   static_data:
