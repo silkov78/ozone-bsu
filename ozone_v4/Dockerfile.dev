@@ -1,0 +1,19 @@
+FROM python:3.12-alpine
+
+WORKDIR /ozone
+
+COPY ./local_certs/ /usr/local/share/local_certs/
+
+RUN apk add --no-cache ca-certificates postgresql-client gettext \
+  && find /usr/local/share/local_certs -name '*.pem' -exec cp {} /usr/local/share/ca-certificates/ \; \
+  && update-ca-certificates
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+CMD echo 'Waiting for postgres...' \
+    && until pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -q; do sleep 1; done \
+    && python manage.py makemigrations \
+    && python manage.py migrate \
+    && python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin').exists() or User.objects.create_superuser('admin', '', 'ozone')" \
+    && python manage.py runserver 0.0.0.0:8000

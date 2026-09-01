@@ -18,7 +18,7 @@
                         &nbsp
 
                         {% for report in annual_reports %}
-                            <a href="url 'report.report_file.url' ">{{report.year}}</a>
+                            <a href="{{ report.report_file.url }}">{{report.year}}</a>
                             &nbsp
                         {% endfor %}
                     </p>
