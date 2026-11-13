@@ -1,7 +1,8 @@
 from django.test import TestCase
 from datetime import datetime
 
-from observations.models import Observations, AnnualReport
+from observations.models import Observations
+from main_app.models import AnnualReport
 
 
 class ObservationsTest(TestCase):
@@ -11,8 +12,8 @@ class ObservationsTest(TestCase):
 
         new_observ = Observations.objects.create(
             date=date_example,
-            common_ozone_minsk=22.0,
-            ground_ozone_minsk=31.1,
+            total_ozone_minsk=22.0,
+            surface_ozone_minsk=31.1,
         )
 
         self.assertEqual(new_observ.__str__(), f'{new_observ.date}')
