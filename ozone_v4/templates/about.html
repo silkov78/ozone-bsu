@@ -21,7 +21,7 @@
 
 <section id="units"><div class="container">
   <h2>{% trans "Подразделения" %}</h2>
-  <div class="units">{% for d in departments %}<div class="unit"><span>{{ forloop.counter|stringformat:"02d" }}</span>{% trans d %}</div>{% endfor %}</div>
+  <div class="units">{% for d in departments %}<div class="unit"><span>{{ forloop.counter|stringformat:"02d" }}</span>{{ d }}</div>{% endfor %}</div>
 </div></section>
 
 <section id="team" class="section-soft"><div class="container">
@@ -58,7 +58,7 @@
   <h2>{% trans "Годовые отчёты" %}</h2>
   <div class="doc-list">
     {% for r in annual_reports %}
-    <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% trans "Отчёт за" %} {{ r.year }} {% trans "год" %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
+    <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% blocktrans with year=r.year %}Отчёт за {{ year }} год{% endblocktrans %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
     {% endfor %}
   </div>
 </div></section>

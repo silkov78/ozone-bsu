@@ -50,3 +50,40 @@
     document.querySelector(".burger")?.addEventListener("click", () => document.getElementById("nav").classList.toggle("open"));
   });
 })();
+
+// ===== Версия для слабовидящих =====
+(function () {
+  const KEY = "a11y", h = document.documentElement;
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
+  const save = s => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} };
+  function apply(s) {
+    h.classList.remove("a11y", "a11y-bw", "a11y-wb", "a11y-noimg");
+    if (s.on) {
+      h.classList.add("a11y", "a11y-" + (s.scheme || "bw"));
+      if (s.img === "off") h.classList.add("a11y-noimg");
+      h.style.setProperty("--a11y-zoom", s.size || 1.25);
+    } else h.style.removeProperty("--a11y-zoom");
+    const panel = document.getElementById("a11y-panel");
+    if (!panel) return;
+    panel.hidden = !s.on;
+    panel.querySelectorAll("[data-size]").forEach(b => b.classList.toggle("on", +b.dataset.size === +(s.size || 1.25)));
+    panel.querySelectorAll("[data-scheme]").forEach(b => b.classList.toggle("on", b.dataset.scheme === (s.scheme || "bw")));
+    panel.querySelectorAll("[data-img]").forEach(b => b.classList.toggle("on", b.dataset.img === (s.img || "on")));
+    document.getElementById("a11y-toggle")?.setAttribute("aria-pressed", s.on ? "true" : "false");
+    window.dispatchEvent(new Event("resize")); // графики пересчитают размер
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    let s = load();
+    apply(s);
+    const set = patch => { s = { ...s, ...patch }; save(s); apply(s); };
+    document.getElementById("a11y-toggle")?.addEventListener("click", () => set({ on: !s.on }));
+    const panel = document.getElementById("a11y-panel");
+    panel?.addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (b.dataset.size) set({ size: +b.dataset.size });
+      else if (b.dataset.scheme) set({ scheme: b.dataset.scheme });
+      else if (b.dataset.img) set({ img: b.dataset.img });
+      else if ("off" in b.dataset) set({ on: false });
+    });
+  });
+})();

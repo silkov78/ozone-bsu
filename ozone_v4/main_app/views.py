@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
+from django.utils.translation import gettext_lazy as _
 
 from observations.views import observations_json
 from staff.models import Worker
@@ -8,11 +9,11 @@ from .models import News, Article, Devices, Document, AnnualReport
 
 # Подразделения — пока просто перечень (сущности в БД нет)
 DEPARTMENTS = [
-    "Лаборатория физики атмосферы",
-    "Лаборатория биофотоники",
-    "Лаборатория оптических средств измерений",
-    "Информационно-аналитический центр",
-    "Озонометрическая станция № 354 GAW",
+    _("Лаборатория физики атмосферы"),
+    _("Лаборатория биофотоники"),
+    _("Лаборатория оптических средств измерений"),
+    _("Информационно-аналитический центр"),
+    _("Озонометрическая станция № 354 GAW"),
 ]
 
 

@@ -1,18 +1,31 @@
 {% load static i18n %}{% get_current_language as LANG %}<!doctype html>
 <html lang="{{ LANG }}">
 <head>
+  <script>
+    // версия для слабовидящих: настройки из localStorage применяются до отрисовки
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem("a11y") || "null"), h = document.documentElement;
+        if (s && s.on) {
+          h.classList.add("a11y", "a11y-" + (s.scheme || "bw"));
+          if (s.img === "off") h.classList.add("a11y-noimg");
+          h.style.setProperty("--a11y-zoom", s.size || 1.25);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% block title %}{% trans "Главная" %}{% endblock %}</title>
   <meta name="description" content="{% block description %}{% trans 'Национальный научно-исследовательский центр мониторинга озоносферы БГУ: наблюдения озонового слоя и УФ-излучения над Беларусью.' %}{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}?v=4">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-site-32.png' %}?v=4">
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}?v=6">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-site-32.png' %}?v=6">
   <link rel="apple-touch-icon" href="{% static 'img/favicon-site-180.png' %}">
   <meta name="theme-color" content="#1e4356">
-  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=4">
-  <script src="{% static 'js/site.js' %}?v=4"></script>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=6">
+  <script src="{% static 'js/site.js' %}?v=6"></script>
   {% block head %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
@@ -33,8 +46,21 @@
       <button type="submit" name="language" value="{{ code }}" class="{% if code == LANG %}active{% endif %}" title="{{ name }}">{{ code|upper }}</button>
     {% endfor %}
   </form>
+  <button class="a11y-btn" type="button" id="a11y-toggle" title="{% trans 'Версия для слабовидящих' %}" aria-label="{% trans 'Версия для слабовидящих' %}">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+  </button>
   <button class="burger" type="button" aria-label="{% trans 'Меню' %}">☰</button>
-</div></header>
+</div>
+<div class="a11y-panel" id="a11y-panel" hidden><div class="container">
+  <div class="a11y-group"><span>{% trans "Размер шрифта" %}:</span>
+    <button type="button" data-size="1">A</button><button type="button" data-size="1.25">A+</button><button type="button" data-size="1.5">A++</button></div>
+  <div class="a11y-group"><span>{% trans "Цвет" %}:</span>
+    <button type="button" data-scheme="bw" class="sw-bw" title="{% trans 'Чёрным по белому' %}">A</button><button type="button" data-scheme="wb" class="sw-wb" title="{% trans 'Белым по чёрному' %}">A</button></div>
+  <div class="a11y-group"><span>{% trans "Изображения" %}:</span>
+    <button type="button" data-img="on">{% trans "Вкл" %}</button><button type="button" data-img="off">{% trans "Выкл" %}</button></div>
+  <button type="button" class="a11y-off" data-off>{% trans "Обычная версия" %}</button>
+</div></div>
+</header>
 {% endwith %}
 
 {% block content %}{% endblock %}
