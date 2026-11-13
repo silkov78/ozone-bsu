@@ -27,7 +27,7 @@ class SiteViewsTest(TestCase):
     def test_pages_ok(self):
         for name, args in [
             ('main-page-url', []), ('news-list-url', []), ('news-item-url', [self.news.pk]),
-            ('about-page-url', []), ('observations-url', []), ('documents-page-url', []),
+            ('about-page-url', []), ('science-page-url', []), ('observations-url', []), ('documents-page-url', []),
             ('search-page-url', []), ('cookies-page-url', []), ('workers-detail-url', [self.worker.pk]),
             ('devices-item-url', [self.device.pk]), ('articles-item-url', [self.article.pk]),
         ]:
@@ -48,7 +48,7 @@ class SiteViewsTest(TestCase):
         for old, new in [
             ('/blog/', '/news/'), (f'/blog/{self.news.pk}/', f'/news/{self.news.pk}/'),
             ('/observations/info/', '/observations/'), ('/observations/download/', '/observations/'),
-            ('/staff/', '/about/#team'),
+            ('/staff/', '/about/#team'), ('/articles/', '/science/#research'), ('/devices/', '/science/#devices'),
         ]:
             with self.subTest(old=old):
                 self.assertRedirects(self.client.get(old), new, status_code=301, fetch_redirect_response=False)

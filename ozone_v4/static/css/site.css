@@ -524,3 +524,50 @@ html.a11y-noimg img,html.a11y-noimg .thumb,html.a11y-noimg .cover,html.a11y-noim
 .policy th,.policy td{text-align:left;white-space:normal;vertical-align:top}
 .policy code{font-size:14px;background:var(--bg-soft);padding:2px 6px;border-radius:6px}
 .policy h1{margin-bottom:24px}
+
+/* ===== Карта станций (SVG) ===== */
+.by-map{width:100%;height:auto;display:block}
+.by-shape{fill:var(--bg-soft);stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.map-pt{cursor:pointer;outline:none}
+.map-pt .dot{fill:var(--accent-2);stroke:#fff;stroke-width:3}
+.map-pt .ring{fill:var(--accent-2);opacity:0;transition:opacity .2s}
+.map-pt text{font:700 22px var(--font);fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:5px}
+.map-pt:hover .ring,.map-pt:focus-visible .ring{opacity:.18}
+.map-pt.on .ring{opacity:.25}
+.map-pt.on .dot{fill:var(--ink)}
+.mini-map{padding-top:4px}
+.mini-map .map-pt text{font-size:26px}
+/* «О центре» → контакты */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.contact-list{display:grid;gap:14px;margin:8px 0 20px}
+.contact-list span{display:block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.contact-list b{font-weight:600;font-size:17px}
+.map-links{display:flex;gap:10px;flex-wrap:wrap}
+.stations-title{margin:28px 0 10px;font-size:17px}
+.stations-list{list-style:none;padding:0;display:grid;gap:8px;font-size:15px}
+.stations-list small{display:block;color:var(--muted);font-size:13px}
+.map-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+@media(max-width:860px){.contacts-grid{grid-template-columns:1fr}}
+/* «Наука» → публикации по годам */
+.pub-year{border-top:1px solid var(--line);padding:6px 0}
+.pub-year summary{cursor:pointer;padding:10px 0;font-size:17px;list-style:none}
+.pub-year summary::before{content:"+ ";color:var(--accent-2);font-weight:800}
+.pub-year[open] summary::before{content:"− "}
+.pub-author{display:block;margin-top:4px;color:var(--muted)}
+/* слабовидящие: карта контрастная */
+html.a11y-bw .by-shape{fill:#fff;stroke:#000}
+html.a11y-bw .map-pt .dot{fill:#000}
+html.a11y-wb .by-shape{fill:#000;stroke:#fff}
+html.a11y-wb .map-pt .dot{fill:#fff;stroke:#000}
+html.a11y-wb .map-pt text{fill:#fff;stroke:#000}
+.mini-map .by-map{max-height:170px;width:100%;margin:0 auto}
+.mini-map .map-pt .dot{r:16px;stroke-width:6}
+.mini-map .map-pt .ring{r:32px}
+.mini-map .map-pt text{font-size:46px;stroke-width:9px}
+.mini-map .by-shape{stroke-width:4}
+.map-card .map-pt .dot{r:9px}
+
+.info-grid.with-map{grid-template-columns:repeat(4,1fr) minmax(200px,.85fr)}
+.map-mini-card{display:flex;flex-direction:column;padding-bottom:12px!important}
+@media(max-width:1100px){.info-grid.with-map{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.info-grid.with-map{grid-template-columns:1fr 1fr}}

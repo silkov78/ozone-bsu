@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 09:35+0300\n"
+"POT-Creation-Date: 2026-11-13 09:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,27 +36,28 @@ msgstr "Англійская"
 msgid "О нас"
 msgstr "Пра нас"
 
-#: main_app/models.py:66
+#: main_app/models.py:66 templates/article.html:6 templates/base.html:38
+#: templates/science.html:3
 msgid "Наука"
 msgstr "Навука"
 
-#: main_app/views.py:12
+#: main_app/views.py:14
 msgid "Лаборатория физики атмосферы"
 msgstr "Лабараторыя фізікі атмасферы"
 
-#: main_app/views.py:13
+#: main_app/views.py:15
 msgid "Лаборатория биофотоники"
 msgstr "Лабараторыя біяфатонікі"
 
-#: main_app/views.py:14
+#: main_app/views.py:16
 msgid "Лаборатория оптических средств измерений"
 msgstr "Лабараторыя аптычных сродкаў вымярэнняў"
 
-#: main_app/views.py:15
+#: main_app/views.py:17
 msgid "Информационно-аналитический центр"
 msgstr "Інфармацыйна-аналітычны цэнтр"
 
-#: main_app/views.py:16
+#: main_app/views.py:18
 msgid "Озонометрическая станция № 354 GAW"
 msgstr "Азонаметрычная станцыя № 354 GAW"
 
@@ -64,18 +65,22 @@ msgstr "Азонаметрычная станцыя № 354 GAW"
 msgid "Все пункты"
 msgstr "Усе пункты"
 
-#: observations/forms.py:8 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:8 templates/about.html:52 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:4 templates/partials/belarus_map.html:6
 msgid "Минск"
 msgstr "Мінск"
 
-#: observations/forms.py:9 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:9 templates/about.html:53 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:8 templates/partials/belarus_map.html:10
 msgid "Гомель"
 msgstr "Гомель"
 
-#: observations/forms.py:10 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:10 templates/about.html:54 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:12
+#: templates/partials/belarus_map.html:14
 msgid "Нарочь"
 msgstr "Нарач"
 
@@ -92,14 +97,14 @@ msgid "Приземный озон"
 msgstr "Прыземны азон"
 
 #: observations/forms.py:17 templates/index.html:11 templates/index.html:43
-#: templates/observations.html:11 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:11 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "УФ-индекс"
 msgstr "УФ-індэкс"
 
 #: observations/forms.py:18 templates/index.html:11 templates/index.html:44
-#: templates/observations.html:12 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:12 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "УФ-макс"
 msgstr "УФ-макс"
 
@@ -119,7 +124,7 @@ msgstr "Пачатковая дата:"
 msgid "Конечная дата:"
 msgstr "Канчатковая дата:"
 
-#: templates/about.html:3 templates/about.html:12 templates/base.html:38
+#: templates/about.html:3 templates/about.html:12 templates/base.html:39
 msgid "О центре"
 msgstr "Пра цэнтр"
 
@@ -135,27 +140,16 @@ msgstr "Падраздзяленні"
 msgid "Сотрудники"
 msgstr "Супрацоўнікі"
 
-#: templates/about.html:8 templates/about.html:39 templates/device.html:6
-msgid "Приборная база"
-msgstr "Прыборная база"
-
-#: templates/about.html:8 templates/about.html:49 templates/article.html:6
-msgid "Научная деятельность"
-msgstr "Навуковая дзейнасць"
-
-#: templates/about.html:8 templates/about.html:58
-msgid "Годовые отчёты"
-msgstr "Гадавыя справаздачы"
+#: templates/about.html:8 templates/about.html:40 templates/base.html:81
+msgid "Контакты"
+msgstr "Кантакты"
 
 #: templates/about.html:14
 msgid ""
 "ННИЦ МО БГУ создан 14 июня 1997 года как учреждение Белорусского "
 "государственного университета (постановление Совета Министров Республики "
 "Беларусь от 14.05.97 №484)."
-msgstr ""
-"ННДЦ МА БДУ створаны 14 чэрвеня 1997 года як установа Беларускага "
-"дзяржаўнага ўніверсітэта (пастанова Савета Міністраў Рэспублікі Беларусь ад "
-"14.05.97 №484)."
+msgstr "ННДЦ МА БДУ створаны 14 чэрвеня 1997 года як установа Беларускага дзяржаўнага ўніверсітэта (пастанова Савета Міністраў Рэспублікі Беларусь ад 14.05.97 №484)."
 
 #: templates/about.html:15
 msgid ""
@@ -163,19 +157,13 @@ msgid ""
 "излучения и приземного озона на территории Беларуси в рамках обязательств по "
 "Венской конвенции об охране озонового слоя и ведёт исследования по физике "
 "атмосферы."
-msgstr ""
-"Цэнтр адказвае за назіранне азонавага слоя, прыземнага ўльтрафіялетавага "
-"выпраменьвання і прыземнага азону на тэрыторыі Беларусі ў рамках "
-"абавязацельстваў па Венскай канвенцыі аб ахове азонавага слоя і праводзіць "
-"даследаванні па фізіцы атмасферы."
+msgstr "Цэнтр адказвае за назіранне азонавага слоя, прыземнага ўльтрафіялетавага выпраменьвання і прыземнага азону на тэрыторыі Беларусі ў рамках абавязацельстваў па Венскай канвенцыі аб ахове азонавага слоя і праводзіць даследаванні па фізіцы атмасферы."
 
 #: templates/about.html:16
 msgid ""
 "В международных организациях, в том числе во Всемирном центре данных по "
 "озону и УФ-радиации (WOUDC), центр известен как <b>NOMREC</b> (BSU-NOMREC)."
-msgstr ""
-"У міжнародных арганізацыях, у тым ліку ў Сусветным цэнтры даных па азоне і "
-"УФ-радыяцыі (WOUDC), цэнтр вядомы як <b>NOMREC</b> (BSU-NOMREC)."
+msgstr "У міжнародных арганізацыях, у тым ліку ў Сусветным цэнтры даных па азоне і УФ-радыяцыі (WOUDC), цэнтр вядомы як <b>NOMREC</b> (BSU-NOMREC)."
 
 #: templates/about.html:18 templates/index.html:30
 msgid "год основания"
@@ -193,18 +181,45 @@ msgstr "гадоў радоў даных"
 msgid "Здание ННИЦ МО БГУ"
 msgstr "Будынак ННДЦ МА БДУ"
 
-#: templates/about.html:52
-msgid "СТ"
-msgstr "АРТ"
+#: templates/about.html:42 templates/team-member.html:16
+msgid "Адрес"
+msgstr "Адрас"
+
+#: templates/about.html:42 templates/base.html:80
+msgid "220045, г. Минск, ул. Курчатова, 7"
+msgstr "220045, г. Мінск, вул. Курчатава, 7"
+
+#: templates/about.html:43 templates/team-member.html:15
+msgid "Телефон"
+msgstr "Тэлефон"
+
+#: templates/about.html:47
+msgid "Яндекс Карты"
+msgstr "Яндэкс Карты"
+
+#: templates/about.html:48
+msgid "Google Карты"
+msgstr "Google Карты"
+
+#: templates/about.html:50
+msgid "Станции наблюдений"
+msgstr "Станцыі назіранняў"
+
+#: templates/about.html:52 templates/base.html:34
+msgid "ННИЦ МО БГУ"
+msgstr "ННДЦ МА БДУ"
+
+#: templates/about.html:52 templates/about.html:53 templates/about.html:54
+msgid "с.ш."
+msgstr "пн.ш."
+
+#: templates/about.html:52 templates/about.html:53 templates/about.html:54
+msgid "в.д."
+msgstr "у.д."
 
 #: templates/about.html:53
-msgid "Материалы готовятся"
-msgstr "Матэрыялы рыхтуюцца"
-
-#: templates/about.html:61
-#, python-format
-msgid "Отчёт за %(year)s год"
-msgstr "Справаздача за %(year)s год"
+msgid "ГГУ имени Франциска Скорины"
+msgstr "ГДУ імя Францыска Скарыны"
 
 #: templates/article.html:13
 msgid "Файлы"
@@ -218,13 +233,7 @@ msgstr "Галоўная"
 msgid ""
 "Национальный научно-исследовательский центр мониторинга озоносферы БГУ: "
 "наблюдения озонового слоя и УФ-излучения над Беларусью."
-msgstr ""
-"Нацыянальны навукова-даследчы цэнтр маніторынгу азонасферы БДУ: назіранні "
-"азонавага слоя і УФ-выпраменьвання над Беларуссю."
-
-#: templates/base.html:34
-msgid "ННИЦ МО БГУ"
-msgstr "ННДЦ МА БДУ"
+msgstr "Нацыянальны навукова-даследчы цэнтр маніторынгу азонасферы БДУ: назіранні азонавага слоя і УФ-выпраменьвання над Беларуссю."
 
 #: templates/base.html:34
 msgid "Белорусский государственный университет"
@@ -239,95 +248,87 @@ msgstr "Назіранні"
 msgid "Новости"
 msgstr "Навіны"
 
-#: templates/base.html:39 templates/documents.html:3 templates/documents.html:6
+#: templates/base.html:40 templates/documents.html:3 templates/documents.html:6
 msgid "Документы"
 msgstr "Дакументы"
 
-#: templates/base.html:48
+#: templates/base.html:49
 msgid "Версия для слабовидящих"
 msgstr "Версія для слабавідушчых"
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Меню"
 msgstr "Меню"
 
-#: templates/base.html:54
+#: templates/base.html:55
 msgid "Размер шрифта"
 msgstr "Памер шрыфту"
 
-#: templates/base.html:56
+#: templates/base.html:57
 msgid "Цвет"
 msgstr "Колер"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Чёрным по белому"
 msgstr "Чорным па белым"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Белым по чёрному"
 msgstr "Белым па чорным"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Изображения"
 msgstr "Выявы"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "Вкл"
 msgstr "Укл"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "Выкл"
 msgstr "Выкл"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Обычная версия"
 msgstr "Звычайная версія"
 
-#: templates/base.html:68
+#: templates/base.html:69
 msgid "Сайт использует только технические cookie, необходимые для его работы."
 msgstr "Сайт выкарыстоўвае толькі тэхнічныя cookie, неабходныя для яго работы."
 
-#: templates/base.html:70
+#: templates/base.html:71
 msgid "Понятно"
 msgstr "Зразумела"
 
-#: templates/base.html:71
+#: templates/base.html:72
 msgid "Подробнее"
 msgstr "Падрабязней"
 
-#: templates/base.html:77
+#: templates/base.html:78
 msgid "Национальный научно-исследовательский центр мониторинга озоносферы БГУ"
 msgstr "Нацыянальны навукова-даследчы цэнтр маніторынгу азонасферы БДУ"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Структурное подразделение"
 msgstr "Структурнае падраздзяленне"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Белорусского государственного университета"
 msgstr "Беларускага дзяржаўнага ўніверсітэта"
 
-#: templates/base.html:79
-msgid "220045, г. Минск, ул. Курчатова, 7"
-msgstr "220045, г. Мінск, вул. Курчатава, 7"
-
-#: templates/base.html:80
-msgid "Контакты"
-msgstr "Кантакты"
-
-#: templates/base.html:84
+#: templates/base.html:85
 msgid "Ссылки"
 msgstr "Спасылкі"
 
-#: templates/base.html:88 templates/cookies.html:3
+#: templates/base.html:87 templates/cookies.html:3
 msgid "Политика конфиденциальности"
 msgstr "Палітыка канфідэнцыяльнасці"
 
-#: templates/base.html:90
+#: templates/base.html:89
 msgid "ННИЦ МО БГУ · Белорусский государственный университет"
 msgstr "ННДЦ МА БДУ · Беларускі дзяржаўны ўніверсітэт"
 
-#: templates/base.html:90
+#: templates/base.html:89
 msgid "Данные доступны без регистрации"
 msgstr "Даныя даступныя без рэгістрацыі"
 
@@ -341,11 +342,7 @@ msgid ""
 "операционной системе устройства при использовании сайта. Cookie позволяют "
 "сохранить ранее выбранные настройки, чтобы не вводить их заново при переходе "
 "между страницами и следующем посещении сайта."
-msgstr ""
-"Cookie — невялікія файлы, якія захоўваюцца ў вашым браўзеры або аперацыйнай "
-"сістэме прылады пры выкарыстанні сайта. Cookie дазваляюць захаваць раней "
-"выбраныя налады, каб не ўводзіць іх зноў пры пераходзе паміж старонкамі і "
-"наступным наведванні сайта."
+msgstr "Cookie — невялікія файлы, якія захоўваюцца ў вашым браўзеры або аперацыйнай сістэме прылады пры выкарыстанні сайта. Cookie дазваляюць захаваць раней выбраныя налады, каб не ўводзіць іх зноў пры пераходзе паміж старонкамі і наступным наведванні сайта."
 
 #: templates/cookies.html:9
 msgid ""
@@ -353,11 +350,7 @@ msgid ""
 "одна из мер по защите персональных данных, принимаемых ННИЦ МО БГУ в "
 "соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите "
 "персональных данных»."
-msgstr ""
-"Палажэнне аб палітыцы ў дачыненні да апрацоўкі персанальных даных і cookie — "
-"адна з мер па абароне персанальных даных, якія прымае ННДЦ МА БДУ ў "
-"адпаведнасці з Законам Рэспублікі Беларусь ад 7 мая 2021 г. № 99-З «Аб "
-"абароне персанальных даных»."
+msgstr "Палажэнне аб палітыцы ў дачыненні да апрацоўкі персанальных даных і cookie — адна з мер па абароне персанальных даных, якія прымае ННДЦ МА БДУ ў адпаведнасці з Законам Рэспублікі Беларусь ад 7 мая 2021 г. № 99-З «Аб абароне персанальных даных»."
 
 #: templates/cookies.html:11
 msgid "Какие данные использует сайт"
@@ -369,21 +362,14 @@ msgid ""
 "информацию о действиях и сессиях пользователей. Данные наблюдений доступны "
 "без регистрации. Сайт не использует сторонние счётчики, рекламу и внешние "
 "сервисы: шрифты и скрипты загружаются с сервера центра."
-msgstr ""
-"Сайт ННДЦ МА БДУ не збірае персанальныя даныя наведвальнікаў і не захоўвае "
-"інфармацыю пра дзеянні і сесіі карыстальнікаў. Даныя назіранняў даступныя "
-"без рэгістрацыі. Сайт не выкарыстоўвае іншыя лічыльнікі, рэкламу і знешнія "
-"сэрвісы: шрыфты і скрыпты загружаюцца з сервера цэнтра."
+msgstr "Сайт ННДЦ МА БДУ не збірае персанальныя даныя наведвальнікаў і не захоўвае інфармацыю пра дзеянні і сесіі карыстальнікаў. Даныя назіранняў даступныя без рэгістрацыі. Сайт не выкарыстоўвае іншыя лічыльнікі, рэкламу і знешнія сэрвісы: шрыфты і скрыпты загружаюцца з сервера цэнтра."
 
 #: templates/cookies.html:13
 msgid ""
 "Используются только строго необходимые cookie (категория «строго "
 "обязательные» по классификации GDPR). Без них сайт не может корректно и "
 "безопасно работать, поэтому отключить их нельзя."
-msgstr ""
-"Выкарыстоўваюцца толькі строга неабходныя cookie (катэгорыя «строга "
-"абавязковыя» паводле класіфікацыі GDPR). Без іх сайт не можа карэктна і "
-"бяспечна працаваць, таму адключыць іх нельга."
+msgstr "Выкарыстоўваюцца толькі строга неабходныя cookie (катэгорыя «строга абавязковыя» паводле класіфікацыі GDPR). Без іх сайт не можа карэктна і бяспечна працаваць, таму адключыць іх нельга."
 
 #: templates/cookies.html:15
 msgid "Список cookie"
@@ -419,8 +405,7 @@ msgstr "да закрыцця браўзера"
 
 #: templates/cookies.html:21
 msgid "Вход в административную часть сайта; создаётся только у администраторов"
-msgstr ""
-"Уваход у адміністрацыйную частку сайта; ствараецца толькі ў адміністратараў"
+msgstr "Уваход у адміністрацыйную частку сайта; ствараецца толькі ў адміністратараў"
 
 #: templates/cookies.html:21
 msgid "2 недели"
@@ -436,11 +421,11 @@ msgid ""
 "ознакомились с уведомлением о cookie, и настройки версии для слабовидящих. "
 "Эти данные не передаются на сервер, их можно удалить, очистив данные сайта в "
 "настройках браузера."
-msgstr ""
-"Акрамя cookie, сайт захоўвае ў браўзеры (localStorage) адзнаку пра тое, што "
-"вы азнаёміліся з паведамленнем пра cookie, і налады версіі для "
-"слабавідушчых. Гэтыя даныя не перадаюцца на сервер, іх можна выдаліць, "
-"ачысціўшы даныя сайта ў наладах браўзера."
+msgstr "Акрамя cookie, сайт захоўвае ў браўзеры (localStorage) адзнаку пра тое, што вы азнаёміліся з паведамленнем пра cookie, і налады версіі для слабавідушчых. Гэтыя даныя не перадаюцца на сервер, іх можна выдаліць, ачысціўшы даныя сайта ў наладах браўзера."
+
+#: templates/device.html:6 templates/science.html:7 templates/science.html:25
+msgid "Приборная база"
+msgstr "Прыборная база"
 
 #: templates/device.html:12
 msgid "Технические характеристики"
@@ -458,9 +443,7 @@ msgstr "Азонавы слой і УФ-выпраменьванне над Бе
 msgid ""
 "Ежедневные наземные наблюдения общего содержания озона и УФ-индекса на трёх "
 "станциях."
-msgstr ""
-"Штодзённыя наземныя назіранні агульнага зместу азону і УФ-індэкса на трох "
-"станцыях."
+msgstr "Штодзённыя наземныя назіранні агульнага зместу азону і УФ-індэкса на трох станцыях."
 
 #: templates/index.html:12 templates/index.html:46
 msgid "дн"
@@ -489,23 +472,19 @@ msgid ""
 "университета. Ведёт мониторинг озонового слоя и ультрафиолетового излучения, "
 "разрабатывает приборы и методики измерений, участвует в международных "
 "программах."
-msgstr ""
-"ННДЦ МА — структурнае падраздзяленне Беларускага дзяржаўнага ўніверсітэта. "
-"Вядзе маніторынг азонавага слоя і ўльтрафіялетавага выпраменьвання, "
-"распрацоўвае прыборы і методыкі вымярэнняў, удзельнічае ў міжнародных "
-"праграмах."
+msgstr "ННДЦ МА — структурнае падраздзяленне Беларускага дзяржаўнага ўніверсітэта. Вядзе маніторынг азонавага слоя і ўльтрафіялетавага выпраменьвання, распрацоўвае прыборы і методыкі вымярэнняў, удзельнічае ў міжнародных праграмах."
 
 #: templates/index.html:31
 msgid "Подробнее о центре"
 msgstr "Падрабязней пра цэнтр"
 
 #: templates/index.html:43 templates/observations.html:10
-#: templates/observations.html:26 templates/observations.html:48
-#: templates/observations.html:49
+#: templates/observations.html:27 templates/observations.html:49
+#: templates/observations.html:50
 msgid "ОСО"
 msgstr "АЗА"
 
-#: templates/index.html:43 templates/observations.html:49
+#: templates/index.html:43 templates/observations.html:50
 msgid "е.Д."
 msgstr "адз.Д."
 
@@ -545,24 +524,20 @@ msgstr "Што мы вымяраем"
 msgid ""
 "Общее содержание озона в столбе атмосферы, в единицах Добсона (е.Д.). Норма "
 "для Беларуси — 300–380 е.Д."
-msgstr ""
-"Агульны змест азону ў слупе атмасферы, у адзінках Добсана (адз.Д.). Норма "
-"для Беларусі — 300–380 адз.Д."
+msgstr "Агульны змест азону ў слупе атмасферы, у адзінках Добсана (адз.Д.). Норма для Беларусі — 300–380 адз.Д."
 
 #: templates/observations.html:11
 msgid ""
 "Среднедневной индекс ультрафиолетового излучения. 0–2 низкий, 3–5 умеренный, "
 "6+ высокий."
-msgstr ""
-"Сярэднядзённы індэкс ультрафіялетавага выпраменьвання. 0–2 нізкі, 3–5 "
-"умераны, 6+ высокі."
+msgstr "Сярэднядзённы індэкс ультрафіялетавага выпраменьвання. 0–2 нізкі, 3–5 умераны, 6+ высокі."
 
 #: templates/observations.html:12
 msgid "Максимальное за день значение УФ-индекса, обычно около полудня."
 msgstr "Максімальнае за дзень значэнне УФ-індэкса, звычайна каля поўдня."
 
-#: templates/observations.html:13 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:13 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "ПСО"
 msgstr "ПА"
 
@@ -570,49 +545,104 @@ msgstr "ПА"
 msgid "Приземный озон — концентрация озона у поверхности земли (только Минск)."
 msgstr "Прыземны азон — канцэнтрацыя азону ля паверхні зямлі (толькі Мінск)."
 
-#: templates/observations.html:27
+#: templates/observations.html:14
+msgid "Станции"
+msgstr "Станцыі"
+
+#: templates/observations.html:28
 msgid "Неделя"
 msgstr "Тыдзень"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Месяц"
 msgstr "Месяц"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Год"
 msgstr "Год"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Всё время"
 msgstr "Увесь час"
 
-#: templates/observations.html:33
+#: templates/observations.html:34
 msgid "Скачать данные"
 msgstr "Спампаваць даныя"
 
-#: templates/observations.html:34
+#: templates/observations.html:35
 msgid "С"
 msgstr "З"
 
-#: templates/observations.html:34
+#: templates/observations.html:35
 msgid "По"
 msgstr "Па"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "Последние данные"
 msgstr "Апошнія даныя"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "за"
 msgstr "за"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "по"
 msgstr "па"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "Нет данных"
 msgstr "Няма даных"
+
+#: templates/partials/belarus_map.html:2
+msgid "Станции наблюдений на карте Беларуси"
+msgstr "Станцыі назіранняў на карце Беларусі"
+
+#: templates/science.html:7 templates/science.html:17
+msgid "Научные материалы"
+msgstr "Навуковыя матэрыялы"
+
+#: templates/science.html:8 templates/science.html:34
+msgid "Годовые отчёты"
+msgstr "Гадавыя справаздачы"
+
+#: templates/science.html:8 templates/team-member.html:27
+msgid "Публикации"
+msgstr "Публікацыі"
+
+#: templates/science.html:12
+msgid "Научная деятельность"
+msgstr "Навуковая дзейнасць"
+
+#: templates/science.html:13
+msgid ""
+"Исследования по физике атмосферы, разработка приборов и методик измерения "
+"озона и ультрафиолетового излучения."
+msgstr "Даследаванні па фізіцы атмасферы, распрацоўка прыбораў і методык вымярэння азону і ўльтрафіялетавага выпраменьвання."
+
+#: templates/science.html:20
+msgid "СТ"
+msgstr "АРТ"
+
+#: templates/science.html:21
+msgid "Материалы готовятся"
+msgstr "Матэрыялы рыхтуюцца"
+
+#: templates/science.html:37
+#, python-format
+msgid "Отчёт за %(year)s год"
+msgstr "Справаздача за %(year)s год"
+
+#: templates/science.html:42
+msgid "Публикации сотрудников"
+msgstr "Публікацыі супрацоўнікаў"
+
+#: templates/science.html:47 templates/team-member.html:28
+msgid "ссылка"
+msgstr "спасылка"
+
+#: templates/science.html:51
+msgid "Публикации пока не добавлены"
+msgstr "Публікацыі пакуль не дададзены"
 
 #: templates/search.html:3
 msgid "Поиск"
@@ -629,14 +659,6 @@ msgstr "Нічога не знойдзена"
 #: templates/team-member.html:6
 msgid "Все сотрудники"
 msgstr "Усе супрацоўнікі"
-
-#: templates/team-member.html:15
-msgid "Телефон"
-msgstr "Тэлефон"
-
-#: templates/team-member.html:16
-msgid "Адрес"
-msgstr "Адрас"
 
 #: templates/team-member.html:17
 msgid "Профиль"
@@ -657,14 +679,3 @@ msgstr "Кар'ера"
 #: templates/team-member.html:25
 msgid "Награды"
 msgstr "Узнагароды"
-
-#: templates/team-member.html:27
-msgid "Публикации"
-msgstr "Публікацыі"
-
-#: templates/team-member.html:28
-msgid "ссылка"
-msgstr "спасылка"
-
-#~ msgid "По вопросам обработки персональных данных обращайтесь по адресу"
-#~ msgstr "Па пытаннях апрацоўкі персанальных даных звяртайцеся па адрасе"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 09:35+0300\n"
+"POT-Creation-Date: 2026-11-13 09:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,28 @@ msgstr "English"
 msgid "О нас"
 msgstr "About us"
 
-#: main_app/models.py:66
+#: main_app/models.py:66 templates/article.html:6 templates/base.html:38
+#: templates/science.html:3
 msgid "Наука"
 msgstr "Science"
 
-#: main_app/views.py:12
+#: main_app/views.py:14
 msgid "Лаборатория физики атмосферы"
 msgstr "Laboratory of Atmospheric Physics"
 
-#: main_app/views.py:13
+#: main_app/views.py:15
 msgid "Лаборатория биофотоники"
 msgstr "Laboratory of Biophotonics"
 
-#: main_app/views.py:14
+#: main_app/views.py:16
 msgid "Лаборатория оптических средств измерений"
 msgstr "Laboratory of Optical Measuring Instruments"
 
-#: main_app/views.py:15
+#: main_app/views.py:17
 msgid "Информационно-аналитический центр"
 msgstr "Information and Analytical Center"
 
-#: main_app/views.py:16
+#: main_app/views.py:18
 msgid "Озонометрическая станция № 354 GAW"
 msgstr "Ozonometric Station No. 354 GAW"
 
@@ -62,18 +63,22 @@ msgstr "Ozonometric Station No. 354 GAW"
 msgid "Все пункты"
 msgstr "All stations"
 
-#: observations/forms.py:8 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:8 templates/about.html:52 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:4 templates/partials/belarus_map.html:6
 msgid "Минск"
 msgstr "Minsk"
 
-#: observations/forms.py:9 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:9 templates/about.html:53 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:8 templates/partials/belarus_map.html:10
 msgid "Гомель"
 msgstr "Homel"
 
-#: observations/forms.py:10 templates/index.html:41
-#: templates/observations.html:22 templates/observations.html:47
+#: observations/forms.py:10 templates/about.html:54 templates/index.html:41
+#: templates/observations.html:23 templates/observations.html:48
+#: templates/partials/belarus_map.html:12
+#: templates/partials/belarus_map.html:14
 msgid "Нарочь"
 msgstr "Naroch"
 
@@ -90,14 +95,14 @@ msgid "Приземный озон"
 msgstr "Surface ozone"
 
 #: observations/forms.py:17 templates/index.html:11 templates/index.html:43
-#: templates/observations.html:11 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:11 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "УФ-индекс"
 msgstr "UV index"
 
 #: observations/forms.py:18 templates/index.html:11 templates/index.html:44
-#: templates/observations.html:12 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:12 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "УФ-макс"
 msgstr "UV max"
 
@@ -117,7 +122,7 @@ msgstr "Start date:"
 msgid "Конечная дата:"
 msgstr "End date:"
 
-#: templates/about.html:3 templates/about.html:12 templates/base.html:38
+#: templates/about.html:3 templates/about.html:12 templates/base.html:39
 msgid "О центре"
 msgstr "About"
 
@@ -133,27 +138,16 @@ msgstr "Departments"
 msgid "Сотрудники"
 msgstr "Staff"
 
-#: templates/about.html:8 templates/about.html:39 templates/device.html:6
-msgid "Приборная база"
-msgstr "Instruments"
-
-#: templates/about.html:8 templates/about.html:49 templates/article.html:6
-msgid "Научная деятельность"
-msgstr "Research"
-
-#: templates/about.html:8 templates/about.html:58
-msgid "Годовые отчёты"
-msgstr "Annual reports"
+#: templates/about.html:8 templates/about.html:40 templates/base.html:81
+msgid "Контакты"
+msgstr "Contacts"
 
 #: templates/about.html:14
 msgid ""
 "ННИЦ МО БГУ создан 14 июня 1997 года как учреждение Белорусского "
 "государственного университета (постановление Совета Министров Республики "
 "Беларусь от 14.05.97 №484)."
-msgstr ""
-"NOMREC BSU was established on 14 June 1997 as an institution of the "
-"Belarusian State University (Resolution of the Council of Ministers of the "
-"Republic of Belarus No. 484 of 14.05.97)."
+msgstr "NOMREC BSU was established on 14 June 1997 as an institution of the Belarusian State University (Resolution of the Council of Ministers of the Republic of Belarus No. 484 of 14.05.97)."
 
 #: templates/about.html:15
 msgid ""
@@ -161,20 +155,13 @@ msgid ""
 "излучения и приземного озона на территории Беларуси в рамках обязательств по "
 "Венской конвенции об охране озонового слоя и ведёт исследования по физике "
 "атмосферы."
-msgstr ""
-"The center is responsible for monitoring the ozone layer, surface "
-"ultraviolet radiation and surface ozone in Belarus under the commitments of "
-"the Vienna Convention for the Protection of the Ozone Layer, and conducts "
-"research in atmospheric physics."
+msgstr "The center is responsible for monitoring the ozone layer, surface ultraviolet radiation and surface ozone in Belarus under the commitments of the Vienna Convention for the Protection of the Ozone Layer, and conducts research in atmospheric physics."
 
 #: templates/about.html:16
 msgid ""
 "В международных организациях, в том числе во Всемирном центре данных по "
 "озону и УФ-радиации (WOUDC), центр известен как <b>NOMREC</b> (BSU-NOMREC)."
-msgstr ""
-"In international organizations, including the World Ozone and Ultraviolet "
-"Radiation Data Centre (WOUDC), the center is known as <b>NOMREC</b> (BSU-"
-"NOMREC)."
+msgstr "In international organizations, including the World Ozone and Ultraviolet Radiation Data Centre (WOUDC), the center is known as <b>NOMREC</b> (BSU-NOMREC)."
 
 #: templates/about.html:18 templates/index.html:30
 msgid "год основания"
@@ -192,18 +179,45 @@ msgstr "years of data"
 msgid "Здание ННИЦ МО БГУ"
 msgstr "NOMREC BSU building"
 
-#: templates/about.html:52
-msgid "СТ"
-msgstr "ART"
+#: templates/about.html:42 templates/team-member.html:16
+msgid "Адрес"
+msgstr "Address"
+
+#: templates/about.html:42 templates/base.html:80
+msgid "220045, г. Минск, ул. Курчатова, 7"
+msgstr "7 Kurchatova St., Minsk 220045, Belarus"
+
+#: templates/about.html:43 templates/team-member.html:15
+msgid "Телефон"
+msgstr "Phone"
+
+#: templates/about.html:47
+msgid "Яндекс Карты"
+msgstr "Yandex Maps"
+
+#: templates/about.html:48
+msgid "Google Карты"
+msgstr "Google Maps"
+
+#: templates/about.html:50
+msgid "Станции наблюдений"
+msgstr "Observation stations"
+
+#: templates/about.html:52 templates/base.html:34
+msgid "ННИЦ МО БГУ"
+msgstr "NOMREC BSU"
+
+#: templates/about.html:52 templates/about.html:53 templates/about.html:54
+msgid "с.ш."
+msgstr "N"
+
+#: templates/about.html:52 templates/about.html:53 templates/about.html:54
+msgid "в.д."
+msgstr "E"
 
 #: templates/about.html:53
-msgid "Материалы готовятся"
-msgstr "Coming soon"
-
-#: templates/about.html:61
-#, python-format
-msgid "Отчёт за %(year)s год"
-msgstr "Report for %(year)s"
+msgid "ГГУ имени Франциска Скорины"
+msgstr "Francisk Skorina Gomel State University"
 
 #: templates/article.html:13
 msgid "Файлы"
@@ -217,13 +231,7 @@ msgstr "Home"
 msgid ""
 "Национальный научно-исследовательский центр мониторинга озоносферы БГУ: "
 "наблюдения озонового слоя и УФ-излучения над Беларусью."
-msgstr ""
-"National Ozone Monitoring Research and Education Center of BSU: observations "
-"of the ozone layer and UV radiation over Belarus."
-
-#: templates/base.html:34
-msgid "ННИЦ МО БГУ"
-msgstr "NOMREC BSU"
+msgstr "National Ozone Monitoring Research and Education Center of BSU: observations of the ozone layer and UV radiation over Belarus."
 
 #: templates/base.html:34
 msgid "Белорусский государственный университет"
@@ -238,95 +246,87 @@ msgstr "Observations"
 msgid "Новости"
 msgstr "News"
 
-#: templates/base.html:39 templates/documents.html:3 templates/documents.html:6
+#: templates/base.html:40 templates/documents.html:3 templates/documents.html:6
 msgid "Документы"
 msgstr "Documents"
 
-#: templates/base.html:48
+#: templates/base.html:49
 msgid "Версия для слабовидящих"
 msgstr "Low vision version"
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Меню"
 msgstr "Menu"
 
-#: templates/base.html:54
+#: templates/base.html:55
 msgid "Размер шрифта"
 msgstr "Font size"
 
-#: templates/base.html:56
+#: templates/base.html:57
 msgid "Цвет"
 msgstr "Colour"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Чёрным по белому"
 msgstr "Black on white"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Белым по чёрному"
 msgstr "White on black"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Изображения"
 msgstr "Images"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "Вкл"
 msgstr "On"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "Выкл"
 msgstr "Off"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Обычная версия"
 msgstr "Standard version"
 
-#: templates/base.html:68
+#: templates/base.html:69
 msgid "Сайт использует только технические cookie, необходимые для его работы."
 msgstr "This website uses only technical cookies required for it to work."
 
-#: templates/base.html:70
+#: templates/base.html:71
 msgid "Понятно"
 msgstr "Got it"
 
-#: templates/base.html:71
+#: templates/base.html:72
 msgid "Подробнее"
 msgstr "Learn more"
 
-#: templates/base.html:77
+#: templates/base.html:78
 msgid "Национальный научно-исследовательский центр мониторинга озоносферы БГУ"
 msgstr "National Ozone Monitoring Research and Education Center of BSU"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Структурное подразделение"
 msgstr "A unit of the"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Белорусского государственного университета"
 msgstr "Belarusian State University"
 
-#: templates/base.html:79
-msgid "220045, г. Минск, ул. Курчатова, 7"
-msgstr "7 Kurchatova St., Minsk 220045, Belarus"
-
-#: templates/base.html:80
-msgid "Контакты"
-msgstr "Contacts"
-
-#: templates/base.html:84
+#: templates/base.html:85
 msgid "Ссылки"
 msgstr "Links"
 
-#: templates/base.html:88 templates/cookies.html:3
+#: templates/base.html:87 templates/cookies.html:3
 msgid "Политика конфиденциальности"
 msgstr "Privacy policy"
 
-#: templates/base.html:90
+#: templates/base.html:89
 msgid "ННИЦ МО БГУ · Белорусский государственный университет"
 msgstr "NOMREC BSU · Belarusian State University"
 
-#: templates/base.html:90
+#: templates/base.html:89
 msgid "Данные доступны без регистрации"
 msgstr "Data are available without registration"
 
@@ -340,10 +340,7 @@ msgid ""
 "операционной системе устройства при использовании сайта. Cookie позволяют "
 "сохранить ранее выбранные настройки, чтобы не вводить их заново при переходе "
 "между страницами и следующем посещении сайта."
-msgstr ""
-"Cookies are small files stored in your browser or device operating system "
-"when you use the website. They keep the settings you have chosen, so you do "
-"not have to enter them again when moving between pages or on your next visit."
+msgstr "Cookies are small files stored in your browser or device operating system when you use the website. They keep the settings you have chosen, so you do not have to enter them again when moving between pages or on your next visit."
 
 #: templates/cookies.html:9
 msgid ""
@@ -351,10 +348,7 @@ msgid ""
 "одна из мер по защите персональных данных, принимаемых ННИЦ МО БГУ в "
 "соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите "
 "персональных данных»."
-msgstr ""
-"This personal data and cookie policy is one of the personal data protection "
-"measures taken by NOMREC BSU in accordance with the Law of the Republic of "
-"Belarus No. 99-Z of 7 May 2021 \"On Personal Data Protection\"."
+msgstr "This personal data and cookie policy is one of the personal data protection measures taken by NOMREC BSU in accordance with the Law of the Republic of Belarus No. 99-Z of 7 May 2021 \"On Personal Data Protection\"."
 
 #: templates/cookies.html:11
 msgid "Какие данные использует сайт"
@@ -366,22 +360,14 @@ msgid ""
 "информацию о действиях и сессиях пользователей. Данные наблюдений доступны "
 "без регистрации. Сайт не использует сторонние счётчики, рекламу и внешние "
 "сервисы: шрифты и скрипты загружаются с сервера центра."
-msgstr ""
-"The NOMREC BSU website does not collect personal data of visitors and does "
-"not store information about user actions or sessions. Observation data are "
-"available without registration. The website does not use third-party "
-"analytics, advertising or external services: fonts and scripts are served "
-"from the center's own server."
+msgstr "The NOMREC BSU website does not collect personal data of visitors and does not store information about user actions or sessions. Observation data are available without registration. The website does not use third-party analytics, advertising or external services: fonts and scripts are served from the center's own server."
 
 #: templates/cookies.html:13
 msgid ""
 "Используются только строго необходимые cookie (категория «строго "
 "обязательные» по классификации GDPR). Без них сайт не может корректно и "
 "безопасно работать, поэтому отключить их нельзя."
-msgstr ""
-"Only strictly necessary cookies are used (\"strictly necessary\" category "
-"under the GDPR). The website cannot work correctly and securely without "
-"them, so they cannot be disabled."
+msgstr "Only strictly necessary cookies are used (\"strictly necessary\" category under the GDPR). The website cannot work correctly and securely without them, so they cannot be disabled."
 
 #: templates/cookies.html:15
 msgid "Список cookie"
@@ -401,8 +387,7 @@ msgstr "Lifetime"
 
 #: templates/cookies.html:19
 msgid "Защита форм сайта от CSRF-атак (подделки межсайтовых запросов)"
-msgstr ""
-"Protects website forms against CSRF (cross-site request forgery) attacks"
+msgstr "Protects website forms against CSRF (cross-site request forgery) attacks"
 
 #: templates/cookies.html:19
 msgid "1 год"
@@ -434,11 +419,11 @@ msgid ""
 "ознакомились с уведомлением о cookie, и настройки версии для слабовидящих. "
 "Эти данные не передаются на сервер, их можно удалить, очистив данные сайта в "
 "настройках браузера."
-msgstr ""
-"Besides cookies, the website stores in your browser (localStorage) a note "
-"that you have seen the cookie notice, and the low vision version settings. "
-"These data are not sent to the server; you can delete them by clearing the "
-"site data in your browser settings."
+msgstr "Besides cookies, the website stores in your browser (localStorage) a note that you have seen the cookie notice, and the low vision version settings. These data are not sent to the server; you can delete them by clearing the site data in your browser settings."
+
+#: templates/device.html:6 templates/science.html:7 templates/science.html:25
+msgid "Приборная база"
+msgstr "Instruments"
 
 #: templates/device.html:12
 msgid "Технические характеристики"
@@ -456,9 +441,7 @@ msgstr "Ozone layer and UV radiation over Belarus"
 msgid ""
 "Ежедневные наземные наблюдения общего содержания озона и УФ-индекса на трёх "
 "станциях."
-msgstr ""
-"Daily ground-based observations of total ozone and the UV index at three "
-"stations."
+msgstr "Daily ground-based observations of total ozone and the UV index at three stations."
 
 #: templates/index.html:12 templates/index.html:46
 msgid "дн"
@@ -487,22 +470,19 @@ msgid ""
 "университета. Ведёт мониторинг озонового слоя и ультрафиолетового излучения, "
 "разрабатывает приборы и методики измерений, участвует в международных "
 "программах."
-msgstr ""
-"NOMREC is a unit of the Belarusian State University. It monitors the ozone "
-"layer and ultraviolet radiation, develops instruments and measurement "
-"methods, and takes part in international programmes."
+msgstr "NOMREC is a unit of the Belarusian State University. It monitors the ozone layer and ultraviolet radiation, develops instruments and measurement methods, and takes part in international programmes."
 
 #: templates/index.html:31
 msgid "Подробнее о центре"
 msgstr "More about the center"
 
 #: templates/index.html:43 templates/observations.html:10
-#: templates/observations.html:26 templates/observations.html:48
-#: templates/observations.html:49
+#: templates/observations.html:27 templates/observations.html:49
+#: templates/observations.html:50
 msgid "ОСО"
 msgstr "TO"
 
-#: templates/index.html:43 templates/observations.html:49
+#: templates/index.html:43 templates/observations.html:50
 msgid "е.Д."
 msgstr "DU"
 
@@ -542,9 +522,7 @@ msgstr "What we measure"
 msgid ""
 "Общее содержание озона в столбе атмосферы, в единицах Добсона (е.Д.). Норма "
 "для Беларуси — 300–380 е.Д."
-msgstr ""
-"Total ozone (TO) in the atmospheric column, in Dobson units (DU). The norm "
-"for Belarus is 300–380 DU."
+msgstr "Total ozone (TO) in the atmospheric column, in Dobson units (DU). The norm for Belarus is 300–380 DU."
 
 #: templates/observations.html:11
 msgid ""
@@ -556,8 +534,8 @@ msgstr "Daily mean ultraviolet index. 0–2 low, 3–5 moderate, 6+ high."
 msgid "Максимальное за день значение УФ-индекса, обычно около полудня."
 msgstr "Daily maximum of the UV index, usually around noon."
 
-#: templates/observations.html:13 templates/observations.html:26
-#: templates/observations.html:48 templates/observations.html:49
+#: templates/observations.html:13 templates/observations.html:27
+#: templates/observations.html:49 templates/observations.html:50
 msgid "ПСО"
 msgstr "SO"
 
@@ -565,49 +543,104 @@ msgstr "SO"
 msgid "Приземный озон — концентрация озона у поверхности земли (только Минск)."
 msgstr "Surface ozone (SO) — ozone concentration near the ground (Minsk only)."
 
-#: templates/observations.html:27
+#: templates/observations.html:14
+msgid "Станции"
+msgstr "Stations"
+
+#: templates/observations.html:28
 msgid "Неделя"
 msgstr "Week"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Месяц"
 msgstr "Month"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Год"
 msgstr "Year"
 
-#: templates/observations.html:27
+#: templates/observations.html:28
 msgid "Всё время"
 msgstr "All time"
 
-#: templates/observations.html:33
+#: templates/observations.html:34
 msgid "Скачать данные"
 msgstr "Download data"
 
-#: templates/observations.html:34
+#: templates/observations.html:35
 msgid "С"
 msgstr "From"
 
-#: templates/observations.html:34
+#: templates/observations.html:35
 msgid "По"
 msgstr "To"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "Последние данные"
 msgstr "Latest data"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "за"
 msgstr "as of"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "по"
 msgstr "to"
 
-#: templates/observations.html:49
+#: templates/observations.html:50
 msgid "Нет данных"
 msgstr "No data"
+
+#: templates/partials/belarus_map.html:2
+msgid "Станции наблюдений на карте Беларуси"
+msgstr "Observation stations on the map of Belarus"
+
+#: templates/science.html:7 templates/science.html:17
+msgid "Научные материалы"
+msgstr "Research papers"
+
+#: templates/science.html:8 templates/science.html:34
+msgid "Годовые отчёты"
+msgstr "Annual reports"
+
+#: templates/science.html:8 templates/team-member.html:27
+msgid "Публикации"
+msgstr "Publications"
+
+#: templates/science.html:12
+msgid "Научная деятельность"
+msgstr "Research"
+
+#: templates/science.html:13
+msgid ""
+"Исследования по физике атмосферы, разработка приборов и методик измерения "
+"озона и ультрафиолетового излучения."
+msgstr "Research in atmospheric physics, development of instruments and methods for measuring ozone and ultraviolet radiation."
+
+#: templates/science.html:20
+msgid "СТ"
+msgstr "ART"
+
+#: templates/science.html:21
+msgid "Материалы готовятся"
+msgstr "Coming soon"
+
+#: templates/science.html:37
+#, python-format
+msgid "Отчёт за %(year)s год"
+msgstr "Report for %(year)s"
+
+#: templates/science.html:42
+msgid "Публикации сотрудников"
+msgstr "Staff publications"
+
+#: templates/science.html:47 templates/team-member.html:28
+msgid "ссылка"
+msgstr "link"
+
+#: templates/science.html:51
+msgid "Публикации пока не добавлены"
+msgstr "No publications yet"
 
 #: templates/search.html:3
 msgid "Поиск"
@@ -624,14 +657,6 @@ msgstr "Nothing found"
 #: templates/team-member.html:6
 msgid "Все сотрудники"
 msgstr "All staff"
-
-#: templates/team-member.html:15
-msgid "Телефон"
-msgstr "Phone"
-
-#: templates/team-member.html:16
-msgid "Адрес"
-msgstr "Address"
 
 #: templates/team-member.html:17
 msgid "Профиль"
@@ -652,14 +677,3 @@ msgstr "Career"
 #: templates/team-member.html:25
 msgid "Награды"
 msgstr "Awards"
-
-#: templates/team-member.html:27
-msgid "Публикации"
-msgstr "Publications"
-
-#: templates/team-member.html:28
-msgid "ссылка"
-msgstr "link"
-
-#~ msgid "По вопросам обработки персональных данных обращайтесь по адресу"
-#~ msgstr "For questions about personal data processing, please contact"

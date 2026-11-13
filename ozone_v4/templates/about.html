@@ -5,7 +5,7 @@
 {% block content %}
 <nav class="subnav"><div class="container">
   <a href="#info">{% trans "Общая информация" %}</a><a href="#units">{% trans "Подразделения" %}</a><a href="#team">{% trans "Сотрудники" %}</a>
-  <a href="#devices">{% trans "Приборная база" %}</a><a href="#science">{% trans "Научная деятельность" %}</a><a href="#reports">{% trans "Годовые отчёты" %}</a>
+  <a href="#contacts">{% trans "Контакты" %}</a>
 </div></nav>
 
 <section id="info"><div class="container split">
@@ -35,31 +35,25 @@
   </div>
 </div></section>
 
-<section id="devices"><div class="container">
-  <h2>{% trans "Приборная база" %}</h2>
-  <div class="devices">
-    {% for d in devices %}
-    <a class="card" href="{% url 'devices-item-url' d.pk %}"><div class="thumb r32">{% if d.main_image %}<img src="{{ d.main_image.url }}" alt="" loading="lazy">{% endif %}</div>
-      <div class="body"><h3>{{ d.name }}</h3><p>{{ d.subtitle }}</p></div></a>
-    {% endfor %}
+<section id="contacts"><div class="container contacts-grid">
+  <div>
+    <h2>{% trans "Контакты" %}</h2>
+    <div class="contact-list">
+      <div><span>{% trans "Адрес" %}</span><b>{% trans "220045, г. Минск, ул. Курчатова, 7" %}</b></div>
+      <div><span>{% trans "Телефон" %}</span><b><a href="tel:+375173993611">+375 (17) 399-36-11</a><br><a href="tel:+375173185312">+375 (17) 318-53-12</a></b></div>
+      <div><span>Email</span><b><a href="mailto:nomrec@bsu.by">nomrec@bsu.by</a></b></div>
+    </div>
+    <div class="map-links">
+      <a class="btn btn-ghost" href="https://yandex.by/maps/?pt=27.4750,53.8370&z=16&l=map" target="_blank" rel="noopener">{% trans "Яндекс Карты" %} ↗</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=53.8370,27.4750" target="_blank" rel="noopener">{% trans "Google Карты" %} ↗</a>
+    </div>
+    <h3 class="stations-title">{% trans "Станции наблюдений" %}</h3>
+    <ul class="stations-list">
+      <li><b>{% trans "Минск" %}</b> — {% trans "ННИЦ МО БГУ" %} <small>53.837° {% trans "с.ш." %}, 27.475° {% trans "в.д." %}</small></li>
+      <li><b>{% trans "Гомель" %}</b> — {% trans "ГГУ имени Франциска Скорины" %} <small>52.442° {% trans "с.ш." %}, 30.983° {% trans "в.д." %}</small></li>
+      <li><b>{% trans "Нарочь" %}</b> <small>54.907° {% trans "с.ш." %}, 26.626° {% trans "в.д." %}</small></li>
+    </ul>
   </div>
-</div></section>
-
-<section id="science" class="section-soft"><div class="container">
-  <h2>{% trans "Научная деятельность" %}</h2>
-  <div class="doc-list">
-    {% for a in articles %}
-    <a class="doc" href="{% url 'articles-item-url' a.pk %}"><span class="ext">{% trans "СТ" %}</span><span class="t">{{ a.title }}<small>{{ a.published|date:"Y" }}{% if a.subtitle %} · {{ a.subtitle }}{% endif %}</small></span><span>→</span></a>
-    {% empty %}<p class="muted">{% trans "Материалы готовятся" %}</p>{% endfor %}
-  </div>
-</div></section>
-
-<section id="reports"><div class="container">
-  <h2>{% trans "Годовые отчёты" %}</h2>
-  <div class="doc-list">
-    {% for r in annual_reports %}
-    <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% blocktrans with year=r.year %}Отчёт за {{ year }} год{% endblocktrans %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
-    {% endfor %}
-  </div>
+  <div class="map-card">{% include "partials/belarus_map.html" %}</div>
 </div></section>
 {% endblock %}

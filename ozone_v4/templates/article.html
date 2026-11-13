@@ -3,7 +3,7 @@
 {% block title %}{{ object.title }}{% endblock %}
 {% block content %}
 <section><div class="container"><article class="article">
-  <a class="back" href="{% url 'about-page-url' %}#science">← {% trans "Научная деятельность" %}</a>
+  <a class="back" href="{% url 'science-page-url' %}#research">← {% trans "Наука" %}</a>
   <p class="muted">{{ object.published|date:"j E Y" }}</p>
   <h1>{{ object.title }}</h1>
   {% if object.subtitle %}<p class="muted" style="font-size:18px;margin-top:8px">{{ object.subtitle }}</p>{% endif %}

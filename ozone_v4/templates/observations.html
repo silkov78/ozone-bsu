@@ -6,11 +6,12 @@
 {% block content %}
 <section class="section-soft" style="padding:28px 0"><div class="container">
   <h2 style="font-size:18px;margin:0 0 12px">{% trans "Что мы измеряем" %}</h2>
-  <div class="info-grid">
+  <div class="info-grid with-map">
     <div class="obs-card"><h3>{% trans "ОСО" %}</h3><p>{% trans "Общее содержание озона в столбе атмосферы, в единицах Добсона (е.Д.). Норма для Беларуси — 300–380 е.Д." %}</p></div>
     <div class="obs-card"><h3>{% trans "УФ-индекс" %}</h3><p>{% trans "Среднедневной индекс ультрафиолетового излучения. 0–2 низкий, 3–5 умеренный, 6+ высокий." %}</p></div>
     <div class="obs-card"><h3>{% trans "УФ-макс" %}</h3><p>{% trans "Максимальное за день значение УФ-индекса, обычно около полудня." %}</p></div>
     <div class="obs-card"><h3>{% trans "ПСО" %}</h3><p>{% trans "Приземный озон — концентрация озона у поверхности земли (только Минск)." %}</p></div>
+    <div class="obs-card map-mini-card"><h3>{% trans "Станции" %}</h3><div class="mini-map">{% include "partials/belarus_map.html" %}</div></div>
   </div>
 </div></section>
 
@@ -28,7 +29,7 @@
       </div>
     </div>
     <div class="obs-side">
-      <aside class="obs-card city-card" id="city-card"></aside>
+      <aside class="obs-card city-card"><div id="city-card"></div></aside>
       <form class="obs-card dl-card" action="{% url 'observations-export-url' %}" method="get">
         <span class="eyebrow">{% trans "Скачать данные" %}</span>
         <div class="dl-dates"><label class="field">{% trans "С" %}<input type="date" name="from" id="from"></label><label class="field">{% trans "По" %}<input type="date" name="to" id="to"></label></div>
@@ -72,6 +73,7 @@ seg("range", d => days = +d.d);
 
 function render() {
   renderCityCard();
+  document.querySelectorAll(".map-pt").forEach(p => p.classList.toggle("on", p.dataset.c === city));
   // ПСО есть только у Минска
   document.querySelector('#param [data-p="surface_ozone"]').disabled = city !== "minsk";
   if (city !== "minsk" && param === "surface_ozone") { param = "total_ozone"; document.querySelectorAll("#param button").forEach(x => x.classList.toggle("on", x.dataset.p === param)); }
@@ -92,6 +94,12 @@ function render() {
                 y: { grid: { color: "#eef3f6" }, ticks: { font: { size: 13 } } } } },
   });
 }
+// клик по станции на карте -> переключить город
+document.querySelectorAll(".map-pt").forEach(p => {
+  const go = () => document.querySelector(`#city [data-c="${p.dataset.c}"]`)?.click();
+  p.addEventListener("click", go);
+  p.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+});
 if (OBS.length) {
   $("to").value = OBS[OBS.length - 1].date; $("from").value = OBS[Math.max(0, OBS.length - 30)].date;
   render();

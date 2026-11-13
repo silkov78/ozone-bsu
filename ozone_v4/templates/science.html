@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{% trans "Наука" %}{% endblock %}
+{% block head %}<style>section[id]{scroll-margin-top:120px}</style>{% endblock %}
+{% block content %}
+<nav class="subnav"><div class="container">
+  <a href="#research">{% trans "Научные материалы" %}</a><a href="#devices">{% trans "Приборная база" %}</a>
+  <a href="#reports">{% trans "Годовые отчёты" %}</a><a href="#publications">{% trans "Публикации" %}</a>
+</div></nav>
+
+<section style="padding-bottom:8px"><div class="container">
+  <h1 style="margin-bottom:12px">{% trans "Научная деятельность" %}</h1>
+  <p class="muted" style="max-width:760px">{% trans "Исследования по физике атмосферы, разработка приборов и методик измерения озона и ультрафиолетового излучения." %}</p>
+</div></section>
+
+<section id="research" style="padding-top:24px"><div class="container">
+  <h2>{% trans "Научные материалы" %}</h2>
+  <div class="doc-list">
+    {% for a in articles %}
+    <a class="doc" href="{% url 'articles-item-url' a.pk %}"><span class="ext">{% trans "СТ" %}</span><span class="t">{{ a.title }}<small>{{ a.published|date:"Y" }}{% if a.subtitle %} · {{ a.subtitle }}{% endif %}</small></span><span>→</span></a>
+    {% empty %}<p class="muted">{% trans "Материалы готовятся" %}</p>{% endfor %}
+  </div>
+</div></section>
+<section id="devices" class="section-soft"><div class="container">
+  <h2>{% trans "Приборная база" %}</h2>
+  <div class="devices">
+    {% for d in devices %}
+    <a class="card" href="{% url 'devices-item-url' d.pk %}"><div class="thumb r32">{% if d.main_image %}<img src="{{ d.main_image.url }}" alt="" loading="lazy">{% endif %}</div>
+      <div class="body"><h3>{{ d.name }}</h3><p>{{ d.subtitle }}</p></div></a>
+    {% endfor %}
+  </div>
+</div></section>
+<section id="reports"><div class="container">
+  <h2>{% trans "Годовые отчёты" %}</h2>
+  <div class="doc-list">
+    {% for r in annual_reports %}
+    <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% blocktrans with year=r.year %}Отчёт за {{ year }} год{% endblocktrans %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
+    {% endfor %}
+  </div>
+</div></section>
+<section id="publications" class="section-soft"><div class="container">
+  <div class="section-head"><h2>{% trans "Публикации сотрудников" %}</h2><span class="muted">{{ publications_count }}</span></div>
+  {% for year, items in publications_by_year %}
+  <details class="pub-year" {% if forloop.first %}open{% endif %}>
+    <summary><b>{{ year }}</b> <span class="muted">· {{ items|length }}</span></summary>
+    <ul class="pubs">
+      {% for p in items %}<li>{{ p.publication_description }}{% if p.publication_link %} <a href="{{ p.publication_link }}" target="_blank" rel="noopener">{% trans "ссылка" %} ↗</a>{% endif %}
+        <small class="pub-author"><a href="{% url 'workers-detail-url' p.worker_id %}">{{ p.worker.last_name }} {{ p.worker.first_name|slice:":1" }}.{{ p.worker.middle_name|slice:":1" }}.</a></small></li>{% endfor %}
+    </ul>
+  </details>
+  {% empty %}<p class="muted">{% trans "Публикации пока не добавлены" %}</p>{% endfor %}
+</div></section>
+{% endblock %}

@@ -35,7 +35,8 @@
 | `/observations/export/` | Выгрузка CSV/XLSX (`from`, `to`, `format`) | — |
 | `/observations/chart-data/` | JSON-API (Минск, `range=week|month|year|all`) | — |
 | `/news/`, `/news/<id>/` | Новости: сетка 3:2 с пагинацией; страница новости с источником | `news.html`, `news-item.html` |
-| `/about/` | О центре: общая информация, подразделения, сотрудники, приборы, научная деятельность, годовые отчёты (якоря) | `about.html` |
+| `/about/` | О центре: общая информация, подразделения, сотрудники, контакты + карта станций (якоря) | `about.html` |
+| `/science/` | Наука: научные материалы (статьи), приборная база, годовые отчёты, публикации сотрудников по годам | `science.html` |
 | `/staff/<id>/` | Сотрудник | `team-member.html` |
 | `/devices/<id>/` | Прибор с характеристиками | `device.html` |
 | `/articles/<id>/` | Статья с файлами | `article.html` |
@@ -46,7 +47,7 @@
 | `/api/staff/v1/workers/…` | JSON-API сотрудников (вне языковых префиксов) | — |
 
 Редиректы 301: `/blog/…` → `/news/…`, `/observations/info|download/` → `/observations/`,
-`/staff/` → `/about/#team`, `/articles/` → `/about/#science`, `/devices/` → `/about/#devices`.
+`/staff/` → `/about/#team`, `/articles/` → `/science/#research`, `/devices/` → `/science/#devices`.
 
 ## Файлы фронта
 
@@ -54,7 +55,7 @@
 ozone_v4/
 ├── templates/
 │   ├── base.html            шапка (меню, RU/BE/EN), подвал, подключение css/js
-│   ├── partials/news_card.html
+│   ├── partials/news_card.html, partials/belarus_map.html  (SVG-схема Беларуси со станциями, Natural Earth 1:50m)
 │   └── *.html               страницы (см. таблицу)
 └── static/
     ├── css/site.css         все стили (палитра: #1e4356, #68a4c4, #0091c2, #a2cce3, #f3f8fa)
