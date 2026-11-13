@@ -104,6 +104,19 @@ document.querySelectorAll(".map-pt").forEach(p => {
   p.addEventListener("click", go);
   p.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
 });
+// выпадающая выгрузка: закрывать по клику вне и по Esc
+const dl = document.querySelector(".dl-drop");
+document.addEventListener("click", e => { if (dl?.open && !dl.contains(e.target)) dl.open = false; });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && dl?.open) dl.open = false; });
+// при открытии — плавно докрутить, чтобы форма была видна целиком
+dl?.addEventListener("toggle", () => {
+  if (!dl.open) return;
+  requestAnimationFrame(() => {
+    const extra = 48; // запас под формой
+    const y = dl.getBoundingClientRect().bottom + scrollY - innerHeight + extra;
+    if (y > scrollY) scrollTo({ top: y, behavior: REDUCED_MOTION ? "auto" : "smooth" });
+  });
+});
 if (OBS.length) {
   $("to").value = OBS[OBS.length - 1].date; $("from").value = OBS[Math.max(0, OBS.length - 30)].date;
   render();
