@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{% block title %}{% trans "ННИЦ МО БГУ" %}{% endblock %}</title>
+  <title>{% block title %}{% trans "Главная" %}{% endblock %}</title>
   <meta name="description" content="{% block description %}{% trans 'Национальный научно-исследовательский центр мониторинга озоносферы БГУ: наблюдения озонового слоя и УФ-излучения над Беларусью.' %}{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="{% static 'img/brand/favicon.ico' %}" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/brand/favicon-32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/brand/favicon-16.png' %}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/brand/favicon-180.png' %}">
-  <link rel="manifest" href="{% static 'img/brand/site.webmanifest' %}">
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-site-32.png' %}?v=4">
+  <link rel="apple-touch-icon" href="{% static 'img/favicon-site-180.png' %}">
   <meta name="theme-color" content="#1e4356">
-  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=2">
-  <script src="{% static 'js/site.js' %}?v=2"></script>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=4">
+  <script src="{% static 'js/site.js' %}?v=4"></script>
   {% block head %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">

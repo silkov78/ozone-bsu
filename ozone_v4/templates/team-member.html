@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{{ w.last_name }} {{ w.first_name }} {{ w.middle_name }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block title %}{{ w.last_name }} {{ w.first_name }} {{ w.middle_name }}{% endblock %}
 {% block content %}
 <section><div class="container">
 <a class="back" href="{% url 'about-page-url' %}#team">← {% trans "Все сотрудники" %}</a>

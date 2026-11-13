@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n site_tags %}
-{% block title %}{{ object.title }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
 {% block content %}
 <section><div class="container"><article class="article">
   <a class="back" href="{% url 'about-page-url' %}#science">← {% trans "Научная деятельность" %}</a>
