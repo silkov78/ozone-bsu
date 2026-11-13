@@ -511,3 +511,16 @@ html.a11y .card,html.a11y .obs-card,html.a11y .panel,html.a11y .station,html.a11
 /* без изображений */
 html.a11y-noimg img,html.a11y-noimg .thumb,html.a11y-noimg .cover,html.a11y-noimg .photo,html.a11y-noimg .ph{display:none!important}
 .a11y-btn{width:32px;height:32px;margin-left:-22px}
+
+/* ===== Уведомление о cookie ===== */
+.cookie-note{position:fixed;left:20px;bottom:20px;z-index:60;max-width:380px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 40px rgba(30,67,86,.18);padding:18px 20px;display:grid;gap:12px;font-size:15px;line-height:1.5}
+.cookie-note[hidden]{display:none}
+.cookie-note p{color:var(--ink)}
+.cookie-btns{display:flex;gap:8px;flex-wrap:wrap}
+.cookie-btns .btn{padding:9px 16px;font-size:14px}
+@media(max-width:600px){.cookie-note{left:12px;right:12px;bottom:12px;max-width:none}}
+/* страница политики */
+.policy table{width:100%;margin:8px 0 18px}
+.policy th,.policy td{text-align:left;white-space:normal;vertical-align:top}
+.policy code{font-size:14px;background:var(--bg-soft);padding:2px 6px;border-radius:6px}
+.policy h1{margin-bottom:24px}

@@ -18,14 +18,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% block title %}{% trans "Главная" %}{% endblock %}</title>
   <meta name="description" content="{% block description %}{% trans 'Национальный научно-исследовательский центр мониторинга озоносферы БГУ: наблюдения озонового слоя и УФ-излучения над Беларусью.' %}{% endblock %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}?v=6">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-site-32.png' %}?v=6">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}?v=7">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-site-32.png' %}?v=7">
   <link rel="apple-touch-icon" href="{% static 'img/favicon-site-180.png' %}">
   <meta name="theme-color" content="#1e4356">
-  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=6">
-  <script src="{% static 'js/site.js' %}?v=6"></script>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=7">
+  <script src="{% static 'js/site.js' %}?v=7"></script>
   {% block head %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
@@ -65,6 +64,14 @@
 
 {% block content %}{% endblock %}
 
+<div class="cookie-note" id="cookie-note" hidden role="dialog" aria-label="Cookie">
+  <p>{% trans "Сайт использует только технические cookie, необходимые для его работы." %}</p>
+  <div class="cookie-btns">
+    <button type="button" class="btn btn-primary" id="cookie-ok">{% trans "Понятно" %}</button>
+    <a class="btn btn-ghost" href="{% url 'cookies-page-url' %}">{% trans "Подробнее" %}</a>
+  </div>
+</div>
+
 <footer class="footer"><div class="container">
   <div class="cols">
     <div><h4>{% trans "Национальный научно-исследовательский центр мониторинга озоносферы БГУ" %}</h4>
@@ -76,8 +83,6 @@
       <li><a href="mailto:nomrec@bsu.by">nomrec@bsu.by</a></li></ul></div>
     <div><h4>{% trans "Ссылки" %}</h4><ul>
       <li><a href="https://bsu.by">bsu.by</a></li>
-      <li><a href="https://web.telegram.org/k/#@nomrec">Telegram</a></li>
-      <li><a href="https://www.instagram.com/nomrec/">Instagram</a></li>
       <li><a href="{% url 'cookies-page-url' %}">{% trans "Политика конфиденциальности" %}</a></li></ul></div>
   </div>
   <div class="copy"><span>© {% now "Y" %} {% trans "ННИЦ МО БГУ · Белорусский государственный университет" %}</span><span>{% trans "Данные доступны без регистрации" %}</span></div>

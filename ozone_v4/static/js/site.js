@@ -87,3 +87,17 @@
     });
   });
 })();
+
+// ===== Уведомление о cookie (показывается один раз) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const box = document.getElementById("cookie-note"), KEY = "cookie_notice";
+  if (!box) return;
+  let seen = false;
+  try { seen = localStorage.getItem(KEY) === "1"; } catch (e) {}
+  if (seen) return;
+  box.hidden = false;
+  document.getElementById("cookie-ok")?.addEventListener("click", () => {
+    try { localStorage.setItem(KEY, "1"); } catch (e) {}
+    box.hidden = true;
+  });
+});

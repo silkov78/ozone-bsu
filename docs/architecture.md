@@ -58,7 +58,9 @@ ozone_v4/
 │   └── *.html               страницы (см. таблицу)
 └── static/
     ├── css/site.css         все стили (палитра: #1e4356, #68a4c4, #0091c2, #a2cce3, #f3f8fa)
-    ├── js/site.js           даты, уровни УФ, lastOf(), анимация прорисовки графиков, шапка
+    ├── js/site.js           даты, уровни УФ, lastOf(), анимация графиков, шапка, версия для слабовидящих, cookie
+    ├── css/fonts.css, fonts/manrope/   шрифт Manrope (локально)
+    ├── vendor/chartjs/      Chart.js 4.4.1 (локально)
     └── img/site/, img/brand/  фон, фото здания, фавиконы
 ```
 
