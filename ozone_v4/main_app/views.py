@@ -1,121 +1,75 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, redirect
-from django.http import Http404
-from django.urls import reverse
-from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
+from django.shortcuts import render, get_object_or_404
 
+from observations.views import observations_json
+from staff.models import Worker
 from .models import News, Article, Devices, Document, AnnualReport
+
+# Подразделения — пока просто перечень (сущности в БД нет)
+DEPARTMENTS = [
+    "Лаборатория физики атмосферы",
+    "Лаборатория биофотоники",
+    "Лаборатория оптических средств измерений",
+    "Информационно-аналитический центр",
+    "Озонометрическая станция № 354 GAW",
+]
+
+
+def published_news():
+    return News.objects.filter(status='PB').order_by('-published')
 
 
 def main_page(request):
     context = {
-        'about_us_news': News.objects.filter(status='PB', tag="WE").order_by('-published')[0:3],
-        'science_news': News.objects.filter(status='PB', tag="SCI").order_by('-published')[0:3],
-        'devices': Devices.objects.all()[0:6]
+        'news': published_news()[:3],
+        # 90 дней + запас на задержку Гомеля/Нарочи
+        'observations': observations_json(days=120),
     }
-
     return render(request, 'index.html', context)
 
 
-# ----------------------------------------------------
-
-class BlogPageView(ListView):
-    template_name = 'blog.html'
-    paginate_by = 4
-
-    def get_queryset(self):
-        return News.objects.filter(status='PB').order_by('-published')
+def news_list(request):
+    page = Paginator(published_news(), 9).get_page(request.GET.get('page'))
+    return render(request, 'news.html', {'page_obj': page})
 
 
-class NewsItemView(DetailView):
-    model = News
-    template_name = 'blog-single.html'
-
-    def get(self, request, *args, **kwargs):
-        try:
-            return super().get(request, *args, **kwargs)
-        except Http404:
-            return redirect(reverse('blog-page-url'))
+def news_item(request, pk):
+    item = get_object_or_404(News, pk=pk, status='PB')
+    more = published_news().exclude(pk=pk)[:3]
+    return render(request, 'news-item.html', {'object': item, 'more': more})
 
 
-# class ArticlesPageView(ListView):
-#     template_name = 'articles.html'
-#     paginate_by = 4
-#
-#     def get_queryset(self):
-#         return Article.objects.filter(status='PB').order_by('-published')
-
-
-def articles_page_view(request):
-    articles_list = Article.objects.filter(status='PB').order_by('-published')
-    paginator = Paginator(articles_list, 4)
-
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-
+def about_page(request):
     context = {
-        "page_obj": page_obj,
-        "annual_reports": AnnualReport.objects.all().order_by('year')
+        'departments': DEPARTMENTS,
+        'workers': Worker.objects.all(),
+        'devices': Devices.objects.all(),
+        'articles': Article.objects.filter(status='PB').order_by('-published'),
+        'annual_reports': AnnualReport.objects.all(),
     }
-    return render(request, "articles.html", context)
+    return render(request, 'about.html', context)
 
 
-class ArticlesItemView(DetailView):
-    model = Article
-    template_name = 'article-single.html'
+def device_item(request, pk):
+    device = get_object_or_404(Devices.objects.prefetch_related('characteristics'), pk=pk)
+    return render(request, 'device.html', {'object': device})
 
-    def get(self, request, *args, **kwargs):
-        try:
-            return super().get(request, *args, **kwargs)
-        except Http404:
-            return redirect(reverse('articles-page-url'))
+
+def article_item(request, pk):
+    article = get_object_or_404(Article.objects.prefetch_related('article_files'), pk=pk, status='PB')
+    return render(request, 'article.html', {'object': article})
+
+
+def documents_page(request):
+    return render(request, 'documents.html', {'documents': Document.objects.all()})
 
 
 def search_page(request):
-    search_query = request.GET.get("search")
-    object_list = News.objects.filter(
-        Q(title__icontains=search_query) | \
-        Q(subtitle__icontains=search_query) | \
-        Q(body__icontains=search_query), \
-        status='PB'
-    )
-
-    context = {'object_list': object_list}
-
-    return render(request, 'search.html', context)
+    query = (request.GET.get('q') or request.GET.get('search') or '').strip()
+    results = published_news().filter(Q(title__icontains=query) | Q(body__icontains=query)) if query else []
+    return render(request, 'search.html', {'query': query, 'results': results})
 
 
-# ------------------------------------------------------------
-class DevicesPageView(ListView):
-    template_name = 'devices.html'
-    model = Devices
-
-
-class DeviceItemView(DetailView):
-    model = Devices
-    template_name = 'devices-single.html'
-
-    def get(self, request, *args, **kwargs):
-        try:
-            return super().get(request, *args, **kwargs)
-        except Http404:
-            return redirect(reverse('devices-page-url'))
-
-
-# ----------------------------------------------------
-
-class DocumetsPageView(ListView):
-    template_name = 'documents.html'
-    model = Document
-
-
-# ----------------------------------------------------
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
-    # model = Document
-
-
-# ----------------------------------------------------
 def cookies_page(request):
     return render(request, 'cookies.html')
