@@ -4,9 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
 from observations.views import observations_json
-from itertools import groupby
-
-from staff.models import Worker, Publication
+from staff.models import Worker
 from .models import News, Article, Devices, Document, AnnualReport
 
 # Подразделения — пока просто перечень (сущности в БД нет)
@@ -52,14 +50,10 @@ def about_page(request):
 
 
 def science_page(request):
-    pubs = Publication.objects.select_related('worker').order_by('-publication_year', 'worker__ordering')
     context = {
         'articles': Article.objects.filter(status='PB').order_by('-published'),
         'devices': Devices.objects.all(),
         'annual_reports': AnnualReport.objects.all(),
-        # публикации сотрудников по годам: [(2026, [..]), (2025, [..]), ...]
-        'publications_by_year': [(y, list(g)) for y, g in groupby(pubs, key=lambda p: p.publication_year)],
-        'publications_count': pubs.count(),
     }
     return render(request, 'science.html', context)
 

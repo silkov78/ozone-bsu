@@ -5,7 +5,7 @@
 {% block content %}
 <nav class="subnav"><div class="container">
   <a href="#research">{% trans "Научные материалы" %}</a><a href="#devices">{% trans "Приборная база" %}</a>
-  <a href="#reports">{% trans "Годовые отчёты" %}</a><a href="#publications">{% trans "Публикации" %}</a>
+  <a href="#reports">{% trans "Годовые отчёты" %}</a>
 </div></nav>
 
 <section style="padding-bottom:8px"><div class="container">
@@ -23,9 +23,9 @@
 </div></section>
 <section id="devices" class="section-soft"><div class="container">
   <h2>{% trans "Приборная база" %}</h2>
-  <div class="devices">
+  <div class="devices devices-text">
     {% for d in devices %}
-    <a class="card" href="{% url 'devices-item-url' d.pk %}"><div class="thumb r32">{% if d.main_image %}<img src="{{ d.main_image.url }}" alt="" loading="lazy">{% endif %}</div>
+    <a class="card device-card" href="{% url 'devices-item-url' d.pk %}">
       <div class="body"><h3>{{ d.name }}</h3><p>{{ d.subtitle }}</p></div></a>
     {% endfor %}
   </div>
@@ -37,17 +37,5 @@
     <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% blocktrans with year=r.year %}Отчёт за {{ year }} год{% endblocktrans %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
     {% endfor %}
   </div>
-</div></section>
-<section id="publications" class="section-soft"><div class="container">
-  <div class="section-head"><h2>{% trans "Публикации сотрудников" %}</h2><span class="muted">{{ publications_count }}</span></div>
-  {% for year, items in publications_by_year %}
-  <details class="pub-year" {% if forloop.first %}open{% endif %}>
-    <summary><b>{{ year }}</b> <span class="muted">· {{ items|length }}</span></summary>
-    <ul class="pubs">
-      {% for p in items %}<li>{{ p.publication_description }}{% if p.publication_link %} <a href="{{ p.publication_link }}" target="_blank" rel="noopener">{% trans "ссылка" %} ↗</a>{% endif %}
-        <small class="pub-author"><a href="{% url 'workers-detail-url' p.worker_id %}">{{ p.worker.last_name }} {{ p.worker.first_name|slice:":1" }}.{{ p.worker.middle_name|slice:":1" }}.</a></small></li>{% endfor %}
-    </ul>
-  </details>
-  {% empty %}<p class="muted">{% trans "Публикации пока не добавлены" %}</p>{% endfor %}
 </div></section>
 {% endblock %}
