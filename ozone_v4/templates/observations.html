@@ -6,12 +6,11 @@
 {% block content %}
 <section class="section-soft" style="padding:28px 0"><div class="container">
   <h2 style="font-size:18px;margin:0 0 12px">{% trans "Что мы измеряем" %}</h2>
-  <div class="info-grid with-map">
+  <div class="info-grid compact">
     <div class="obs-card"><h3>{% trans "ОСО" %}</h3><p>{% trans "Общее содержание озона в столбе атмосферы, в единицах Добсона (е.Д.). Норма для Беларуси — 300–380 е.Д." %}</p></div>
     <div class="obs-card"><h3>{% trans "УФ-индекс" %}</h3><p>{% trans "Среднедневной индекс ультрафиолетового излучения. 0–2 низкий, 3–5 умеренный, 6+ высокий." %}</p></div>
     <div class="obs-card"><h3>{% trans "УФ-макс" %}</h3><p>{% trans "Максимальное за день значение УФ-индекса, обычно около полудня." %}</p></div>
     <div class="obs-card"><h3>{% trans "ПСО" %}</h3><p>{% trans "Приземный озон — концентрация озона у поверхности земли (только Минск)." %}</p></div>
-    <div class="obs-card map-mini-card"><h3>{% trans "Станции" %}</h3><div class="mini-map">{% include "partials/belarus_map.html" %}</div></div>
   </div>
 </div></section>
 
@@ -30,13 +29,18 @@
     </div>
     <div class="obs-side">
       <aside class="obs-card city-card"><div id="city-card"></div></aside>
-      <form class="obs-card dl-card" action="{% url 'observations-export-url' %}" method="get">
-        <span class="eyebrow">{% trans "Скачать данные" %}</span>
-        <div class="dl-dates"><label class="field">{% trans "С" %}<input type="date" name="from" id="from"></label><label class="field">{% trans "По" %}<input type="date" name="to" id="to"></label></div>
-        <div class="dl-btns"><button class="btn btn-primary" name="format" value="csv">⬇ CSV</button><button class="btn btn-ghost" name="format" value="xlsx">⬇ XLSX</button></div>
-      </form>
+      <div class="obs-card map-side-card"><span class="eyebrow">{% trans "Станции" %}</span><div class="mini-map">{% include "partials/belarus_map.html" %}</div></div>
     </div>
   </div>
+  <details class="obs-card dl-drop">
+    <summary>⬇ {% trans "Скачать данные" %} <span class="muted">· CSV / XLSX, {% trans "все пункты и параметры за период" %}</span></summary>
+    <form class="dl-row" action="{% url 'observations-export-url' %}" method="get">
+      <label class="field">{% trans "С" %}<input type="date" name="from" id="from"></label>
+      <label class="field">{% trans "По" %}<input type="date" name="to" id="to"></label>
+      <button class="btn btn-primary" name="format" value="csv">⬇ CSV</button>
+      <button class="btn btn-ghost" name="format" value="xlsx">⬇ XLSX</button>
+    </form>
+  </details>
 </div></section>
 {% endblock %}
 
@@ -105,7 +109,7 @@ if (OBS.length) {
   render();
 }
 // растянуть нижний блок до низа окна — футер только после прокрутки
-const fit = () => { const d = $("download"); d.style.minHeight = Math.max(0, innerHeight - d.getBoundingClientRect().top - scrollY + 16) + "px"; };
+const fit = () => { const d = $("download"); d.style.minHeight = Math.max(0, innerHeight - d.getBoundingClientRect().top - scrollY + 12) + "px"; };
 addEventListener("resize", fit); addEventListener("load", fit); document.fonts?.ready.then(fit); fit();
 </script>
 {% endblock %}

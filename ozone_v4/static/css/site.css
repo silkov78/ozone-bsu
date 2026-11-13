@@ -571,3 +571,32 @@ html.a11y-wb .map-pt text{fill:#fff;stroke:#000}
 .map-mini-card{display:flex;flex-direction:column;padding-bottom:12px!important}
 @media(max-width:1100px){.info-grid.with-map{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:860px){.info-grid.with-map{grid-template-columns:1fr 1fr}}
+
+/* ===== Наблюдения v2: карта справа, выгрузка снизу, компактные карточки ===== */
+.info-grid.compact{gap:14px}
+.info-grid.compact .obs-card{padding:14px 18px!important}
+.info-grid.compact .obs-card h3{font-size:16px!important;margin-bottom:4px!important}
+.info-grid.compact .obs-card p{font-size:14px!important;line-height:1.45!important}
+section.section-soft:has(.info-grid.compact){padding:20px 0!important}
+section.section-soft:has(.info-grid.compact) h2{font-size:18px!important;margin-bottom:10px!important}
+#download{padding:18px 0 20px!important}
+.map-side-card{padding:12px 18px!important;display:flex;flex-direction:column;gap:6px}
+.map-side-card .mini-map{padding:0}
+.map-side-card .by-map{max-height:140px}
+#download .obs-side .city-card{flex:1}
+.dl-drop{margin-top:14px;padding:0!important}
+.dl-drop summary{cursor:pointer;list-style:none;padding:12px 20px;font-weight:700;color:var(--accent-2)}
+.dl-drop summary::-webkit-details-marker{display:none}
+.dl-drop summary .muted{font-weight:500;font-size:14px}
+.dl-drop[open] summary{border-bottom:1px solid var(--line)}
+.dl-row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;padding:14px 20px}
+.dl-row .field input{min-width:160px}
+.map-side-card .by-map{max-height:112px}
+#download .obs-side .city-card{padding:14px 20px}
+#download .obs-side .city-card .row{padding:8px 0}
+#download .obs-side{gap:12px}
+/* лишнюю высоту правой колонки отдаём карте, а не пустой карточке */
+#download .obs-side .city-card{flex:none}
+#download .obs-side .map-side-card{flex:1;min-height:150px}
+.map-side-card .mini-map{flex:1;min-height:0;position:relative}
+.map-side-card .by-map{position:absolute;inset:0;width:100%;height:100%;max-height:none}
