@@ -41,3 +41,6 @@ venv.bak/
 
 # Visual Studio Code # 
 .vscode
+
+# Локальные данные: бэкап БД, медиа, выгрузки (не коммитить)
+local_data/
