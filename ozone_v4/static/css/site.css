@@ -473,3 +473,9 @@ section.section-soft h2{font-size:22px!important}
 .lang button.active{color:var(--ink)}
 .header.dark .lang button{color:#a9c4d3}
 .header.dark .lang button.active{color:#fff}
+
+/* «О центре»: текст об учреждении */
+.split-top{align-items:start}
+.about-text p{color:var(--muted);line-height:1.7;margin-bottom:14px}
+.about-text i{color:var(--ink);font-style:italic}
+.split-top .photo{position:sticky;top:140px}
