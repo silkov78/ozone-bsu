@@ -476,6 +476,5 @@ section.section-soft h2{font-size:22px!important}
 
 /* «О центре»: текст об учреждении */
 .split-top{align-items:start}
-.about-text p{color:var(--muted);line-height:1.7;margin-bottom:14px}
-.about-text i{color:var(--ink);font-style:italic}
-.split-top .photo{position:sticky;top:140px}
+.about-text p{color:var(--muted);line-height:1.65;margin:0 0 12px}
+.about-text b{color:var(--ink)}
