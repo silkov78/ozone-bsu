@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_cleanup.apps.CleanupConfig',
     'import_export',
+    'django_ckeditor_5',
 
     'main_app.apps.MainConfig',
     'observations.apps.ObservationsConfig',
@@ -176,3 +177,25 @@ REST_FRAMEWORK = {
 
 # CSRF origin
 CSRF_TRUSTED_ORIGINS = ['https://ozone.bsu.by', 'https://127.0.0.1 ']
+
+
+# CKEditor 5 — визуальный редактор текста новостей и статей в админке
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+CKEDITOR_5_UPLOAD_PATH = "main/editor/"
+CKEDITOR_5_CONFIGS = {
+    "default": {
+        "toolbar": [
+            "heading", "|", "bold", "italic", "link", "|",
+            "bulletedList", "numberedList", "blockQuote", "|",
+            "imageUpload", "insertTable", "|", "undo", "redo",
+        ],
+        "heading": {
+            "options": [
+                {"model": "paragraph", "title": "Абзац", "class": "ck-heading_paragraph"},
+                {"model": "heading2", "view": "h2", "title": "Подзаголовок", "class": "ck-heading_heading2"},
+                {"model": "heading3", "view": "h3", "title": "Подзаголовок 2", "class": "ck-heading_heading3"},
+            ]
+        },
+        "language": "ru",
+    },
+}

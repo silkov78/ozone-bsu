@@ -10,7 +10,8 @@ class BasePost(models.Model):
         null=False,
         blank=False
     )
-    subtitle = models.CharField(max_length=255, verbose_name='Подзаголовок')
+    # не выводится на сайте, оставлен в БД (см. docs)
+    subtitle = models.CharField(max_length=255, verbose_name='Подзаголовок', blank=True, default='')
 
     image_logo = models.ImageField(
         upload_to='main/news',
@@ -51,6 +52,14 @@ class BasePost(models.Model):
 
 
 class News(BasePost):
+
+    source_url = models.URLField(
+        max_length=500,
+        blank=True,
+        default='',
+        verbose_name='Оригинальный источник',
+        help_text='Ссылка на первоисточник новости (необязательно)'
+    )
 
     TAGS = (
         ("WE", _("О нас")),
