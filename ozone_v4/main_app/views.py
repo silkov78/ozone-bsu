@@ -45,6 +45,7 @@ def about_page(request):
     context = {
         'departments': DEPARTMENTS,
         'workers': Worker.objects.all(),
+        'documents': Document.objects.all(),
     }
     return render(request, 'about.html', context)
 
@@ -66,10 +67,6 @@ def device_item(request, pk):
 def article_item(request, pk):
     article = get_object_or_404(Article.objects.prefetch_related('article_files'), pk=pk, status='PB')
     return render(request, 'article.html', {'object': article})
-
-
-def documents_page(request):
-    return render(request, 'documents.html', {'documents': Document.objects.all()})
 
 
 def search_page(request):

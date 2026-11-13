@@ -11,7 +11,6 @@ urlpatterns = [
     path('science/', views.science_page, name='science-page-url'),
     path('devices/<int:pk>/', views.device_item, name='devices-item-url'),
     path('articles/<int:pk>/', views.article_item, name='articles-item-url'),
-    path('documents/', views.documents_page, name='documents-page-url'),
     path('search/', views.search_page, name='search-page-url'),
     path('cookies/', views.cookies_page, name='cookies-page-url'),
 
@@ -20,5 +19,6 @@ urlpatterns = [
     path('blog/<int:pk>/', RedirectView.as_view(pattern_name='news-item-url', permanent=True)),
     path('search/<int:pk>/', RedirectView.as_view(pattern_name='news-item-url', permanent=True)),
     path('articles/', RedirectView.as_view(url='/science/#research', permanent=True)),
+    path('documents/', RedirectView.as_view(url='/about/#documents', permanent=True)),
     path('devices/', RedirectView.as_view(url='/science/#devices', permanent=True)),
 ]

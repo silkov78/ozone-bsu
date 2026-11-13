@@ -37,7 +37,6 @@
     <a href="{% url 'news-list-url' %}" class="{% if url == 'news-list-url' or url == 'news-item-url' %}active{% endif %}">{% trans "Новости" %}</a>
     <a href="{% url 'science-page-url' %}" class="{% if url == 'science-page-url' or url == 'devices-item-url' or url == 'articles-item-url' %}active{% endif %}">{% trans "Наука" %}</a>
     <a href="{% url 'about-page-url' %}" class="{% if url == 'about-page-url' or url == 'workers-detail-url' %}active{% endif %}">{% trans "О центре" %}</a>
-    <a href="{% url 'documents-page-url' %}" class="{% if url == 'documents-page-url' %}active{% endif %}">{% trans "Документы" %}</a>
   </nav>
   <form class="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input type="hidden" name="next" value="{{ request.get_full_path }}">

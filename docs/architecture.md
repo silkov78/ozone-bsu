@@ -35,19 +35,18 @@
 | `/observations/export/` | Выгрузка CSV/XLSX (`from`, `to`, `format`) | — |
 | `/observations/chart-data/` | JSON-API (Минск, `range=week|month|year|all`) | — |
 | `/news/`, `/news/<id>/` | Новости: сетка 3:2 с пагинацией; страница новости с источником | `news.html`, `news-item.html` |
-| `/about/` | О центре: общая информация, подразделения, сотрудники, контакты + карта станций (якоря) | `about.html` |
+| `/about/` | О центре: общая информация, подразделения, сотрудники, документы, контакты + карта станций (якоря) | `about.html` |
 | `/science/` | Наука: научные материалы (статьи), приборная база, годовые отчёты | `science.html` |
 | `/staff/<id>/` | Сотрудник | `team-member.html` |
 | `/devices/<id>/` | Прибор с характеристиками | `device.html` |
 | `/articles/<id>/` | Статья с файлами | `article.html` |
-| `/documents/` | Документы | `documents.html` |
 | `/search/?q=` | Поиск по новостям | `search.html` |
 | `/cookies/` | Политика конфиденциальности | `cookies.html` |
 | `/admin/` | Админка | — |
 | `/api/staff/v1/workers/…` | JSON-API сотрудников (вне языковых префиксов) | — |
 
 Редиректы 301: `/blog/…` → `/news/…`, `/observations/info|download/` → `/observations/`,
-`/staff/` → `/about/#team`, `/articles/` → `/science/#research`, `/devices/` → `/science/#devices`.
+`/staff/` → `/about/#team`, `/articles/` → `/science/#research`, `/devices/` → `/science/#devices`, `/documents/` → `/about/#documents`.
 
 ## Файлы фронта
 
