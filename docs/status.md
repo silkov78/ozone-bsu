@@ -45,12 +45,21 @@
 - Шрифт Manrope (`static/fonts/manrope`, `static/css/fonts.css`) и Chart.js 4.4.1 (`static/vendor/chartjs`) размещены локально —
   сайт не обращается к Google Fonts и cdnjs.
 
-**Инфраструктура (dev)**
+**Инфраструктура**
+- Папка проекта `ozone_v4/` → `app/`; Dockerfile-ы и nginx-конфиги — в `docker/`; `.env.dev` / `.env.example` / `.env` — в корне.
+- `docker-compose.yml` → `compose.yml` (прод: код в образе, gunicorn, непривилегированный пользователь, Postgres без публикации порта).
+- `restart: always` и healthcheck у всех сервисов, запуск по готовности зависимостей (`service_healthy`).
+- Общий `entrypoint.sh`: ожидание БД, `migrate`, `collectstatic` (прод), `admin/ozone` (только dev).
+- Настройки из окружения: `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, `SECURE_PROXY_SSL_HEADER`, secure-cookie при `DEBUG=False`.
+- Nginx: gzip, кэш статики, только TLS 1.2/1.3, HTTP/2, HSTS и базовые security-заголовки.
+- Скрипты: бэкап БД+медиа с ротацией, восстановление БД, деплой, обёртка `manage.py`.
+
+**Инфраструктура (dev, ранее)**
 - `local_data/` (в `.gitignore`): дамп БД, архив и распакованные медиа, xlsx с наблюдениями.
 - `docker/initdb/00-restore.sh` — автозаливка дампа в новый том Postgres.
 - `compose.dev.yml`: медиа монтируются из `local_data/media`, порты 5433/8000/8081.
-- `Dockerfile.dev`: убран `makemigrations` при старте (миграции коммитятся), `admin/ozone` для dev.
-- `.env.dev`: `ALLOWED_HOSTS` без кавычек + `localhost`.
+- миграции коммитятся (без `makemigrations` при старте), `admin/ozone` для dev.
+- `.env.dev`: `ALLOWED_HOSTS` без кавычек + `localhost`, `CSRF_TRUSTED_ORIGINS` для :8081.
 
 ## Что сделать
 
@@ -60,8 +69,10 @@
       Пока они пустые и показывается русский текст. Интерфейс уже переведён.
 - [ ] В 4 новостях с `source_url` ссылка дублируется в конце текста — при желании убрать её из текста вручную в админке.
 - [ ] Подразделения сейчас списком в коде (`main_app/views.py: DEPARTMENTS`). Если нужны описание/страницы — завести модель.
-- [ ] Продакшен: `docker-compose.yml`, `Dockerfile`, nginx-конфиги не менялись — проверить сборку статики
-      (`collectstatic`), установку `django-ckeditor-5`/`openpyxl`, медиа для CKEditor.
+- [ ] Первый деплой на сервер: перенести `ozone_v4/.env` → `.env` (+ `CSRF_TRUSTED_ORIGINS`), проверить имена
+      томов (новый проект `ozone`: тома будут `ozone_postgres_data`, `ozone_media_data` — данные старых томов
+      перенести через `backup.sh`/`restore_db.sh` или указать старые имена томов в `compose.yml`).
+- [ ] Настроить cron для `scripts/backup.sh`.
 - [ ] Удалить ставший ненужным код: `observations/forms.py`, `observations/services.py` (старая форма выгрузки),
       DRF-API сотрудников, если не используется извне.
 - [ ] Картинка фона главной `static/img/site/atmosphere.jpg` — 860×483, нужна версия ≥1920 px.

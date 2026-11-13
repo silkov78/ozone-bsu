@@ -1,16 +1,17 @@
 # To ignore
 
-# PROD <-> DEV
-ozone_v4/config/settings.py
-docker-compose.yml
-.env.dev
+# Секреты продакшена (шаблон — .env.example)
+.env
 
 # Django #
 *.log
 *.pot
 *.pyc
 __pycache__
-media
+app/media
+app/staticfiles
+# бэкапы
+backups/
 
 # Ozone_db_states
 db_backups
@@ -20,12 +21,13 @@ db_data_ozone
 htmlcov
 .coverage
 
-# Certificates
-certs
-certs_2024
+# Certificates (продакшен, монтируются в nginx)
+/certs
+/certs_2024
 
 # local certs
-ozone_v4/local_certs/*
+docker/django/certs/*
+!docker/django/certs/.gitkeep
 
 # Environments 
 .env

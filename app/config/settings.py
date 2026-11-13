@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
 
 
 # Application definition
@@ -175,8 +175,16 @@ REST_FRAMEWORK = {
     )
 }
 
-# CSRF origin
-CSRF_TRUSTED_ORIGINS = ['https://ozone.bsu.by', 'https://127.0.0.1 ']
+# CSRF: доверенные источники форм (через пробел), напр. "https://ozone.bsu.by https://www.ozone.bsu.by"
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'https://ozone.bsu.by https://www.ozone.bsu.by').split()
+
+# За Nginx: схему https берём из заголовка прокси
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
 # CKEditor 5 — визуальный редактор текста новостей и статей в админке

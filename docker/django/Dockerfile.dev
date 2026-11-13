@@ -1,0 +1,23 @@
+# Dev-образ: код монтируется томом (./app -> /app), runserver с автоперезагрузкой
+FROM python:3.12-alpine
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+COPY docker/django/certs/ /usr/local/share/local_certs/
+RUN apk add --no-cache ca-certificates postgresql-client gettext \
+ && find /usr/local/share/local_certs -name '*.pem' -exec cp {} /usr/local/share/ca-certificates/ \; \
+ && update-ca-certificates
+
+COPY app/requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
+
+COPY docker/django/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 8000
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -3,7 +3,7 @@
 ## Общая схема
 
 ```
-Браузер ──► Nginx (8081) ──► Django 4.2 (runserver / gunicorn) ──► PostgreSQL 16
+Браузер ──► Nginx (443 / dev 8081) ──► Django 4.2 (gunicorn / dev runserver) ──► PostgreSQL 16
                                    │
                                    ├─ шаблоны templates/  (серверный рендеринг, i18n RU/BE/EN)
                                    ├─ static/  (site.css, site.js, картинки, фавиконы)
@@ -51,7 +51,7 @@
 ## Файлы фронта
 
 ```
-ozone_v4/
+app/
 ├── templates/
 │   ├── base.html            шапка (меню, RU/BE/EN), подвал, подключение css/js
 │   ├── partials/news_card.html, partials/belarus_map.html  (SVG-схема Беларуси со станциями, Natural Earth 1:50m)
@@ -67,6 +67,9 @@ ozone_v4/
 ## Данные и окружение
 
 - `local_data/` (не в git): `backup_*.sql`, медиа-архив и `media/`, выгрузки xlsx.
+- Docker: `docker/django/` (Dockerfile прод/dev, `entrypoint.sh` — ожидание БД, `migrate`, `collectstatic`),
+  `docker/nginx/` (конфиги), `compose.yml` (прод), `compose.dev.yml` (dev). Healthcheck: `/healthz/` у Django, `/nginx-health` у Nginx.
+- Скрипты сопровождения: `scripts/backup.sh`, `restore_db.sh`, `deploy.sh`, `manage.sh`.
 - `docker/initdb/00-restore.sh`: при создании тома Postgres восстанавливает самый свежий дамп
   (создаёт роль `ozone_user` — владельца объектов в дампе).
 - Наблюдения Гомеля и Нарочи приходят с задержкой ~неделю: фронт везде берёт последнюю

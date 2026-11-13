@@ -1,1 +1,15 @@
+.git
+.idea
+.vscode
+local_data
+docs
+scripts
+**/__pycache__
+**/*.pyc
+app/media
+app/staticfiles
 .env
+.env.*
+docker/django/certs/*
+!docker/django/certs/.gitkeep
+!docker/django/certs/*.pem

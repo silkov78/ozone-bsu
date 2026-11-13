@@ -1,10 +1,22 @@
 from django.contrib import admin
+from django.db import connection
+from django.http import HttpResponse
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
+def healthz(request):
+    """Проверка живости для docker healthcheck: приложение + доступность БД."""
+    try:
+        connection.ensure_connection()
+    except Exception:
+        return HttpResponse('db error', status=503, content_type='text/plain')
+    return HttpResponse('ok', content_type='text/plain')
+
+
 urlpatterns = [
+    path('healthz/', healthz),
     path('', include('staff.urls')),
 ]
 
