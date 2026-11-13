@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Наблюдения" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+
+{% block content %}
+<section class="section-soft" style="padding:28px 0"><div class="container">
+  <h2 style="font-size:18px;margin:0 0 12px">{% trans "Что мы измеряем" %}</h2>
+  <div class="info-grid">
+    <div class="obs-card"><h3>{% trans "ОСО" %}</h3><p>{% trans "Общее содержание озона в столбе атмосферы, в единицах Добсона (е.Д.). Норма для Беларуси — 300–380 е.Д." %}</p></div>
+    <div class="obs-card"><h3>{% trans "УФ-индекс" %}</h3><p>{% trans "Среднедневной индекс ультрафиолетового излучения. 0–2 низкий, 3–5 умеренный, 6+ высокий." %}</p></div>
+    <div class="obs-card"><h3>{% trans "УФ-макс" %}</h3><p>{% trans "Максимальное за день значение УФ-индекса, обычно около полудня." %}</p></div>
+    <div class="obs-card"><h3>{% trans "ПСО" %}</h3><p>{% trans "Приземный озон — концентрация озона у поверхности земли (только Минск)." %}</p></div>
+  </div>
+</div></section>
+
+<section style="padding:28px 0" id="download"><div class="container">
+  <div class="obs-main">
+    <div class="panel big-chart">
+      <div class="chart-head">
+        <h2 id="chart-title"></h2>
+        <div class="seg" id="city"><button data-c="minsk" class="on">{% trans "Минск" %}</button><button data-c="homel">{% trans "Гомель" %}</button><button data-c="naroch">{% trans "Нарочь" %}</button></div>
+      </div>
+      <div class="chart-box"><canvas id="chart"></canvas></div>
+      <div class="chart-ctrl">
+        <div class="seg" id="param"><button data-p="total_ozone" class="on">{% trans "ОСО" %}</button><button data-p="surface_ozone">{% trans "ПСО" %}</button><button data-p="total_uvi">{% trans "УФ-индекс" %}</button><button data-p="max_uvi">{% trans "УФ-макс" %}</button></div>
+        <div class="seg" id="range"><button data-d="7" class="on">{% trans "Неделя" %}</button><button data-d="30">{% trans "Месяц" %}</button><button data-d="365">{% trans "Год" %}</button><button data-d="0">{% trans "Всё время" %}</button></div>
+      </div>
+    </div>
+    <div class="obs-side">
+      <aside class="obs-card city-card" id="city-card"></aside>
+      <form class="obs-card dl-card" action="{% url 'observations-export-url' %}" method="get">
+        <span class="eyebrow">{% trans "Скачать данные" %}</span>
+        <div class="dl-dates"><label class="field">{% trans "С" %}<input type="date" name="from" id="from"></label><label class="field">{% trans "По" %}<input type="date" name="to" id="to"></label></div>
+        <div class="dl-btns"><button class="btn btn-primary" name="format" value="csv">⬇ CSV</button><button class="btn btn-ghost" name="format" value="xlsx">⬇ XLSX</button></div>
+      </form>
+    </div>
+  </div>
+</div></section>
+{% endblock %}
+
+{% block scripts %}
+{{ observations|json_script:"obs-data" }}
+<script>
+const OBS = JSON.parse(document.getElementById("obs-data").textContent);
+const $ = id => document.getElementById(id);
+const NAMES = { minsk: "{% trans 'Минск' %}", homel: "{% trans 'Гомель' %}", naroch: "{% trans 'Нарочь' %}" };
+const PARAM = { total_ozone: "{% trans 'ОСО' %}", surface_ozone: "{% trans 'ПСО' %}", total_uvi: "{% trans 'УФ-индекс' %}", max_uvi: "{% trans 'УФ-макс' %}" };
+const T = { last: "{% trans 'Последние данные' %}", at: "{% trans 'за' %}", upto: "{% trans 'по' %}", du: "{% trans 'е.Д.' %}", uvi: "{% trans 'УФ-индекс' %}", uvmax: "{% trans 'УФ-макс' %}", oso: "{% trans 'ОСО' %}", pso: "{% trans 'ПСО' %}", empty: "{% trans 'Нет данных' %}" };
+
+// карточка выбранного на графике города
+function renderCityCard() {
+  const k = city, oz = lastOf(OBS, "total_ozone_" + k), uv = lastOf(OBS, "total_uvi_" + k), mx = lastOf(OBS, "max_uvi_" + k), so = lastOf(OBS, "surface_ozone_" + k);
+  const ref = oz || uv || mx;
+  const badge = uv ? (([c, l]) => ` <i class="uvi-badge ${c}">${l}</i>`)(uviClass(uv.value)) : "";
+  $("city-card").innerHTML = `<span class="eyebrow">${T.last}</span>
+  <h3>${NAMES[k]}</h3>${ref ? `<span class="asof">${T.at} ${shortDate(ref.date)}</span>` : ""}
+  <div class="row"><span>${T.oso}</span><b>${oz ? oz.value + " " + T.du : "—"}</b></div>
+  <div class="row"><span>${T.uvi}</span><b>${uv ? uv.value + badge : "—"}</b></div>
+  <div class="row"><span>${T.uvmax}</span><b>${mx ? mx.value : "—"}</b></div>
+  ${so ? `<div class="row"><span>${T.pso}</span><b>${so.value}</b></div>` : ""}`;
+}
+
+let city = "minsk", param = "total_ozone", days = 7, chart;
+const seg = (id, fn) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+  if (b.disabled) return;
+  document.querySelectorAll(`#${id} button`).forEach(x => x.classList.toggle("on", x === b)); fn(b.dataset); render();
+});
+seg("city", d => city = d.c);
+seg("param", d => param = d.p);
+seg("range", d => days = +d.d);
+
+function render() {
+  renderCityCard();
+  // ПСО есть только у Минска
+  document.querySelector('#param [data-p="surface_ozone"]').disabled = city !== "minsk";
+  if (city !== "minsk" && param === "surface_ozone") { param = "total_ozone"; document.querySelectorAll("#param button").forEach(x => x.classList.toggle("on", x.dataset.p === param)); }
+  const key = param + "_" + city, lo = lastOf(OBS, key);
+  chart?.destroy();
+  if (!lo) { $("chart-title").textContent = T.empty; return; }
+  // период отсчитываем от последней даты, за которую у пункта есть данные
+  const rows = OBS.slice(0, lo.i + 1).slice(days ? -days : 0);
+  $("chart-title").innerHTML = `${NAMES[city]} · ${PARAM[param]} <span class="asof">${T.upto} ${shortDate(lo.date)}</span>`;
+  chart = new Chart($("chart"), {
+    type: "line",
+    data: { labels: rows.map(o => o.date), datasets: [{ label: PARAM[param], data: rows.map(o => o[key]),
+      borderColor: "#0091c2", backgroundColor: "rgba(0,145,194,.08)", fill: true, borderWidth: 2.5, tension: .4, spanGaps: true,
+      pointRadius: rows.length <= 31 ? 4 : 0, pointHoverRadius: 6, pointBackgroundColor: "#0091c2" }] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      plugins: { legend: { display: false }, tooltip: { padding: 10, titleFont: { size: 14 }, bodyFont: { size: 14 } } },
+      scales: { x: { grid: { color: "#eef3f6" }, ticks: { font: { size: 13 }, maxTicksLimit: 10, maxRotation: 0 } },
+                y: { grid: { color: "#eef3f6" }, ticks: { font: { size: 13 } } } } },
+  });
+}
+if (OBS.length) {
+  $("to").value = OBS[OBS.length - 1].date; $("from").value = OBS[Math.max(0, OBS.length - 30)].date;
+  render();
+}
+// растянуть нижний блок до низа окна — футер только после прокрутки
+const fit = () => { const d = $("download"); d.style.minHeight = Math.max(0, innerHeight - d.getBoundingClientRect().top - scrollY + 16) + "px"; };
+addEventListener("resize", fit); addEventListener("load", fit); document.fonts?.ready.then(fit); fit();
+</script>
+{% endblock %}

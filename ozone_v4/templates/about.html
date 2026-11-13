@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static i18n site_tags %}
+{% block title %}{% trans "О центре" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block head %}<style>section[id]{scroll-margin-top:120px}</style>{% endblock %}
+{% block content %}
+<nav class="subnav"><div class="container">
+  <a href="#info">{% trans "Общая информация" %}</a><a href="#units">{% trans "Подразделения" %}</a><a href="#team">{% trans "Сотрудники" %}</a>
+  <a href="#devices">{% trans "Приборная база" %}</a><a href="#science">{% trans "Научная деятельность" %}</a><a href="#reports">{% trans "Годовые отчёты" %}</a>
+</div></nav>
+
+<section id="info"><div class="container split">
+  <div><h1 style="margin-bottom:16px">{% trans "О центре" %}</h1>
+    <p class="muted">{% trans "Национальный научно-исследовательский центр мониторинга озоносферы — структурное подразделение" %} <a href="https://bsu.by">{% trans "Белорусского государственного университета" %}</a>. {% trans "Центр обеспечивает наблюдения за состоянием озонового слоя, УФ-излучения и приземного озона в Беларуси, разрабатывает измерительные приборы и участвует в международных программах ВМО." %}</p>
+    <div class="stats"><div><b>1997</b><span>{% trans "год основания" %}</span></div><div><b>3</b><span>{% trans "станции" %}</span></div><div><b>25+</b><span>{% trans "лет рядов данных" %}</span></div></div></div>
+  <img class="photo" src="{% static 'img/site/building.jpg' %}" alt="{% trans 'Здание ННИЦ МО БГУ' %}">
+</div></section>
+
+<section id="units"><div class="container">
+  <h2>{% trans "Подразделения" %}</h2>
+  <div class="units">{% for d in departments %}<div class="unit"><span>{{ forloop.counter|stringformat:"02d" }}</span>{% trans d %}</div>{% endfor %}</div>
+</div></section>
+
+<section id="team" class="section-soft"><div class="container">
+  <h2>{% trans "Сотрудники" %}</h2>
+  <div class="staff">
+    {% for w in workers %}
+    <a class="staff-item" href="{% url 'workers-detail-url' w.pk %}">
+      {% if w.photo %}<img src="{{ w.photo.url }}" alt="" loading="lazy">{% else %}<img alt="">{% endif %}
+      <span><b>{{ w.last_name }} {{ w.first_name }} {{ w.middle_name }}</b><small>{% if w.position %}{{ w.position }}{% endif %}{% if w.position and w.academic_rank %} · {% endif %}{% if w.academic_rank %}{{ w.academic_rank }}{% endif %}</small></span></a>
+    {% endfor %}
+  </div>
+</div></section>
+
+<section id="devices"><div class="container">
+  <h2>{% trans "Приборная база" %}</h2>
+  <div class="devices">
+    {% for d in devices %}
+    <a class="card" href="{% url 'devices-item-url' d.pk %}"><div class="thumb r32">{% if d.main_image %}<img src="{{ d.main_image.url }}" alt="" loading="lazy">{% endif %}</div>
+      <div class="body"><h3>{{ d.name }}</h3><p>{{ d.subtitle }}</p></div></a>
+    {% endfor %}
+  </div>
+</div></section>
+
+<section id="science" class="section-soft"><div class="container">
+  <h2>{% trans "Научная деятельность" %}</h2>
+  <div class="doc-list">
+    {% for a in articles %}
+    <a class="doc" href="{% url 'articles-item-url' a.pk %}"><span class="ext">{% trans "СТ" %}</span><span class="t">{{ a.title }}<small>{{ a.published|date:"Y" }}{% if a.subtitle %} · {{ a.subtitle }}{% endif %}</small></span><span>→</span></a>
+    {% empty %}<p class="muted">{% trans "Материалы готовятся" %}</p>{% endfor %}
+  </div>
+</div></section>
+
+<section id="reports"><div class="container">
+  <h2>{% trans "Годовые отчёты" %}</h2>
+  <div class="doc-list">
+    {% for r in annual_reports %}
+    <a class="doc" href="{{ r.report_file.url }}" download><span class="ext">{{ r.report_file|file_ext }}</span><span class="t">{% trans "Отчёт за" %} {{ r.year }} {% trans "год" %}<small>{{ r.report_file|safe_size }}</small></span><span>↓</span></a>
+    {% endfor %}
+  </div>
+</div></section>
+{% endblock %}

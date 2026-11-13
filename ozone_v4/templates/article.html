@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{{ object.title }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container"><article class="article">
+  <a class="back" href="{% url 'about-page-url' %}#science">← {% trans "Научная деятельность" %}</a>
+  <p class="muted">{{ object.published|date:"j E Y" }}</p>
+  <h1>{{ object.title }}</h1>
+  {% if object.subtitle %}<p class="muted" style="font-size:18px;margin-top:8px">{{ object.subtitle }}</p>{% endif %}
+  {% if object.image_logo %}<div class="cover"><img src="{{ object.image_logo.url }}" alt=""></div>{% endif %}
+  <div class="prose">{{ object.body|rich_text }}</div>
+  {% with files=object.article_files.all %}{% if files %}
+  <h2 style="margin-top:32px">{% trans "Файлы" %}</h2>
+  <div class="doc-list">{% for f in files %}<a class="doc" href="{{ f.file.url }}" download><span class="ext">{{ f.file|file_ext }}</span><span class="t">{{ f.filename }}</span><span>↓</span></a>{% endfor %}</div>
+  {% endif %}{% endwith %}
+</article></div></section>
+{% endblock %}

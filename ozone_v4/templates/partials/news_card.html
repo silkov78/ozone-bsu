@@ -1,0 +1,8 @@
+{% load i18n site_tags %}<a class="card" href="{% url 'news-item-url' n.pk %}">
+  <div class="thumb r32">{% if n.image_logo %}<img src="{{ n.image_logo.url }}" alt="" loading="lazy">{% endif %}</div>
+  <div class="body">
+    <span class="date">{{ n.published|date:"j E Y" }}{% if n.source_url %} · {{ n.source_url|domain }}{% endif %}</span>
+    <h3>{{ n.title }}</h3>
+    <p>{{ n.body|excerpt:120 }}</p>
+  </div>
+</a>

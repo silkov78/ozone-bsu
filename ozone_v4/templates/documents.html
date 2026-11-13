@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{% trans "Документы" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container" style="max-width:860px">
+  <h1 style="margin-bottom:32px">{% trans "Документы" %}</h1>
+  <div class="doc-list">
+    {% for d in documents %}
+    <a class="doc" href="{{ d.document.url }}" download><span class="ext">{{ d.document|file_ext }}</span><span class="t">{{ d.name }}{% if d.description %}<small>{{ d.description }}</small>{% endif %}</span><span>↓</span></a>
+    {% empty %}<p class="muted">{% trans "Документы пока не добавлены" %}</p>{% endfor %}
+  </div>
+</div></section>
+{% endblock %}

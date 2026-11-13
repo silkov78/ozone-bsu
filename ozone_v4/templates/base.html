@@ -1,0 +1,63 @@
+{% load static i18n %}{% get_current_language as LANG %}<!doctype html>
+<html lang="{{ LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}{% trans "ННИЦ МО БГУ" %}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% trans 'Национальный научно-исследовательский центр мониторинга озоносферы БГУ: наблюдения озонового слоя и УФ-излучения над Беларусью.' %}{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="{% static 'img/brand/favicon.ico' %}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/brand/favicon-32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/brand/favicon-16.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/brand/favicon-180.png' %}">
+  <link rel="manifest" href="{% static 'img/brand/site.webmanifest' %}">
+  <meta name="theme-color" content="#1e4356">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <script src="{% static 'js/site.js' %}"></script>
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% with url=request.resolver_match.url_name %}
+<header class="header"><div class="container">
+  <a class="logo" href="{% url 'main-page-url' %}">
+    <span>{% trans "ННИЦ МО БГУ" %}<small>{% trans "Белорусский государственный университет" %}</small></span></a>
+  <nav class="nav" id="nav">
+    <a href="{% url 'observations-url' %}" class="{% if url == 'observations-url' %}active{% endif %}">{% trans "Наблюдения" %}</a>
+    <a href="{% url 'news-list-url' %}" class="{% if url == 'news-list-url' or url == 'news-item-url' %}active{% endif %}">{% trans "Новости" %}</a>
+    <a href="{% url 'about-page-url' %}" class="{% if url == 'about-page-url' or url == 'workers-detail-url' or url == 'devices-item-url' or url == 'articles-item-url' %}active{% endif %}">{% trans "О центре" %}</a>
+    <a href="{% url 'documents-page-url' %}" class="{% if url == 'documents-page-url' %}active{% endif %}">{% trans "Документы" %}</a>
+  </nav>
+  <form class="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    {% get_available_languages as LANGUAGES %}
+    {% for code, name in LANGUAGES %}
+      <button type="submit" name="language" value="{{ code }}" class="{% if code == LANG %}active{% endif %}" title="{{ name }}">{{ code|upper }}</button>
+    {% endfor %}
+  </form>
+  <button class="burger" type="button" aria-label="{% trans 'Меню' %}">☰</button>
+</div></header>
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<footer class="footer"><div class="container">
+  <div class="cols">
+    <div><h4>{% trans "Национальный научно-исследовательский центр мониторинга озоносферы БГУ" %}</h4>
+      <p>{% trans "Структурное подразделение" %} <a href="https://bsu.by">{% trans "Белорусского государственного университета" %}</a></p>
+      <p>{% trans "220045, г. Минск, ул. Курчатова, 7" %}</p></div>
+    <div><h4>{% trans "Контакты" %}</h4><ul>
+      <li><a href="tel:+375173993611">+375 (17) 399-36-11</a></li>
+      <li><a href="tel:+375173185312">+375 (17) 318-53-12</a></li>
+      <li><a href="mailto:nomrec@bsu.by">nomrec@bsu.by</a></li></ul></div>
+    <div><h4>{% trans "Ссылки" %}</h4><ul>
+      <li><a href="https://bsu.by">bsu.by</a></li>
+      <li><a href="https://web.telegram.org/k/#@nomrec">Telegram</a></li>
+      <li><a href="https://www.instagram.com/nomrec/">Instagram</a></li>
+      <li><a href="{% url 'cookies-page-url' %}">{% trans "Политика конфиденциальности" %}</a></li></ul></div>
+  </div>
+  <div class="copy"><span>© {% now "Y" %} {% trans "ННИЦ МО БГУ · Белорусский государственный университет" %}</span><span>{% trans "Данные доступны без регистрации" %}</span></div>
+</div></footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

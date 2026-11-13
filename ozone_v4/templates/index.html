@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static i18n site_tags %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+
+{% block content %}
+<section class="hero" id="hero"><div class="container">
+  <h1>{% trans "Озоновый слой и УФ-излучение над Беларусью" %}</h1>
+  <p>{% trans "Ежедневные наземные наблюдения общего содержания озона и УФ-индекса на трёх станциях." %}</p>
+  <div class="hero-ctrl">
+    <div class="seg dark" id="hp">
+      <button data-p="total_uvi" class="on">{% trans "УФ-индекс" %}</button><button data-p="total_ozone">{% trans "Общий озон" %}</button><button data-p="max_uvi">{% trans "УФ-макс" %}</button><button data-p="surface_ozone">{% trans "Приземный озон" %}</button></div>
+    <div class="seg dark" id="hd"><button data-d="7">7 {% trans "дн" %}</button><button data-d="30" class="on">30 {% trans "дн" %}</button><button data-d="90">90 {% trans "дн" %}</button></div>
+  </div>
+  <div class="today" id="today"></div>
+  <div class="hero-actions"><a class="btn btn-light" href="{% url 'observations-url' %}">{% trans "Графики и выгрузка данных" %} →</a></div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-head"><h2>{% trans "Новости" %}</h2><a href="{% url 'news-list-url' %}">{% trans "Все новости" %} →</a></div>
+  <div class="nl-grid">
+    {% for n in news %}{% include "partials/news_card.html" with n=n %}{% endfor %}
+  </div>
+</div></section>
+
+<section class="section-soft"><div class="container split">
+  <div>
+    <span class="eyebrow">{% trans "О центре · БГУ" %}</span>
+    <h2 style="margin-top:8px">{% trans "Национальный научно-исследовательский центр мониторинга озоносферы" %}</h2>
+    <p class="muted">{% trans "ННИЦ МО — структурное подразделение Белорусского государственного университета. Ведёт мониторинг озонового слоя и ультрафиолетового излучения, разрабатывает приборы и методики измерений, участвует в международных программах." %}</p>
+    <div class="stats"><div><b>1997</b><span>{% trans "год основания" %}</span></div><div><b>3</b><span>{% trans "станции" %}</span></div><div><b>25+</b><span>{% trans "лет рядов данных" %}</span></div></div>
+    <p style="margin-top:24px"><a class="btn btn-ghost" href="{% url 'about-page-url' %}">{% trans "Подробнее о центре" %}</a></p>
+  </div>
+  <img class="photo" src="{% static 'img/site/building.jpg' %}" alt="{% trans 'Здание ННИЦ МО БГУ' %}">
+</div></section>
+{% endblock %}
+
+{% block scripts %}
+{{ observations|json_script:"obs-data" }}
+<script>
+const OBS = JSON.parse(document.getElementById("obs-data").textContent);
+const ST = [["minsk", "{% trans 'Минск' %}"], ["homel", "{% trans 'Гомель' %}"], ["naroch", "{% trans 'Нарочь' %}"]];
+const PU = {
+  total_ozone: ["{% trans 'ОСО' %}", "{% trans 'е.Д.' %}"], total_uvi: ["{% trans 'УФ-индекс' %}", ""],
+  max_uvi: ["{% trans 'УФ-макс' %}", ""], surface_ozone: ["{% trans 'Приземный озон' %}", ""],
+};
+const T = { asof: "{% trans 'данные за' %}", avg: "{% trans 'среднее за' %}", days: "{% trans 'дн' %}" };
+let hp = "total_uvi", hd = 30, sparks = [];
+
+function renderToday() {
+  const sts = ST.filter(([k]) => lastOf(OBS, hp + "_" + k));
+  sparks.forEach(c => c.destroy()); sparks = [];
+  const box = document.getElementById("today");
+  const minskLast = lastOf(OBS, hp + "_minsk");
+  box.innerHTML = sts.map(([k, n]) => {
+    const key = hp + "_" + k, lo = lastOf(OBS, key), cr = OBS.slice(0, lo.i + 1).slice(-hd), vals = cr.map(o => o[key]).filter(x => x != null);
+    const avg = (vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(hp === "total_ozone" ? 0 : 2);
+    const badge = hp.includes("uvi") ? (([c, l]) => ` <i class="uvi-badge ${c}">${l}</i>`)(uviClass(lo.value)) : "";
+    const lag = minskLast && lo.date !== minskLast.date;
+    return `<div class="station" style="view-transition-name:st-${k}"><h3>${n}${lag ? `<span class="asof">${T.asof} ${shortDate(lo.date)}</span>` : ""}</h3><div class="vals">
+      <div class="val"><b>${lo.value}</b><span>${PU[hp][0]} ${PU[hp][1]}${badge}</span></div>
+      <div class="val"><b style="font-size:22px;opacity:.75">${avg}</b><span>${T.avg} ${hd} ${T.days}</span></div>
+    </div><div class="spark"><canvas id="sp-${k}"></canvas></div></div>`;
+  }).join("");
+  box.classList.toggle("solo", sts.length === 1);
+  sts.forEach(([k]) => {
+    const key = hp + "_" + k, lo = lastOf(OBS, key), cr = OBS.slice(0, lo.i + 1).slice(-hd);
+    sparks.push(new Chart(document.getElementById("sp-" + k), {
+      type: "line",
+      data: { labels: cr.map(o => o.date), datasets: [{ data: cr.map(o => o[key]), borderColor: "#a2cce3", borderWidth: 2, pointRadius: 0, tension: .35, spanGaps: true, fill: { target: "origin" }, backgroundColor: "rgba(162,204,227,.12)" }] },
+      plugins: [drawIn],
+      options: { responsive: true, maintainAspectRatio: false, animation: false,
+        plugins: { legend: { display: false }, tooltip: { enabled: true, displayColors: false } },
+        scales: {
+          x: { grid: { display: false }, border: { color: "rgba(255,255,255,.18)" }, ticks: { color: "rgba(207,227,238,.7)", font: { size: 10 }, maxRotation: 0, autoSkip: false, align: "inner",
+               callback: function (v, i, t) { const m = Math.round((t.length - 1) / 2); return i === 0 || i === m || i === t.length - 1 ? shortDate(this.getLabelForValue(v)) : ""; } } },
+          y: { position: "left", grid: { color: "rgba(255,255,255,.06)", drawTicks: false }, border: { display: false }, ticks: { color: "rgba(207,227,238,.7)", font: { size: 10 }, maxTicksLimit: 3, padding: 6 } } } },
+    }));
+  });
+}
+document.querySelectorAll("#hp button").forEach(b => b.onclick = () => { hp = b.dataset.p; document.querySelectorAll("#hp button").forEach(x => x.classList.toggle("on", x === b)); smooth(renderToday); });
+document.querySelectorAll("#hd button").forEach(b => b.onclick = () => { hd = +b.dataset.d; document.querySelectorAll("#hd button").forEach(x => x.classList.toggle("on", x === b)); renderToday(); });
+if (OBS.length) renderToday();
+</script>
+{% endblock %}

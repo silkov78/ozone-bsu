@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{{ object.name }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container"><article class="article">
+  <a class="back" href="{% url 'about-page-url' %}#devices">← {% trans "Приборная база" %}</a>
+  <span class="eyebrow">{{ object.subtitle }}</span>
+  <h1>{{ object.name }}</h1>
+  {% if object.main_image %}<div class="cover"><img src="{{ object.main_image.url }}" alt=""></div>{% endif %}
+  <div class="prose">{{ object.description|rich_text }}</div>
+  {% with chars=object.characteristics.all %}{% if chars %}
+  <h2 style="margin-top:32px">{% trans "Технические характеристики" %}</h2>
+  <div class="table-wrap"><table>{% for c in chars %}<tr><td>{{ c.characteristic_name }}</td><td>{{ c.characteristic_value }}</td></tr>{% endfor %}</table></div>
+  {% endif %}{% endwith %}
+</article></div></section>
+{% endblock %}

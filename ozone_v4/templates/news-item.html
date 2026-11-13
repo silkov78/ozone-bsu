@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{{ object.title }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block description %}{{ object.body|excerpt:160 }}{% endblock %}
+{% block content %}
+<section><div class="container"><article class="article">
+  <a class="back" href="{% url 'news-list-url' %}">← {% trans "Все новости" %}</a>
+  <p class="muted">{{ object.published|date:"j E Y" }}</p>
+  <h1>{{ object.title }}</h1>
+  {% if object.image_logo %}<div class="cover"><img src="{{ object.image_logo.url }}" alt=""></div>{% endif %}
+  <div class="prose">{{ object.body|rich_text }}</div>
+  {% if object.source_url %}
+  <a class="source" href="{{ object.source_url }}" target="_blank" rel="noopener">
+    <span class="ico">↗</span>
+    <span class="meta"><small>{% trans "Оригинальный источник" %}</small><b>{{ object.source_url|domain }}</b></span>
+    <span class="btn btn-ghost">{% trans "Читать оригинал" %}</span></a>
+  {% endif %}
+</article></div></section>
+{% if more %}
+<section class="section-soft"><div class="container">
+  <div class="section-head"><h2>{% trans "Другие новости" %}</h2><a href="{% url 'news-list-url' %}">{% trans "Все новости" %} →</a></div>
+  <div class="nl-grid">{% for n in more %}{% include "partials/news_card.html" with n=n %}{% endfor %}</div>
+</div></section>
+{% endif %}
+{% endblock %}

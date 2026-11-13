@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block title %}{% trans "Поиск" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container" style="max-width:860px">
+  <h1 style="margin-bottom:20px">{% trans "Поиск по новостям" %}</h1>
+  <form action="{% url 'search-page-url' %}" method="get" style="margin-bottom:28px">
+    <input class="search" style="width:100%" type="search" name="q" value="{{ query }}" placeholder="{% trans 'Например: озон' %}" autofocus></form>
+  {% if query %}
+    <div class="doc-list">
+    {% for n in results %}
+      <a class="doc" href="{% url 'news-item-url' n.pk %}"><span class="t">{{ n.title }}<small>{{ n.published|date:"j E Y" }} · {{ n.body|excerpt:120 }}</small></span><span>→</span></a>
+    {% empty %}<p class="muted">{% trans "Ничего не найдено" %}</p>{% endfor %}
+    </div>
+  {% endif %}
+</div></section>
+{% endblock %}

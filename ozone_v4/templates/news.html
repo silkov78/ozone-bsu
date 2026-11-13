@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Новости" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container">
+  <div class="section-head">
+    <h1>{% trans "Новости" %}</h1>
+    <form class="news-search" action="{% url 'search-page-url' %}" method="get">
+      <input class="search" type="search" name="q" placeholder="{% trans 'Поиск по новостям' %}"></form>
+  </div>
+  <div class="nl-grid">
+    {% for n in page_obj %}{% include "partials/news_card.html" with n=n %}{% empty %}<p class="muted">{% trans "Новостей пока нет" %}</p>{% endfor %}
+  </div>
+  {% if page_obj.has_other_pages %}
+  <div class="pager">
+    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">←</a>{% endif %}
+    {% for num in page_obj.paginator.page_range %}
+      <a href="?page={{ num }}" class="{% if num == page_obj.number %}active{% endif %}">{{ num }}</a>
+    {% endfor %}
+    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">→</a>{% endif %}
+  </div>
+  {% endif %}
+</div></section>
+{% endblock %}

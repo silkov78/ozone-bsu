@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Политика конфиденциальности" %} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container"><article class="article prose">
+  <h1>{% trans "Политика конфиденциальности" %}</h1>
+  <p>{% trans "Сайт ННИЦ МО БГУ не собирает персональные данные посетителей. Используются только технические cookie, необходимые для работы сайта: выбор языка интерфейса и защита форм (CSRF)." %}</p>
+  <p>{% trans "Данные наблюдений доступны без регистрации. По вопросам обращайтесь по адресу" %} <a href="mailto:nomrec@bsu.by">nomrec@bsu.by</a>.</p>
+</article></div></section>
+{% endblock %}

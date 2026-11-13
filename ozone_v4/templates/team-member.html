@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ w.last_name }} {{ w.first_name }} {{ w.middle_name }} — {% trans "ННИЦ МО БГУ" %}{% endblock %}
+{% block content %}
+<section><div class="container">
+<a class="back" href="{% url 'about-page-url' %}#team">← {% trans "Все сотрудники" %}</a>
+<div class="profile">
+  <div class="ph">{% if w.photo %}<img src="{{ w.photo.url }}" alt="">{% endif %}</div>
+  <div>
+    {% if w.position %}<span class="eyebrow">{{ w.position }}</span>{% endif %}
+    <h1 style="margin:6px 0 4px">{{ w.last_name }} {{ w.first_name }} {{ w.middle_name }}</h1>
+    {% if w.academic_rank %}<p class="muted">{{ w.academic_rank }}</p>{% endif %}
+    <div class="contacts">
+      {% if w.mail %}<div><span>Email</span><a href="mailto:{{ w.mail }}">{{ w.mail }}</a></div>{% endif %}
+      {% if w.phone %}<div><span>{% trans "Телефон" %}</span>{{ w.phone }}</div>{% endif %}
+      {% if w.adress %}<div><span>{% trans "Адрес" %}</span>{{ w.adress }}</div>{% endif %}
+      {% if w.google_academy %}<div><span>{% trans "Профиль" %}</span><a href="{{ w.google_academy }}" target="_blank" rel="noopener">Google Scholar ↗</a></div>{% endif %}
+    </div>
+    {% with items=w.science_interests.all %}{% if items %}<div class="block"><h2>{% trans "Научные интересы" %}</h2>
+      <div class="chips">{% for i in items %}<span class="chip">{{ i.science_interest }}</span>{% endfor %}</div></div>{% endif %}{% endwith %}
+    {% with items=w.education.all %}{% if items %}<div class="block"><h2>{% trans "Образование" %}</h2>
+      <div class="timeline">{% for i in items %}<div><b>{{ i.study_finishing }}</b> {{ i.study_description }}</div>{% endfor %}</div></div>{% endif %}{% endwith %}
+    {% with items=w.career.all %}{% if items %}<div class="block"><h2>{% trans "Карьера" %}</h2>
+      <div class="timeline">{% for i in items %}<div><b>{{ i.career_period }}</b> {{ i.career_description }}</div>{% endfor %}</div></div>{% endif %}{% endwith %}
+    {% with items=w.rewards.all %}{% if items %}<div class="block"><h2>{% trans "Награды" %}</h2>
+      <div class="timeline">{% for i in items %}<div><b>{{ i.reward_year }}</b> {{ i.reward_description }}</div>{% endfor %}</div></div>{% endif %}{% endwith %}
+    {% with items=w.publications.all %}{% if items %}<div class="block"><h2>{% trans "Публикации" %}</h2>
+      <ul class="pubs">{% for p in items %}<li><b>{{ p.publication_year }}</b>{{ p.publication_description }}{% if p.publication_link %} <a href="{{ p.publication_link }}" target="_blank" rel="noopener">{% trans "ссылка" %} ↗</a>{% endif %}</li>{% endfor %}</ul></div>{% endif %}{% endwith %}
+  </div>
+</div>
+</div></section>
+{% endblock %}
