@@ -4,8 +4,8 @@
 {% block content %}
 <section><div class="container"><article class="article">
   <a class="back" href="{% url 'about-page-url' %}#devices">← {% trans "Приборная база" %}</a>
-  <span class="eyebrow">{{ object.subtitle }}</span>
   <h1>{{ object.name }}</h1>
+  {% if object.subtitle %}<p class="muted" style="font-size:18px;margin-top:8px">{{ object.subtitle }}</p>{% endif %}
   {% if object.main_image %}<div class="cover"><img src="{{ object.main_image.url }}" alt=""></div>{% endif %}
   <div class="prose">{{ object.description|rich_text }}</div>
   {% with chars=object.characteristics.all %}{% if chars %}
