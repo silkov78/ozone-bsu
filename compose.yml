@@ -1,6 +1,5 @@
 # Продакшен: docker compose up -d --build
 # Переменные — в .env (шаблон: .env.example)
-name: ozone
 
 services:
   postgres:
@@ -31,12 +30,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8000/healthz/ >/dev/null || exit 1"]
-      interval: 30s
-      timeout: 5s
-      start_period: 40s
-      retries: 3
 
   nginx:
     image: nginx:1.27-alpine
@@ -51,14 +44,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    depends_on:
-      django:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/nginx-health >/dev/null || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
 
 volumes:
   postgres_data:

@@ -23,6 +23,7 @@ RUN chmod +x /entrypoint.sh \
  && mkdir -p /app/staticfiles /app/media \
  && chown -R django:django /app
 
+RUN mkdir -p /app/staticfiles && chown -R django:django /app/staticfiles
 USER django
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
